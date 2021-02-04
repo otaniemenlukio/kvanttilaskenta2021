@@ -1,32 +1,39 @@
-# kvanttilaskenta 2021
-
-
-## Kvanttilaskennan lukiokurssi -Aalto Espoo go quantum 2021
-Kurssilla tutustutaan kvanttilaskennan periaatteisiin ja sovelluksiin tieteissä. 
-Kurssilla opit ohjelmoimaan oikella kvanttitietokoneella. Kurssin alussa kerrataan 
-tarvittavat esitiedot kompleksiluvuista, vektorimatematiikasta, matriisilaskennasta ja perinteisten 
-tietokoneiden käyttämien loogisten peruspiirien toiminnasta. Klassisen taustan lisäksi kurssilla opetellaan 
-kvanttitietokoneen toimintaan läheisesti liittyvät fysiikan periaatteet ja sekä kvanttilaskennassa käytettävien 
-loogisten porttien laskutoimitukset kubittien tilojen määrittämiseksi.  Kurssin tavoitteena on tuottaa oikean kvanttietokoneen ymmärtämää koodia python-ohjelmointikielellä.
-
-<a href="qiskit.org" target="_blank"> Qiskit</a>
+# Tervetuloa kvanttilaskennan lukiokurssille 2021 4.jakso
 
 Etäluennot MA klo 15.00 - 16.15 ja etäharjoitukset 8-palkissa KE klo 15.00 - 16.15.  Kurssi alkaa 8.2.2021. 
 
 Luennot ja harjoitukset Streamataan verkkoon osallistua voi myös etänä. Viikottaisia kokoontumisia on yleensä 2 oppituntia. MA Luento ja KE opastettu laskuharjoitus, tehtävät voi palauttaa viikottain perjantaina klo 16.15 mennessä. Voit siis osallistua kurssille myös siten, että seuraat luentojen harjoitusten tallenteita omalla ajalla.
 
-## Tiedottaminen
+## Luentojen ja laskuharjoitusten Meet-linkki ja tiedottaminen
+
+Olet saanut pysyvän Meet-linkin sähköpostiisi. Luennoilla ja harjoituksissa käytetään __aina samaa linkkiä__.
+
+
 Seuraa kurssin tiedottamista sähköpostissasi ja GitHubissa.
 
 ## Ohjelmointiympäristöt
 
 Voit valita seuraavista:
 
-1) Omalle koneelle asennettu paikallinen Jupyter-ympäristö, asennusohjeet (suositellaan):
-    <a href="https://qiskit.org/documentation/install.html" target ="_blank">IBM QISKIT Installation</a>
+1 Omalle koneelle asennettu paikallinen Jupyter-ympäristö, asennusohjeet (advanced users):
+  * <a href="https://qiskit.org/documentation/install.html" target ="_blank">IBM QISKIT Installation</a>
+    
+  * <a href="https://drive.google.com/file/d/1wkgPYrJ15oS_SI0BuTMr02ASOzoA-vty/view?usp=sharing" target ="_blank">Lisäohjeita Linux-käyttäjille</a>
 
-2) Verkkoselaimessa toimiva ohjelmointiympäristö
+  * Jos käytät Omalla tietokoneella toimivaa Jupyter-ympäristöä, niin sinun on osattava kloonata kurssin GitHub-repositio tehtävien lataamista varten. Pikaohje, macissa ja linuxissa komentoriviltä eli terminaalista:
+
+  * reposition lataus komennolla: `git clone https://github.com/otaniemenlukio/kvanttilaskenta2021`
+
+  * reposition päivitys (reposition kansiossa annettava komento): `git pull`
+
+  * Tehtävät voi myös ladatajaetusta Google-kansiosta, jonka osoitteen olet saanut sähköpostiisi.  
+
+  * Tehtävien palautus tehdään tällöin __aina samalla Google Form-lomakkeella__, jonka linkin olet saanut sähköpostiisi.
+
+2 Verkkoselaimessa toimiva ohjelmointiympäristö (suositellaan, helppokäyttöinen)
     <a href="https://koodikoulu.net" target ="_blank">koodikoulu.net</a>
 
-Kirjautuminen tehdään koodikoulu.net -palveluun gmail-tilillä tai eduespoo.fi-tilillä. Käyttöoikeudet saa kurssin ohjaajilta.
+  * Tehtävätiedostot ladataan (fetch) ja palautetaan verkkoympäristön sisällä. Ei edellytä asennuksia omalle koneelle. Suositellaan verkkopalvelun käyttöä, jos asennukset ei onistu tai GitHubin käyttö on sinulle vierasta. Koodikoulu.net-palvelun käyttöä harjoitellaan ensimmäisellä laskuharjoituskerralla.
+  
+  Kirjautuminen tehdään koodikoulu.net -palveluun gmail-tilillä tai eduespoo.fi-tilillä. Käyttöoikeudet saa kurssin ohjaajilta.
 
