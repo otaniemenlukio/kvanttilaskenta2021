@@ -8,7 +8,7 @@ Luennot ja harjoitukset Streamataan verkkoon osallistua voi myös etänä. Viiko
 <a href="https://drive.google.com/file/d/1yO71adpr6yk-9yNlFUzom2pT5ClYaWtY/view?usp=sharing" target="_blank">Kierros 1 luentokalvot MA 8.2.2021</a>
 
 
-<a href = "https://www.youtube.com/watch?v=jbko8SVbnW8&feature=youtu.be" target="blank">Luento 1 MA 9.2.2021</a>
+<a href = "https://www.youtube.com/watch?v=jbko8SVbnW8&feature=youtu.be" target="blank">Luento 1 MA 8.2.2021 Youtubessa</a>
 
 ## Luentojen ja laskuharjoitusten Meet-linkki ja tiedottaminen
 
