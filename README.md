@@ -4,8 +4,9 @@ Etäluennot MA klo 15.00 - 16.15 ja etäharjoitukset 8-palkissa KE klo 15.00 - 1
 
 Luennot ja harjoitukset Streamataan verkkoon osallistua voi myös etänä. Viikottaisia kokoontumisia on yleensä 2 oppituntia. MA Luento ja KE opastettu laskuharjoitus, tehtävät voi palauttaa viikottain perjantaina klo 16.15 mennessä. Voit siis osallistua kurssille myös siten, että seuraat luentojen harjoitusten tallenteita omalla ajalla.
 
-## Luentokalvot
+## Luentokalvot ja luennot
 <a href="https://drive.google.com/file/d/1yO71adpr6yk-9yNlFUzom2pT5ClYaWtY/view?usp=sharing" target="_blank">Kierros 1 luentokalvot MA 8.2.2021</a>
+<a href = "https://www.youtube.com/watch?v=jbko8SVbnW8&feature=youtu.be" target="blank">Luento 1 MA 9.2.2021</a>
 
 ## Luentojen ja laskuharjoitusten Meet-linkki ja tiedottaminen
 
