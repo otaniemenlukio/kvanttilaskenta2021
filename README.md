@@ -12,7 +12,7 @@ Luennot ja harjoitukset Streamataan verkkoon osallistua voi myös etänä. Viiko
 
 <a href = "https://youtu.be/NiO7F3Ysyas" target="_blank">Laskuharjoitus 1 KE 10.8.2021</a>
 
-< href ="https://github.com/otaniemenlukio/kvanttilaskenta2021/blob/master/kierros1/ratkaisut-kierros1.ipynb">Tehtävien ratkaisut. Ratkaisuissa on tarvittava koodi, jonka avulla voit lähettää koodisi oikean kvanttikoneelle suoritettavaksi.</a>
+<a href ="https://github.com/otaniemenlukio/kvanttilaskenta2021/blob/master/kierros1/ratkaisut-kierros1.ipynb" target ="_blank"> Tehtävien ratkaisut. Ratkaisuissa on tarvittava koodi, jonka avulla voit lähettää koodisi oikean kvanttikoneelle suoritettavaksi.</a>
 
 
 ## Luentojen ja laskuharjoitusten Meet-linkki ja tiedottaminen
