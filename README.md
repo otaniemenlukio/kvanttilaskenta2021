@@ -9,7 +9,7 @@ Luennot ja harjoitukset Streamataan verkkoon osallistua voi myös etänä. Viiko
 <a href="https://github.com/otaniemenlukio/kvanttilaskenta2021/blob/master/kierros2/Kvanttilaskenta%2C%20kierros%202-ratkaisut.ipynb" target="_blank">Kierroksen 2 malliratkaisut KE 17.2.2020 Githubissa</a>
 
 
-<a href="https://youtu.be/NtfyXd3xX3g" target="_blank">Kierros 2 Laskuharjoitukset Youtubesas KE 17.2.2021</a>
+<a href="https://youtu.be/NtfyXd3xX3g" target="_blank">Kierros 2 Laskuharjoitukset KE 17.2.2021 Youtubessa</a>
 
 
 <a href="https://drive.google.com/file/d/1u1fpPASyQfhX0I-hkILNrMLssClkLmcM/view?usp=sharing" target="_blank">Kierros 2 luentokalvot MA 15.2.2021</a>
