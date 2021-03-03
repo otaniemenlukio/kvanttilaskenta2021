@@ -7,6 +7,7 @@ Luennot ja harjoitukset Streamataan verkkoon osallistua voi myös etänä. Viiko
 ## Luentokalvot ja luennot
 
 <a href ="https://youtu.be/NdtWaNvCSKI" target="_blank"> Kierros 3 luento  MA 1.3.2021 Youtubessa</a>
+
 <a href ="https://drive.google.com/file/d/1ryIC_66TAR6VoY6gExp6BAo8-_QxcyDV/view?usp=sharing" target="_blank"> Luentokalvot MA 3.3 pdf-tiedostona</a>
 
 <a href="https://github.com/otaniemenlukio/kvanttilaskenta2021/blob/master/kierros2/Kvanttilaskenta%2C%20kierros%202-ratkaisut.ipynb" target="_blank">Kierroksen 2 malliratkaisut KE 17.2.2020 Githubissa</a>
