@@ -1,0 +1,1820 @@
+\documentclass[a4paper, 12pt]{article}
+
+
+\makeatletter
+%\renewcommand{\@chapapp}{}% Not necessary...
+%\newenvironment{chapquote}[2][2em]
+ % {\setlength{\@tempdima}{#1}%
+ %  \def\chapquote@author{#2}%
+ %  \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+ %  \itshape}
+ % {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+%\makeatother
+%\renewcommand\thechapter{\Roman{chapter}}
+%\usepackage[paper=a4paper,textwidth=16.5cm,bottom=40mm]{geometry}
+\usepackage[left=2.5cm, top=3.0cm,right=2.5cm, bottom=2.5cm]{geometry}
+%\usepackage{avant}
+%\usepackage[scaled=.92]{helvet}
+%\renewcommand*\familydefault{\sfdefault}
+\usepackage[utf8]{inputenc}
+\usepackage{romannum}
+%\usepackage{cmbright}
+%\usepackage{ccfonts,eulervm}
+%\usepackage{eulervm}
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+
+\usepackage[english, finnish]{babel}
+\usepackage{tabularx}
+\usepackage{ae}
+%\usepackage{cleveref}
+\usepackage[affil-it]{authblk}
+%\usepackage{CV}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+
+
+
+\usepackage[pdfpagemode=None,linktocpage=true, colorlinks=true,urlcolor=red, linkcolor=black,citecolor=black,pdfstartview=FitH,linktoc=all]{hyperref}
+\usepackage{cleveref}
+\makeatletter  
+\def\@endtheorem{\qed\endtrivlist\@endpefalse } % insert `\qed` macro
+\makeatother
+%\renewcommand{\qedsymbol}{}
+\usepackage{thmtools}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\declaretheoremstyle[headfont=\color{blue}\normalfont\bfseries, bodyfont=\normalfont, headpunct={.}, qed={}]{normalbody}
+\declaretheoremstyle[headfont=\color{blue}\normalfont\bfseries, bodyfont=\normalfont, headpunct={.}]{normalbody1}
+\declaretheoremstyle[headfont=\normalfont\bfseries, bodyfont=\normalfont, headpunct={.}, qed={}]{normalbody2}
+\definecolor{auburn}{rgb}{0.43, 0.21, 0.1}
+\declaretheoremstyle[headfont=\color{auburn}\normalfont\bfseries, bodyfont=\normalfont, headpunct={.}, qed={}]{normalbody3}
+\declaretheoremstyle[headfont=\normalfont\bfseries, bodyfont=\normalfont, headpunct={:}, qed={}]{normalbody4}
+%\theoremstyle{exercise}
+\declaretheorem[style=normalbody,name=Tehtävä]{teht}
+%\newtheorem{teht}{Tehtävä}
+\declaretheorem[style=normalbody1,name=Esim.]{es}
+\declaretheorem[style=normalbody2,name={Lause}]{lause}
+\declaretheorem[style=normalbody3,name=Määritelmä]{maar}
+
+\declaretheoremstyle[%
+  spaceabove=0pt,%
+  spacebelow=6pt,%
+  headfont=\normalfont\itshape,%
+  %postheadspace=1em,%
+  %
+  headpunct={.},
+]{mystyle} 
+\declaretheorem[style=normalbody2,name=Ratkaisu, unnumbered]{rat}
+\declaretheorem[style=normalbody4,name=Vastaus, unnumbered]{vast}
+
+\declaretheorem[style=mystyle,name=Todistus, unnumbered]{tod}
+%\def\eolqed{\hfill\qedsymbol}
+%\newcounter{määr}{section}
+\newenvironment{määr}[2]
+{\begin{tcolorbox}[adjusted title=Määritelmä #1,colframe=blue!75!black]
+%\begin{maar*}[''Jakaa täysin'']
+#2
+%\end{maar*}
+\end{tcolorbox}
+}
+
+\declaretheoremstyle[headfont=\normalfont\bfseries, headpunct={.}, qed={}]{normalbody5}
+\declaretheorem[style=normalbody5,name=Huomautus, unnumbered]{huom}
+\declaretheorem[style=normalbody5,name=Seuraus, unnumbered]{seur}
+
+%\renewcommand{\qedsymbol}{}
+%\declaretheorem[style=mythmstyle, name=Lause]{lause}
+\theoremstyle{remark}
+%\newtheorem*{huom}{Huomautus}
+\theoremstyle{definition}
+%\newtheorem{theorem}{Lause}[chapter]
+
+\newtheorem*{maar*}{Määritelmä}
+%\newtheorem*{seur}{Seuraus}
+%\newtheorem*{huom}{Huomautus}
+
+\newtheorem{esim}{Esimerkki}
+%\newtheorem*{rat}{Ratkaisu}
+%\newtheorem{lause}{Lause}
+%\theoremstyle{exercise}
+%\declaretheorem[style=normalbody,name=Tehtävä]{teht}
+
+
+\usepackage{amssymb}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage{mathdesign}
+\usepackage{mathtools}
+\usepackage{graphicx}
+ %\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xr-hyper}
+%\usepackage[backend=bibtex]{biblatex}   % bibliography
+
+%\usepackage[pdfpagemode=FullScreen, colorlinks=true,urlcolor=red, linkcolor=blue,citecolor=black,pdfstartview=FitH]{hyperref}
+\usepackage{url}
+%\usepackage{cite}
+
+\usepackage{latexsym}
+
+\usepackage[decimalsymbol=comma, load=prefixed]{siunitx}
+%\usepackage{siunitx}
+%\sisetup{output-decimal-marker = {,}}
+   \sisetup{exponent-product = \cdot, output-product = \cdot}
+\sisetup{
+    group-digits=true,
+    group-separator={\,},
+%   group-four-digits=false,% default setting
+}
+\usepackage{fancyhdr}
+%\usepackage{fancyref}
+%
+% This is not working with package fancyref.
+
+\usepackage{fancyhdr} % heade
+
+% Quotes
+\usepackage{epigraph}
+
+% Headerit
+\pagestyle{fancyplain}
+\lhead[\fancyplain{}{\bfseries\thepage}]
+	{\fancyplain{}{\bfseries }}
+\chead[\fancyplain{}{\bfseries\thepage}]
+	{\fancyplain{}{\bfseries }}
+\rhead[\fancyplain{}{\bfseries\leftmark}]
+	{\fancyplain{}{\bfseries \dmyyyydate\today}}
+%\cfoot{}
+%\lfoot{}
+%\rfoot{tihayryn@lce.hut.fi}
+%
+% ei kappaleen sisennystä ja tyhjä rivi kappaleiden väliin
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.5ex}
+%\setlength{\parskip}{3mm plus0.5mm minus0.5mm}
+\usepackage{sectsty}
+%\sectionfont{\fontsize{16}{15}\selectfont}
+%\paragraphfont{\fontsize{14}{15}\selectfont}
+%\usepackage{fouriernc}
+%\usepackage{ccfonts,eulervm}
+
+%\usepackage[scaled=.92]{helvet}
+\usepackage{datetime}
+\renewcommand{\dateseparator}{.}
+\date{\dmyyyydate\today}
+
+%\setlength{\textwidth}{160mm}
+%\setlength{\oddsidemargin}{-5mm}
+%\setlength{\evensidemargin}{-5mm}
+%\setlength{\textheight}{255mm}
+%\setlength{\topmargin}{-15mm}
+
+\usepackage{natbib}
+\bibliographystyle{./Bibliography/my-dcu}
+%\bibliographystyle{agsm}
+%\bibliographystyle{dcu}
+%\bibliographystyle{abbrvnat}
+%\bibliographystyle{plainnat}
+%\bibliographystyle{unsrtnat}
+%\renewcommand\harvardyearleft{\unskip, }
+%\renewcommand\harvardyearright[1]{.}
+
+\renewcommand\harvardyearleft{\unskip\ }
+\renewcommand\harvardyearright[1]{.}
+\bibpunct{(}{)}{;}{a}{}{,~}
+\AtBeginDocument{\renewcommand{\harvardand}{ja}}
+%\renewcommand\harvardand{ja}
+\renewcommand{\arraystretch}{1.3}
+
+
+\usepackage{amssymb}
+%\usepackage{mathdesign}
+\usepackage{gauss}
+\usepackage{mathabx}
+
+\usepackage{graphicx} % Kuvien lis??????ist??????arten
+\usepackage{appendix} % Lis??????vaihtoehtoja liitteiden muotoiluun.
+
+
+\usepackage{tikz}
+\usetikzlibrary{shadings}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{decorations.fractals}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{calc, intersections}	       %allows coordinate calculations.
+\usetikzlibrary{angles,patterns,calc}
+\usepackage{sidecap}
+\usetikzlibrary{calc,fadings,decorations.pathreplacing}
+\usepackage{xcolor}
+\usetikzlibrary{positioning}
+\usetikzlibrary{through,backgrounds}
+\usepackage{footmisc}
+\usepackage{sidecap}
+\usetikzlibrary{calc,fadings,decorations.pathreplacing}
+\usepackage{xcolor}
+\usetikzlibrary{positioning}
+\usetikzlibrary{through,backgrounds}
+\usepackage{footmisc}
+\usetikzlibrary{decorations.pathmorphing,decorations.markings}
+
+
+\usetikzlibrary{decorations}
+
+% Not sure this follows any proper defition of 
+% Sirpinksi triangle. It just works.
+\pgfdeclaredecoration{quasi-sirpinski}{do}{%
+    \state{do}[width=\pgfdecoratedinputsegmentlength, next state=do]{%
+        \pgfpathmoveto{\pgfpointpolar{-60}{\pgfdecoratedinputsegmentlength/2}}%
+        \pgfpathlineto{\pgfpointorigin}%
+        \pgfpathlineto{\pgfpoint{\pgfdecoratedinputsegmentlength/2}{0pt}}%
+        \pgfpathclose%
+    }
+}
+% TIKZ - for drawing Feynman diagrams
+% ... use with pdflatex
+
+
+
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{trees}
+\usetikzlibrary{matrix,arrows} 				% For commutative diagram
+			\usepackage{pgfplots}								% http://www.felixl.de/commu.pdf
+\usetikzlibrary{positioning}				% For "above of=" commands
+\usetikzlibrary{calc,through}				% For coordinates
+\usetikzlibrary{decorations.pathreplacing}  % For curly braces
+% http://www.math.ucla.edu/~getreuer/tikz.html
+\usepackage{pgffor}							% For repeating patterns
+
+\usetikzlibrary{decorations.pathmorphing}	% For Feynman Diagrams
+\usetikzlibrary{decorations.markings}
+\tikzset{
+	% >=stealth', %%  Uncomment for more conventional arrows
+    vector/.style={decorate, decoration={snake}, draw},
+	provector/.style={decorate, decoration={snake,amplitude=2.5pt}, draw},
+	antivector/.style={decorate, decoration={snake,amplitude=-2.5pt}, draw},
+    fermion/.style={draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
+    fermionbar/.style={draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{<}}}},
+    fermionnoarrow/.style={draw=black},
+    gluon/.style={decorate, draw=black,
+        decoration={coil,amplitude=4pt, segment length=5pt}},
+    scalar/.style={dashed,draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
+    scalarbar/.style={dashed,draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{<}}}},
+    scalarnoarrow/.style={dashed,draw=black},
+    electron/.style={draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
+	bigvector/.style={decorate, decoration={snake,amplitude=4pt}, draw},
+}
+
+% TIKZ - for block diagrams, 
+% from http://www.texample.net/tikz/examples/control-system-principles/
+% \usetikzlibrary{shapes,arrows}
+\tikzstyle{block} = [draw, rectangle, 
+    minimum height=3em, minimum width=6em]
+
+
+
+
+
+
+\usepackage{listing}
+\usepackage{wasysym}
+\usepackage{bbm}
+\usepackage{fancybox}
+
+\usepackage{textcomp}
+
+\usepackage[labelfont=bf,labelsep=period]{caption}
+
+%\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+
+
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+%\usepackage[nottoc]{tocbibind}
+
+\addto\captionsenglish{\renewcommand{\bibname}{References}}
+% Mathematics
+\newcommand{\vii}{\mathop{\Big/}}
+\newcommand{\viiva}[2]{\vii\limits_{\!\!\!\!{#1}}^{\>\,{#2}}}
+\newcommand{\relR}{\mathrel{\mathsf{R}}}
+\newcommand{\cp}[1]{{#1}^\complement}
+\newcommand{\raj}[2][f]{#1\!\!\mid_{#2}}
+\renewcommand{\bar}[1]{\overline{#1}}
+\newcommand{\vek}[1]{\mbox{\boldmath$#1$}}
+
+\renewcommand{\vec}[1]{\bar{#1}}
+\newcommand{\vecp}[1]{\hat{\vec{#1}}}
+\newcommand{\matr}[1]{\mathsf{#1}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\I}{\mathrm{i}}
+\newcommand{\D}[1][x]{\,\text{d}#1}
+%\newcommand{\km}{\,\mathrm{km}}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\mean}[1]{\langle#1\rangle}
+\newcommand{\fneg}{f^{-1}}
+\newcommand{\ftil}{\tilde{f}}
+\newcommand{\ainaa}{{\alpha \in A}}
+\newcommand{\INT}[1]{\overset{\mspace{6mu}\circ}{#1}}
+\newcommand{\osit}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\diff}[2]{\frac{d#1}{d#2}}
+\newcommand{\difft}[2]{\frac{d^2 #1}{d#2 ^2}}
+\newcommand{\ositt}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\epsi}{\varepsilon}
+\newcommand{\epsii}{\epsi_{i}}
+\newcommand{\epsie}{\epsi_{eff}}
+\newcommand{\epsit}{\epsi_{t}}
+\newcommand{\epsir}{\epsi_{r}}
+\newcommand{\uz}{\vek{u}_z}
+\newcommand{\roo}{\varrho}
+\newcommand{\fii}{\phi_{i}}
+\newcommand{\fit}{\phi_{t}}
+\newcommand{\Ei}{\vek{E}_{i}}
+\newcommand{\Et}{\vek{E}_{t}}
+\newcommand{\pr}{\mathfrak{p}}
+\renewcommand{\Re}[1]{\textrm{Re}\, #1}
+\renewcommand{\Im}[1]{\textrm{Im}\, #1}
+%\renewcommand{\Re}{{\operatorname{Re}}}           % real part
+%\renewcommand{\Im}{{\operatorname{Im}}}           % imaginary part
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Ln}{Ln}
+\newcommand{\phg}{p_\text{HG}}
+\newcommand{\kB}{k_\textrm{B}}
+
+\newcommand{\nub}{\bar{\nu}}
+
+\newcommand{\bra}[1]{\ensuremath{\left\langle#1\right|}}
+\newcommand{\ket}[1]{\ensuremath{\left|#1\right\rangle}}
+\newcommand{\bracket}[2]{\ensuremath{\left\langle#1 \vphantom{#2}\right| \left. #2 \vphantom{#1}\right\rangle}}
+\newcommand{\matrixel}[3]{\ensuremath{\left\langle #1 \vphantom{#2#3} \right| #2 \left| #3 \vphantom{#1#2} \right\rangle}}
+\newcommand{\ipr}[1]{\ensuremath{\left\langle #1\right\rangle}}
+
+
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
+\newcommand{\ave}[1]{\ensuremath{\left\langle #1 \right\rangle}}
+\newcommand{\dotpr}[2]{\ensuremath{#1 \cdot #2}}
+%\newcommand{\dyad}[1]{\overleftrightarrow{#1}}
+\newcommand{\dyad}[1]{\bar{\bar #1}}
+
+\newcommand{\St}[1]{#1_{S}}
+\newcommand{\aSt}[1]{#1_{aS}}
+\newcommand{\vib}[1]{#1_{vib}}
+\newcommand{\op}[1]{\widehat{#1}}
+\newcommand{\Hami}{\mathcal{H}}
+
+\newcommand{\comm}[2]{\ensuremath{\left[ #1,\, #2 \right]}}
+\newcommand{\acomm}[2]{\ensuremath{\left\{ #1,\, #2 \right\}}}
+%\renewcommand{\v}{\mathrm{v}}
+
+ \usepackage{relsize}
+%\newcommand{\comm}[2]{%
+ % [%
+%  \begin{array}{
+ %   @{}
+  % >{\centering $\displaystyle}p{1em}<{$}
+  % @{,}
+  %  >{\centering $\displaystyle}p{1.5em}<{$}
+  % @{}
+ %}
+  % #1 & #2
+ %\end{array}%
+ %]%
+%}
+
+%\newcommand{\acomm}[2]{%
+ % \{%
+  %\begin{array}{
+   % @{}
+   %>{\centering $\displaystyle}p{1em}<{$}
+   %@{,}
+   % >{\centering $\displaystyle}p{1.5em}<{$}
+   %@{}
+ %}
+  % #1 & #2
+ %\end{array}%
+ %\}%
+%}
+
+%\newcommand{\comm}[3][1.2em]{[ \makebox[#1]{$#2$} , \makebox[#1]{$#3$} ]}
+%\newcommand{\acomm}[3][1.2em]{\left\{ \makebox[#1]{$#2$} , \makebox[#1]{$#3$} \right\} }
+ 
+
+
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\tr}{tr}
+
+%\usepackage[nottoc]{tocbibind}
+\usepackage{enumitem}
+\makeatletter
+% This command ignores the optional argument for itemize and enumerate lists
+\newcommand{\inlineitem}[1][]{%
+\ifnum\enit@type=\tw@
+    {\descriptionlabel{#1}}
+  \hspace{\labelsep}%
+\else
+  \ifnum\enit@type=\z@
+       \refstepcounter{\@listctr}\fi
+    \quad\@itemlabel\hspace{\labelsep}%
+\fi}
+\makeatother
+
+\newenvironment{itemize*}%
+ {\begin{itemize}%
+    \setlength{\itemsep}{0pt}%
+  \setlength{\parskip}{0pt}}%
+  {\end{itemize}}
+\renewenvironment{itemize*}{\itemize}
+
+
+\newenvironment{enumerate*}%
+  {\begin{itemize}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parskip}{0pt}}%
+  {\end{itemize}}
+\renewenvironment{enumerate*}{\enumerate}
+
+
+\usepackage{tcolorbox}% http://ctan.org/pkg/tcolorbox
+    \tcbuselibrary{skins,breakable}
+\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1}
+\newtcolorbox{myboxi}[1]{colframe=blue!75!black,fonttitle=\bfseries,title=#1}
+\newtcolorbox{myboxa}[1]{colframe=yellow!15!black,fonttitle=\bfseries,title=#1}
+
+%\usepackage{cleveref}
+
+%\usepackage{pdfpages}
+
+\title{Kompleksiluvuista}
+\author{}
+%\email{Ville.Saarikivi@aalto.fi}
+%\affil{Otaniemen lukio}
+\date{\dmyyyydate\today}
+
+%\renewcommand{\abstractname}{Foreword}
+%\setlength{\parskip}{2ex}
+%\setlength{\parindent}{0pt}
+\usepackage{tasks}
+\usepackage{exsheets}
+
+\newenvironment{listaa} %%%% this adjusts spacing as I desire
+    {\begin{enumerate}[leftmargin=*, label=\alph*), topsep=0pt, itemsep=0pt, parsep=0pt, font=\small\bfseries\color{red}] \itemsep0pt \parskip0pt \parsep0pt \topsep0pt}
+    {\end{enumerate}}
+    \newenvironment{listab} %%%% this adjusts spacing as I desire
+    {\begin{enumerate}[leftmargin=*, label=\roman*), topsep=0pt, itemsep=0pt, parsep=0pt, font=\small\bfseries\color{blue}] \itemsep0pt \parskip0pt \parsep0pt \topsep0pt}
+    {\end{enumerate}}
+%POISTA 2.12.
+%\usepackage[parfill]{parskip}    
+    
+    
+\begin{document}
+\begin{titlepage}
+
+%\thispagestyle{empty}
+
+
+\maketitle
+\thispagestyle{empty}
+
+\end{titlepage}
+
+
+%\cleardoublepage
+\clearpage
+
+\phantomsection 
+\pagenumbering{gobble}
+\pdfbookmark{Sisältö}{contents}
+%\hypertarget{MyToc}{} 
+%\addtocontents{toc}{\protect\hypertarget{toc}{}}
+%\addcontentsline{toc}{title}{Contents}
+
+%% Create it. 
+%\pagenumbering{arabic}
+%\thispagestyle{empty}
+%\pagenumbering{arabic}% Arabic page numbers (and reset to 1)
+
+%\renewcommand\contentsname{}
+\tableofcontents
+%\newpage
+
+%\cleardoublepage
+\clearpage
+\phantomsection
+\pagenumbering{arabic}% Arabic page numbers (and reset to 1)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\chapter*{Johdanto}
+%\addcontentsline{toc}{chapter}{Johdanto}
+%Kompleksiluvut voidaan ajatella uutena lukukäsitteen laajennuksena, aivan kuten rationaali- eli murtolukukäsitettä pitää laajentaa, jotta kaikki muut reaaliluvut tulevat ymmärrettäviksi. Imaginaariluvut ovat sanamukaisesti 'kuvitteelliset luvut', mutta nämä kuvitteelliset luvut ovat laajentaneet lähestulkoon kaikkia matematiikan aloja. Matemaattinen analyysi (mm. differentiaali- ja integraalilaskenta) edelleen koostuu \emph{reaalianalyysista} ja kompleksianalyysista.
+
+
+%Molemmat ovat nykyään hyvin laajoja (ja hieman epämääräisiä) 
+%matematiikan alueita. Kompleksianalyysin osa-alueista maininnan arvoinen on kompleksimuuttujan
+%funktioiden teoria eli \emph{funktioteoria}\footnote{Funktioteorian tutkimusperinne on 
+%Suomessa vahva. Tätä matematiikan suuntausta edusti myös Suomen historian tunnetuin 
+%matemaatikko, akateemikko Rolf Nevanlinna (1895-1980).}. Funktioteorian peruslähtökohtana on laajentaa reaalimuuttujan funktioita kompleksimuuttujan funktioiksi.
+%\cleardoublepage
+%\clearpage
+%\phantomsection
+\section*{Merkinnät}
+\addcontentsline{toc}{section}{Merkinnät}
+\begin{tabular}{ll}
+$\mathbf{N}$ & Luonnollisten lukujen $\{0, 1, 2, \ldots\}$ joukko\\
+$\mathbf{P}$ & Alkulukujen $\{2, 3, 5, \ldots\}$ joukko\\
+$\mathbf{Q}$ & Rationaalilukujen $\{\frac{m}{n}:\, m, n\in\mathbf{Z}\}$ joukko\\
+$\mathbf{R}$ & Reaalilukujen joukko, $\mathbf{R}=]-\infty, \infty[$\\
+$\mathbf{R}_+$ & Positiivisten reaalilukujen joukko, $\mathbf{R}_+=]0, \infty[$\\
+$\mathbf{C}$ & Kompleksilukujen $\{z=x+iy:\, x, y\in\mathbf{R}\}$ joukko\\
+$\in$ & Kuuluu joukkoon, $a\in \mathbf{N}$ eli alkio $a$ kuuluu luonnollisten lukujen joukkoon\\
+$\abs{z}$ & Kompleksiluvun moduli eli itseisarvo\\
+$\bar{z}$ & Kompleksiluvun liittoluku eli kompleksikonjugaatti\\
+$\arg{z}$ & Kompleksiluvun $\neq 0$ argumentti eli vaihekulma, sopimus $\arg{z}\in]-\pi, \pi].$
+\end{tabular}
+%\cleardoublepage
+\clearpage
+\phantomsection
+
+%\chapter{Kompleksiluvuista}
+
+\section{Kompleksitaso}
+Reaalilukua voidaan tarkastella lukusuoralla, kun taas tason pistettä $(x,y)$ varten tarvitaan kaksi lukusuoraa. Taso $\mathbf{R}^2=\mathbf{R}\times\mathbf{R}=\{(x,y):\ x\in\mathbf{R}, \ y\in\mathbf{R}\}$ voidaan samastaa kompleksitason kanssa. Kompleksitason joukkomerkintä on $\mathbf{C},$ ja kompleksilukua eli tason pistettä merkitään symbolilla $z$ eli $z=(x,y).$ Kuten vektoreillekin kompleksilukujen yhtäsuuruus määritellään komponenteittain eli jos $z=(x, y)$ ja $w=(a, b)$ ovat kompleksilukuja, niin
+$z=w$ täsmälleen silloin, kun $x=a$ ja $y=b.$
+
+\begin{centering}
+\begin{tikzpicture}
+    \begin{scope}[thick,font=\scriptsize][set layers]
+    \draw [->] (-4,0) -- (5.2,0) node [above left]  {$\Re$};
+    \node at (5.2,0) [below left]  {$x$};
+    \draw [->] (0,-4) -- (0,5.2) node [below right] {$\Im$};
+    \node at (0,5.2) [below left] {$y$};
+    \iffalse% Single
+    \draw (1,-3pt) -- (1,3pt)   node [above] {$1$};
+    \draw (-1,-3pt) -- (-1,3pt) node [above] {$-1$};
+    \draw (-3pt,1) -- (3pt,1)   node [right] {$1$};
+    \draw (-3pt,-1) -- (3pt,-1) node [right] {$-1$};
+    
+    \else% Multiple
+    \foreach \n in {-3,...,-2,2,3,...,4}{%
+        \draw (\n,-3pt) -- (\n,3pt)   node [above] {$\n$};
+        \draw (-3pt,\n) -- (3pt,\n)   node [right] {$\n $};
+    }
+    \fi
+    \end{scope}
+    \draw (1,-3pt) -- (1,3pt)   node [thick,font=\scriptsize, above] {$1$};
+    \draw (-3pt,1) -- (3pt,1)   node [thick,font=\scriptsize,right] {$1$};
+    \draw (-1,-3pt) -- (-1,3pt)   node [thick,font=\scriptsize, above] {$-1$};
+    \draw (-3pt,-1) -- (3pt,-1)   node [thick,font=\scriptsize,right] {$-1$};
+    %\draw[solid] (0,-1) circle (1);
+    %\draw[solid] (0,-1) circle (2);
+    %\path [draw=none,fill=gray, fill opacity = 0.1] (0,-1) circle (2);
+    %\path [draw=none,fill=white, fill opacity = 0.7] (0,-1) circle (1);
+    %\node [below right,black] at (1.2,1.2) {$A=\{z\in\mathbb{C}:1\leq|z-(-i)|\leq2\}$};
+\end{tikzpicture}
+\end{centering}
+
+Miksi sitten ''määritellä'' taso uudellaan kompleksitasona? Osoittautuu, että kompleksilukujen tulolla on hedelmällisiä ominaisuuksia niin algebrassa, geometriassa kuin kompleksimuuttujan funktioissa.
+
+\begin{huom}
+Reaalilukuja voidaan vertailla eli sanoa ovatko reaaliluvut yhtäsuuria tai onko toinen pienempi kuin toinen. Näin ei ole voida tehdä vektoreille eikä myöskään kompleksiluvuille.
+\end{huom}
+\clearpage
+\section{Kompleksilukujen yhteen- ja kertolasku}
+
+Kompleksilukujen summa määritellään samaan tapaan kuin vektoreilla.
+\begin{maar}
+Olkoon $z_1=(x_1, y_1)$ ja $z_2=(x_2, y_2)$ kompleksilukuja. Tällöin 
+$z_1+z_2=(x_1+x_2, y_1+y_2)\in\mathbf{C}.$
+\end{maar}
+
+Kompleksiluvut ja yhteenlasku muodostavat ns. Abelin ryhmän.
+\begin{lause} $(\mathbf{C}, +)$ on Abelin ryhmä eli
+\begin{enumerate}[label=\roman*), leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, font=\small\bfseries\color{red}]
+\item $z_1+(z_1+z_2)=(z_1+z_2)+z_3$ kaikilla $z_1, z_2, z_3\in\mathbf{C}$ (yhteenlaskun liitännäisyys)
+\item $z_1+z_2=z_2+z_1$ kaikilla $z_1, z_2\in\mathbf{C}$ (yhteenlaskun vaihdannaisuus)
+\item $z+(0,0)=z$ kaikilla $z\in\mathbf{C}$ (neutraalialkio)
+\item jokaista $z\in\mathbf{C}$ kohti on olemassa $-z\in\mathbf{C}$ niin, että $z+(-z)=(0,0)$ (vasta-alkio).
+\end{enumerate}
+
+\end{lause}
+
+Tason vektoreille ei voida määritellä tuloa, ainoastaan pistetulo, joka on luku. (Myös tason vektoreille voidaan määritellä ristitulo, mutta se ei ole enää tason vektori.) Kompleksilukujen tulo oikeastaan tekee kompleksilukujen algebrasta ja geometriasta mielenkiintoisen, kuten myöhemmin huomataan.
+
+\begin{maar}
+Kompleksilukujen $z_1=(x_1, y_1)$ ja $z_2=(x_2, y_2)$ tulo on
+$$
+z_1\cdot z_2=z_1 z_2=(x_1x_2-y_1y_2, x_1y_2+y_1x_2)\in\mathbf{C}
+$$
+\end{maar}
+
+Kompleksilukujen tulolle pätee seuraavat ominaisuudet.
+\begin{lause}
+Olkoon $z_j=(x_j, y_j), j=1,2,3,$ kompleksilukuja. Tällöin seuraavat ehdot pätevät:
+\begin{enumerate}[label=\roman*), leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, font=\small\bfseries\color{red}]
+\item $z_1\cdot(z_2\cdot z_3)=(z_1\cdot z_2)\cdot z_3$ (kertolaskun liitännäisyys)
+\item $z_1\cdot z_2=z_2\cdot z_1$ (kertolaskun vaihdannaisuus)
+\item $z_1\cdot(z_2+z_3)=z_1\cdot z_2+z_1\cdot z_3$ (osittelulaki)
+\item $(1,0)\cdot z=z$ kaikilla $z\in\mathbf{C}$ (ykkösalkio)
+\item Jos $(a, b)\in\mathbf{C},\ (a, b)\neq (0,0),$ niin on olemassa täsmälleen yksi kompleksiluku $(x, y)$, jolle $(a, b)\cdot(x,y)=(1,0).$ Merkitään lyhyesti $(x, y)=(a, b)^{-1}$ (käänteisalkio).
+\end{enumerate}
+\end{lause}
+
+Tulon määritelmä saattaa tuntua hieman oudolta. Kuitenkin osoittautuu, että
+$$
+(0,1)^2=(0,1)\cdot(0,1)=(0\cdot 0 -1\cdot 1, 0\cdot 1+1\cdot 0)=(-1, 0),
+$$
+eli $x$-akselin pisteen $(-1, 0)$ neliöjuuri on $y$-akselin piste $(0,1).$
+\clearpage
+\section{Reaaliluvut kompleksilukujen osajoukkona}
+Tarkastellaan reaalilukua $x$ kompleksitason pisteenä $(x, 0).$ Olkoon
+$x\overset{f}{\mapsto} (x, 0)$ eli $f(x)=(x, 0)$.
+\begin{maar}
+Kuvaus $h$ on injektio, jos eri alkioilla on eri kuvat eli
+$$
+x\neq x'\implies h(x)\neq h(x'),
+$$
+missä implikaatio $A\implies B$ tarkoittaa, että jos $A$  niin $B.$ Injektiivisyys voidaan yhtäpitävästi muotoilla seuraavasti
+$$
+h(x)=h(x')\implies x=x',
+$$
+tätä muotoa onkin usein mukavampi käyttää.
+\end{maar}
+\begin{lause}
+Kuvaus $x\overset{f}{\mapsto} (x, 0)$ on injektiivinen.
+\end{lause}
+\begin{tod}
+Jos $f(x)=f(a)$ eli $(x, 0)=(a, 0)$, niin $x=a.$
+\end{tod}
+
+On helppo todistaa seuraava lause.
+\begin{lause} Olkoon $f(x)$ kuten edellä. Tällöin pätee
+\begin{listab}
+\item $f(x)f(a)=f(x+a)$
+\item $f(x)f(b)=f(xb).$
+\end{listab}
+
+Siis voimme samastaa reaaliluvun $x$ ja kompleksiluvun $f(x)=(x, 0)$ ilman sekaannuksen vaaraa. Lisäksi $f(0)=(0, 0)=0$ ja $f(1)=(1, 0)=1$, joten reaalinen nolla- ja ykkösalkio samastuvat kompleksisen nolla- ja ykkösalkion kanssa.
+\end{lause}
+\clearpage
+
+\section{Kompleksilukujen joukko ja perusmääritelmät}
+Vihdoin voimme määritellä kompleksiluvut tavalliseen tapaan.
+\begin{maar}
+Imaginaariyksikköä merkitään symbolillä $i$ ja sille pätee $i=(0,1),$ joten $i^2=(-1, 0)=-1.$ Näin ollen kompleksiluku $z=(x, y)$ voidaan esittää normaali- eli perusmuodossa
+$z=x+iy
+$
+ja kompleksilukujen joukko on
+$$
+\mathbf{C}=\bigl\{x+iy:\ x, y\in \mathbf{R} \bigr\}.
+$$
+\end{maar}
+
+%\begin{wrapfigure}{r}{6.5cm}
+\begin{centering}
+\begin{tikzpicture}[thick,scale=0.8, every node/.style={scale=0.8}]
+    \begin{scope}[thick,font=\scriptsize][set layers]
+    \draw [->] (-4,0) -- (5.2,0) node [above left]  {$\Re$};
+    \node at (5.2,0) [below left]  {$x$};
+    \draw [->] (0,-4) -- (0,5.2) node [below right] {$\Im$};
+    \node at (0,5.2) [below left] {$y$};
+    \iffalse% Single
+    \draw (1,-3pt) -- (1,3pt)   node [above] {$1$};
+    %\draw (-1,-3pt) -- (-1,3pt) node [above] {$-1$};
+    %\draw (-3pt,1) -- (3pt,1)   node [right] {$1$};
+    %\draw (-3pt,-1) -- (3pt,-1) node [right] {$-1$};
+    
+    %\else% Multiple
+   % \foreach \n in {-3,...,-2,2,3,...,4}{%
+     %   \draw (\n,-3pt) -- (\n,3pt)   node [above] {$\n$};
+      %  \draw (-3pt,\n) -- (3pt,\n)   node [right] {$\n $};
+    }
+    \fi
+    \end{scope}
+    \draw (1,-3pt) -- (1,3pt)   node [thick,font=\scriptsize, above] {$1$};
+    \draw (-3pt,1) -- (3pt,1)   node [thick,font=\scriptsize,right] {$1$};
+    \draw (-1,-3pt) -- (-1,3pt)   node [thick,font=\scriptsize, above] {$-1$};
+    \draw (-3pt,-1) -- (3pt,-1)   node [thick,font=\scriptsize,right] {$-1$};
+    \node at (3,2.5)   {$\bullet$};
+    \node[above] at (3.1,2.5)   {$z=a+ib$};
+    \draw[dashed] (3,2.5)--(3,0) node[below] {$(a,0)=a$};
+    	\draw[dashed] (3,2.5)--(0,2.5) node[left] {$(0,b)=ib$};;
+%\node[draw,text width=4cm] at (3,3) {some text spanning three lines with automatic line breaks};
+    %\draw[solid] (0,-1) circle (1);
+    %\draw[solid] (0,-1) circle (2);
+    %\path [draw=none,fill=gray, fill opacity = 0.1] (0,-1) circle (2);
+    %\path [draw=none,fill=white, fill opacity = 0.7] (0,-1) circle (1);
+    %\node [below right,black] at (1.2,1.2) {$A=\{z\in\mathbb{C}:1\leq|z-(-i)|\leq2\}$};
+\end{tikzpicture}\end{centering}
+
+
+Kompleksilukujen $z=x+iy$ ja $w=a+ib$ tulo on sama kuin edellä määritelty tason pisteiden $z=(x,y)$ ja $w=(a,b)$ tulo, sillä
+$$
+zw=(x+iy)(a+ib)=xa+ixb+iya+i^2yb=xa-yb+i(xb+ya).
+$$
+
+\begin{maar} Kompleksiluvun $z=x+iy$ reaali- ja imaginaariosa ovat
+$\Re z=x$ ja $\Im z=y.$
+Sanotaan, että kompleksiluku on (puhtaasti) reaalinen, jos $\Im z=0,$ ja puhtaasti imaginaarinen, jos $\Re z=0.$ Lisäksi joskus sanotaan kompleksiluvun oleva aidosti kompleksinen, jos $\Im z\neq 0.$
+\end{maar}
+
+Luvulla $i$ siis pätee $i^2=-1.$ Näin ollen toisen asteen yhtälön $ax^2+bx+c=0,\ a,b,c\in\mathbf{R},\ a\neq 0,$ ratkaisut, jos diskriminantti $D<0$, ovat
+$$
+x=\ddfrac{-b\pm i\sqrt{\abs{D}}}{2a},\quad D=b^2-4ac.
+$$
+\clearpage
+\section{Kompleksilukujen geometrisia ominaisuuksia ja napakoordinaattiesitys}
+
+\begin{centering}
+\begin{tikzpicture}
+  \tikzset{>=stealth}
+  % draw axises and labels. We store a single coordinate to have the
+  % direction of the x axis
+  \draw[->] (-4,0) -- ++(8,0) coordinate (X) node[below] {$\Re $};
+  \draw[->] (0,-4) -- ++(0,8) node[left] {$\Im$};
+
+  \newcommand\CircleRadius{3cm}
+  \draw (0,0) circle (\CircleRadius);
+  % special method of noting the position of a point
+  \coordinate (P) at (140:\CircleRadius);
+\coordinate (Q) at (230:\CircleRadius);
+  \draw[very thick,pattern=dots] 
+  (0,0) 
+  coordinate (O) % store origin
+  node[below right] {$O$} % label
+  -- 
+  node[above left,pos=1] {$z=x+iy$} % some labels
+  node[above right,midway] {$r$}
+  (P) 
+  -- 
+  node[midway,left] {$y$}
+  (P |- O) coordinate (Px) % projection onto horitontal line through
+                           % O, saved for later
+  -- 
+  node[midway,below] {$x$}
+  cycle % closed path
+  % pic trick is from the angles library, requires the three points of
+  % the marked angle to be named
+  pic [draw,red,->,angle radius=1cm,pic text=$\theta$,
+  angle eccentricity=1.3] {angle=X--O--P};
+
+  % right angle marker
+  \draw ($(Px)+(0.3,0)$) -- ++(0,0.3) -- ++(-0.3,0);
+  \draw[dashed] (Px)--($(Px)+(0,-3cm*sin(140)$) node[midway, left] {$-y$};
+  \node[below left] at (Q) {$\bar{z}=x-iy$};
+\end{tikzpicture}
+\end{centering}
+
+\begin{maar} Kompleksiluvun $z=x+iy$ liittoluku eli kompleksikonjugaatti $\bar{z}=x+iy$ saadaan peilaamalla piste $z$ $x$- eli reaaliakselin suhteen
+\end{maar} 
+
+\begin{maar} Kompleksiluvun $z=x+iy$ etäisyyttä origosta kutsutaan moduliksi tai pituudeksi, ja se saadaan Pythagoraan lauseella $\abs{z}=\sqrt{x^2+y^2}.$
+\end{maar}
+
+Seuraavassa listataan liittoluvun ja modulin ominaisuuksia.
+\begin{lause}\label{l8} Olkoot $z=x+iy$ ja $w=a+ib$ kompleksilukuja. Tällöin
+\begin{enumerate}[label=\roman*), leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, font=\small\bfseries\color{red}]
+\item $\bar{\bar{z}}=z$
+\item $\bar{z+w}=\bar{z}+\bar{w}$
+
+\item $\bar{zw}=\bar{z}\bar{w}$
+
+\item $\bar{\left( \dfrac{z}{w}\right)}=\dfrac{\bar{z}}{\bar{w}},\ w\neq 0$
+
+\item $\Re z=\dfrac{z+\bar{z}}{2},$ $\Im z=\dfrac{z-\bar{z}}{2i}$
+
+\item $\abs{z}^2=z\bar{z}.$
+\end{enumerate}
+\end{lause}
+
+Viimeisen kohdan nojalla saadaan kompleksinen murtolauseke, jossa nimittäjässä on aito kompleksiluku, lavennettua normaalimuotoon seuraavasti
+$$
+^{\bar{w})}\dfrac{z}{w}=\dfrac{z\bar{w}}{w\bar{w}}=\dfrac{z\bar{w}}{\abs{w}^2}.
+$$
+
+Kompleksiluvun pituudelle, kuten vektorin pituudellekin, pätee kolmioepäyhtälö, jonka mukaan kolmion pisimmän sivun pituus ei voi olla suurempi kuin kahden lyhyemmän sivun pituuden summa.
+
+\begin{lause}[Kolmioepäyhtälö]
+Olkoot $z$ ja $w$ kompleksilukuja. Tällöin
+$$
+\left\lvert \abs{z}-\abs{w}\right\rvert\leq \left\lvert z+w\right\rvert\leq \abs{z}+\abs{w}.
+$$
+\end{lause}
+
+
+Osoittautuu, että napakoordinaatti- eli polaariesitys on hyvin hedelmällinen kompleksilukujen ja -funktioiden tapauksessa. Polaarimuotoon tarvitaan kompleksiluvun etäisyys eli moduli $r=\abs{z}$ ja vaihekulma $\theta$ eli argumentti.
+
+
+\begin{maar} Kompleksiluvun $z\neq 0$ argumentti eli vaihekulma on pisteen $z=x+iy$ suuntakulma positiiviseen $x$-akseliin nähden. Tehdään sopimus, että
+$\theta =\arg z\in\left]-\pi, \pi\right].$ Tällä tavoin määriteltynä argumentti määräytyy ehdoista
+$$
+\cos \theta=\frac{x}{r}\quad\text{ja}\quad \sin \theta=\frac{y}{r}.
+$$
+\end{maar}
+\begin{maar}
+Kompleksiluvun $z\neq 0$ napakoordinaatti- eli polaariesitykseksi kutsutaan muotoa
+$$
+z=r(\cos \theta +i\sin\theta),\quad r=\abs{z}, \ \theta =\arg z.
+$$
+\end{maar}
+\begin{huom}
+Kompleksiluvulle $z=0$ ei voida määritellä suuntakulmaa yksikäsitteisesti. Funktiot sini ja kosini ovat jaksollisia, perusjaksona $2\pi,$ joten luvun $z$ polaariesitys on myös
+$$
+z=r\left(\cos(\theta+n\cdot 2\pi)+i\sin(\theta+n\cdot 2\pi)\right)\quad\text{kaikilla } n\in\mathbf{Z}.
+$$
+Kompleksiluvun napakulmat saadaan usein määrättyä ehdosta
+$$
+\tan \theta=\frac{y}{x},\quad x\neq 0,
+$$
+kunhan tämän ratkaisusta osataan määrätään oikea kulma; se selviää helpoiten kompleksiluvun perusmuodosta. Napakulmalla viitataan tässä kulmaan, joka voi olla kompleksiluvun $z$ argumentti tai siihen lisättynä $2\pi$:n monikerta, toisin sanoen kaikki kompleksiluvun napakulmat toteuttavat ehdon $\theta=\arg z +2\pi n,\ n\in\mathbf{Z}.$ Joskus argumentin päähaaralla tarkoitetaan kulmaa, joka on välillä $]-\pi, \pi]$, kun argumentti on monihaarainen.
+\end{huom}
+%\begin{itemize}
+%\item Tason piste $(x,y)$ voidaan kuvata kompleksilukuna $z=x+iy,$ missä $i^2=-1.$
+%\item Kompleksikonjugaatti $\bar{z}=x-iy$, moduli eli pituus $\abs{z}=%\sqrt{x^2+y^2}=\sqrt{z\bar{z}}.$%
+%\item Kompleksiluvun $z\neq 0$ argumentti eli vaihekulma $\arg z=\theta\in]-\pi, \pi]$
+%\item Napakoordinaattiesitys $z=\abs{z}(\cos \theta + i\sin\theta),$ usein $r=\abs{z}.$
+%\end{itemize}
+
+%\begin{myboxa}{De Moivre ja ykkösen $n$:nnet juuret}
+%Yksikköympyrän piste on kompleksitasossa muotoa $z=\cos\theta+i\sin\theta.$ De Moivren kaava on tärkeä:
+%$z^n=\cos n\theta + i\sin n\theta$ kaikilla kokonaisluvuilla $n.$
+
+%Yhtälön 
+%$$
+%z^n=1, \quad n\in\mathbf{Z}_+,
+%$$
+%ratkaisut kompleksitasossa ovat luvut
+%$$
+%\omega_{n, k} =\cos k\frac{2\pi}{n}+i\sin k \frac{2\pi}{n},\quad k=0,1,2,\ldots, n-1.
+%$$
+%\end{myboxa}
+\clearpage
+\section{De Moivren kaava}
+\begin{centering}
+\begin{tikzpicture}
+  \tikzset{>=stealth}
+  % draw axises and labels. We store a single coordinate to have the
+  % direction of the x axis
+  \draw[->] (-4,0) -- ++(8,0) coordinate (X) node[below] {$\Re $};
+  \draw[->] (0,-4) -- ++(0,8) node[left] {$\Im$};
+
+  \newcommand\CircleRadius{3cm}
+  \draw (0,0) circle (\CircleRadius);
+  % special method of noting the position of a point
+  \coordinate (P) at (55:\CircleRadius);
+\coordinate (Q) at (140:\CircleRadius);
+\coordinate (R) at (195:\CircleRadius);
+
+  \draw[-,red] 
+  (0,0) 
+  coordinate (O) % store origin
+  node[below right] {$O$} % label
+  -- 
+  node[above, xshift=0.9cm, yshift=1.6cm] {$z_1=x_1+iy_1$} (P) % some labels
+  node at (55:3) {$\bullet$}
+  %node[above right,midway] {$r$}
+   
+  -- 
+  cycle % closed path
+  % pic trick is from the angles library, requires the three points of
+  % the marked angle to be named
+  pic [draw,red,->,angle radius=0.75cm,pic text=$\theta_1$,
+  angle eccentricity=1.4] {angle=X--O--P};
+
+
+\draw[blue,-] 
+  (0,0) 
+  coordinate (O) % store origin
+  node[below right] {$O$} % label
+  -- 
+  node[above, xshift=-1.5cm, yshift=1.6cm] {$z_1=x_2+iy_2$} (Q) % some labels
+  node at (140:3) {$\bullet$}
+  %node[above right,midway] {$r$}
+   
+  -- 
+  cycle % closed path
+  % pic trick is from the angles library, requires the three points of
+  % the marked angle to be named
+  pic [draw,blue,->,angle radius=1.5cm,pic text=$\theta_2$,
+  angle eccentricity=1.3] {angle=X--O--Q};
+  
+  \draw[-] 
+  (0,0) 
+  coordinate (O) % store origin
+  node[below right] {$O$} % label
+  -- 
+  node[above, xshift=-2.1cm, yshift=-1.3cm] {$z_3=z_1z_2$} (R) % some labels
+  node at (195:3) {$\bullet$}
+  %node[above right,midway] {$r$}
+   
+  -- 
+  cycle % closed path
+  % pic trick is from the angles library, requires the three points of
+  % the marked angle to be named
+  pic [draw,black,->,angle radius=2.2cm,pic text=$\theta_3$,
+  angle eccentricity=1.2] {angle=X--O--R};
+  % right angle marker
+  %\draw ($(Px)+(0.3,0)$) -- ++(0,0.3) -- ++(-0.3,0);
+  %\draw[dashed] (Px)--($(Px)+(0,-3cm*sin(140)$) node[midway, left] {$-y$};
+  %\node[below left] at (Q) {$\bar{z}=x-iy$};
+\end{tikzpicture}
+\end{centering}
+
+\begin{lause} Kahden kompleksiluvun $z_1=r(\cos\theta_1+i\sin\theta_1)$ ja $z_2=r(\cos\theta_2+i\sin\theta_2)$ tulolle $z_3$ pätee
+$$
+z_3=z_1z_2=r_1r_2\left(\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2)\right),
+$$
+sillä
+$$
+\sin(x+y)=\sin x \cos y+\cos x\sin y,\quad \cos(x+y)=\cos x \cos y -\sin x\sin y,\quad x,y\in\mathbf{R}.
+$$
+\end{lause}
+
+Näin ollen samansäteisellä ympyrällä olevien kompleksilukujen $z_1$ ja $z_2$, $\abs{z_1}=\abs{z_2}$, tulo vastaa kiertoa. Tulon napakulmalle $\theta_3$ pätee $\theta_3=\theta_1+\theta_2.$
+
+\begin{lause} Kompleksiluvun $z_1=r(\cos\theta_1+i\sin \theta_1)\neq 0$ käänteisluvulle pätee
+$$
+z_1^{-1}=\frac{1}{z_1}=\frac{1}{r}\left(\cos (-\theta_1)+i\sin(-\theta_1)\right)=\frac{1}{r}\left(\cos \theta_1-i\sin\theta_1\right),
+$$
+sillä kosini on parillinen ja sini pariton eli $\cos(-x)=\cos x$ ja $\sin(-x)=-\sin x.$
+\end{lause}
+
+Edellisten lauseiden perusteella osamäärän $z_3=\dfrac{z_1}{z_2}$ napakulmalle pätee
+$\theta_3=\theta_1-\theta_2,$ josta on helppo määrätä osamäärän argumentti lisäämällä tai vähentämällä $2\pi$:n monikertoja.
+
+Kertolaskun yleistyksenä saadaan yksikköympyrällä olevalle kompleksiluvulle $\cos \theta+i\sin\theta$ tärkeä de Moivren lause.
+
+\begin{lause}[De Moivre] Olkoon $z=\cos \theta+i\sin \theta.$ Tällöin
+$$
+z^n=\left(\cos \theta+i\sin \theta\right)^n=\cos n\theta+i\sin n\theta\quad\text{kaikilla } n\in\mathbf{Z}.
+$$
+\end{lause}
+
+Yksinkertaisena yleistyksenä luvulle $z=r(\cos \theta+i\sin \theta)$ pätee
+$$
+z^n=r^n\left(\cos n\theta+i\sin n\theta\right).
+$$
+
+De Moivren kaavasta voidaan johtaa yhtälön $z^n=1$ ratkaisut eli ykkösen $n$:nnet juuret.
+\begin{lause}[Ykkösen $n$:nnet juuret]
+Yhtälön 
+$$
+z^n=1, \quad n\in\mathbf{Z}_+,
+$$
+ratkaisut kompleksitasossa ovat luvut
+$$
+\omega_k=\omega_{n, k} =\cos k\frac{2\pi}{n}+i\sin k \frac{2\pi}{n},\quad k=0,1,2,\ldots, n-1.
+$$
+\end{lause}
+
+Kun kompleksiluku $w$ on polaarimuodossa, voidaan edellisen perusteella myös ratkaista yhtälö $z^n=w$. 
+
+\begin{lause} Olkoon $w=r(\cos \theta+i\sin\theta)$, jossa $r=\abs{w}$ ja $\theta=\arg w.$ Tällöin yhtälön
+$$
+z^n=w\neq 0,\quad n\in\mathbf{Z}_+,
+$$
+ratkaisut ovat
+\begin{align*}
+z_k&=z_{n,k}=\sqrt[n]{r}\left(\cos \frac{\theta}{n}+i\sin \frac{\theta}{n}\right)\omega_{n,k}\\
+&=\sqrt[n]{r}\left(\cos \frac{\theta+2k\pi}{n}+i\sin \frac{\theta+2k\pi}{n}\right),\quad \omega_{n, k} =\cos k\frac{2\pi}{n}+i\sin k \frac{2\pi}{n},\quad k=0,1,2,\ldots, n-1.
+\end{align*}
+\end{lause}
+\begin{tod} Olkoon $z=R(\cos \phi+i\sin\phi)$, jossa $R=\abs{z}$ ja $\phi =\arg z.$
+Tällöin
+$$
+z^n=R^n(\cos n\phi+i\sin n\phi),
+$$
+joten yhtälöstä
+$z^n=w$ saadaan
+$$
+R^n(\cos n\phi+i\sin n\phi)=r(\cos \theta+i\sin\theta).
+$$
+Kompleksilukujen pituuksien ja napakulmien (modulo $2\pi$) pitää olla yhtä suuret eli
+$$
+\begin{cases}
+R^n&=r\\
+n\phi&=\theta+2k\pi\end{cases} \iff 
+\begin{dcases}
+R&=\sqrt[n]{r}\\
+\phi&=\dfrac{\theta+2k\pi}{n},\ k\in\mathbf{Z}.\end{dcases}
+$$
+Jotta samoja ratkaisuja ei tulisi lueteltua moneen kertaan, niin $k$ voi saada vain $n$ eri kokonaislukuarvoa eli $k=0,1,2,\ldots, n-1.$ Siis yhtälön $z^n=w\neq 0$ ratkaisut ovat
+$$
+z_k=\sqrt[n]{r}\left(\cos \frac{\theta+2k\pi}{n}+i\sin \frac{\theta+2k\pi}{n}\right),\quad k=0,1,2,\ldots, n-1.
+$$
+\end{tod}
+
+\begin{huom} Ykkösen $n$:nnettä juurta, joka saadaan juurikaavasta
+$$
+\cos k\frac{2\pi}{n}+i\sin k \frac{2\pi}{n},\quad k=0,1,2,\ldots, n-1
+$$
+indeksillä $k=1$, merkitään usein symbolilla $\omega.$
+\end{huom}
+
+\clearpage
+
+
+\section{Eulerin kaava}
+Eulerin kaavan avulla saadaan vielä yksi esitysmuoto kompleksiluvulle, joka osoittautuu useimmissa tapauksissa hyödyllisimmäksi. Sitä ennen ilman todistusta esitellään eksponentti- ja trigonometristen funktioiden sarjakehitelmät.
+
+\begin{lause} 
+Kaikilla reaaliluvuilla $x$ pätee
+\begin{align*}
+e^x &=\sum_{k=0}^{\infty} \dfrac{x^k}{k!}=1+x+\dfrac{x^2}{2!}+\ldots,\\
+\sin x&=\sum_{k=0}^{\infty} (-1)^k\dfrac{x^{2k+1}}{(2k+1)!}=x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}+\ldots,\\
+\cos x&=\sum_{k=0}^{\infty} (-1)^k\dfrac{x^{2k}}{(2k)!}=1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}+\ldots,
+\end{align*}
+jossa luonnollisen luvun $k$ kertoma on $k!=1\cdot 2\cdot 3 \cdots k$ ja $0!=1.$
+\end{lause}
+
+Sarjakehitelmien avulla saadaan yksi keskeisimmistä kompleksialgebran teoreemoista, joka yhdistää mielenkiitoisella tavalla trigonometriset funktiot ja eksponenttifunktion.
+
+\begin{lause}[Eulerin kaava] Jokaisella $x\in\mathbf{R}$ pätee
+$$
+e^{ix}=\cos x +i\sin x.
+$$
+\end{lause}
+
+\begin{seur}
+Eulerin kaavasta melko suoraviivaisesti saadaan, että 
+\begin{itemize}[label=--, leftmargin=*]
+\item kompleksiluku $z\neq 0$ voidaan esittää muodossa $z=re^{i\theta},$ $r=\abs{z}$ ja $\arg{z}=\theta,$
+\item[--] $\bar{e^{ix}}=\bar{\cos x +i\sin x}=\cos x -i\sin x=e^{-ix}$
+\item[--] ja $\displaystyle
+\cos x=\dfrac{e^{ix}+e^{-ix}}{2},\quad \sin x=\dfrac{e^{ix}-e^{-ix}}{2i}.
+$
+\end{itemize}
+Lisäksi selvästi reaaliluvulle $x$ pätee, että $\abs{e^{ix}}=1,$ ja koska $e^{i(x+n\cdot 2\pi)}=e^{ix},$ niin $\arg e^{ix}=x$ mahdollista $2\pi$:n monikertaa vailla.
+\end{seur}
+
+Kompleksiluvun eksponenttiesityksen $z=re^{i\theta}$ avulla kompleksilukujen tulo ja osamäärä on helppo laskea, lisäksi tulolla ja osamäärällä on geometrinen tulkinta kiertona ja skaalauksena.
+\begin{lause} Olkoon $z_1=r_1e^{i\theta_1}$ ja $z_2=r_2 e^{i\theta_2}$ kaksi kompleksilukua ($\neq 0$). Tällöin
+$$
+z_1z_2=r_1r_1 e^{i(\theta_1+\theta_2)}\quad\text{ja}\quad \frac{z_1}{z_2}=\frac{r_1}{r_2}e^{i(\theta_1-\theta_2)}.
+$$
+Kompleksilukujen tulo ja osamäärä ovatkin monissa tapauksissa yksinkertaisinta laskea käyttäen kompleksiluvun eksponenttiesitystä. Yllä olevien eksponenttiesityksen tulon ja osamäärän perusteella
+$$
+\abs{z_1z_2}=\abs{z_1}\abs{z_2},\quad \arg{z_1z_2}=\arg z_1+\arg z_2 \ (+n\cdot 2\pi),
+$$
+ja
+$$
+\left|\frac{z_1}{z_2}\right|=\frac{\abs{z_1}}{\abs{z_2}},\quad \arg{\frac{z_1}{z_2}}=\arg z_1-\arg z_2 \ (+n\cdot 2\pi).
+$$
+\end{lause}
+
+%Jatkossa käsittelemme kompleksista eksponenttifunktiota ja logaritmia, mutta ennen sitä hieman polynomeista.
+\clearpage
+
+\section{Polynomiyhtälöt}
+
+Tarkastellaan tässä astetta $n$ olevaa polynomia $P$ eli
+$$
+P(z)=a_n z^n+a_{n-1}z^{n-1}+\cdots a_0=\sum_{k=0}^n a_k z^k,\quad a_n\neq 0,
+$$
+missä kertoimet $a_k, k=1,2,\ldots, n,$ ovat kompleksilukuja. Koska reaaliluvut ovat osa kompleksilukuja, niin nämä kompleksikertoimiset polynomit sisältävät tutut reaalikertoimiset polynomit. Osoittautuu, että polynomin juurille eli yhtälön $P(z)=0$ ratkaisuille on olemassa ratkaisukaava ainoastaan tapauksissa $n=1, 2, 3, 4.$ Jos asteluku $n=5$ tai sitä suurempi, ei juuria voi saada selville äärellisellä määrällä peruslaskutoimituksia ja juurenottoja polynomin kertoimista.
+
+\begin{lause}\label{lause: 14} Jos polynomilla $P(z)$ on juuri $z_0$, niin $P(z)$ on jaollinen binomilla $z-z_0$ eli $P$:llä on tekijä $z-z_0,$ toisin sanoen 
+$P(z)=(z-z_0)Q(z)$
+kaikilla $z\in\mathbf{C}.$ Polynomin $Q$ asteluku on yhtä pienempi kuin $P$:n asteluku.
+\end{lause}
+
+\begin{maar} Jos polynomin $P$ juuren $z_0$ kertaluku on $k\leq n,$ niin $z_0$ on $k$-kertainen juuri. Tällöin
+$P(z)=(z-z_0)^nQ(z).$
+\end{maar}
+
+Seuraava lause on tärkeä.
+
+\begin{lause}[Algebran peruslause] Jokaisella kompleksikertoimisella polynomilla, joka ei ole vakio, on nollakohta $z_0.$
+\end{lause}
+
+Kun algebran peruslausetta sovelletaan jatkuvasti tekijähajotelmaan $P(z)=(z-z_0)Q(z)$, saadaan tärkeä tulos.
+
+\begin{lause}\label{lause: tekija} Jokainen astetta $n\geq 1$ oleva polynomi voidaan jakaa ensimmäisen asteen tekijöihin, joita on yhteensä $n$ kappaletta ja osa tekijöistä voi olla samoja. Siis
+$$
+P(z)=\sum_{k=0}^n a_k z^k=a_n(z-z_1)^{k_1}(z-z_2)^{k_2}\ldots (z-z_m)^{k_m},
+$$
+missä $z_1, z_2,\ldots z_m$ ovat eri kompleksilukuja ja nollakohdan $z_j, j=1,2,\ldots, m,$ kertaluku on $k_j.$ Koska polynomin $P$ aste on $n$, niin kertaluvuille pätee $k_1+k_2+\cdots+k_m=n.$
+\end{lause}
+
+Erityisesti algebran peruslauseen nojalla myös reaalikertoimisella polynomilla, jonka aste on $n$, on $n$ juurta kompleksitasossa. 
+
+\begin{lause}\label{lause: konjug} Olkoon $P$ astetta $n\geq 1$ oleva reaalikertoiminen polynomi. Jos $z=a+ib$ on polynomin $P$ juuri, niin $\bar{z}=a-ib$ on myös sitä.
+\end{lause}
+
+Tämän perusteella voidaan johtaa reaalikertoimisen polynomin tekijähajotelma.
+
+\begin{lause}\label{lause: hajotelma} Olkoon $P$ reaalikertoiminen polynomi. $P$ on joko vakio (aste 0) tai se voidaan jakaa reaalisiin ensimmäisen ja toisen asteen tekijöihin.
+\end{lause}
+\begin{tod}
+Tapaus, jossa kaikki nollakohdat tekijähajotelmassa $$
+P(z)=\sum_{k=0}^n a_k z^k=a_n(z-z_1)^{k_1}(z-z_2)^{k_2}\ldots (z-z_m)^{k_m}
+$$
+ovat reaalisia, on selvä.
+
+Voidaan siis olettaa, että polynomilla on ainakin yksi aidosti kompleksinen nollakohta $z=a+ib, b\neq 0.$ Lauseen \ref{lause: konjug} nojalla myös sen kompleksikonjugaatti $\bar{z}=a-ib$ on polynomin nollakohta. Myös kompleksijuuren $a+ib$ kertaluvun on oltava sama kuin sen liittoluvun $a-ib$ kertaluku. Siis tekijähajotelma voidaan kirjoittaa muodossa
+\begin{align*}
+P(z)&=\sum_{k=0}^n a_k z^k=a_n(z-z_1)^{k_1}(z-z_2)^{k_2}\ldots (z-z_l)^{k_l}\\
+&\left[ (z-z_{n_1})(z-\bar{z_{n_1}})\right]^{n_1}\left[ (z-z_{n_2})(z-\bar{n_2})\right]^{n_2}\ldots \left[ (z-z_{n_m})(z-\bar{z_{n_m}} )\right]^{n_{m}}
+\end{align*}
+\end{tod}
+missä reaaliset nollakohdat ovat $z_1, z_2,\ldots, z_l$ ja niitä vastaavat kertaluvut $k_1, k_2, \ldots k_l.$ Vastaavasti kompleksiluvut $z_{n_k}=a_{n_k}+ib_{n_k}$ ja niiden kompleksikonjugaatit $\bar{z_{n_k}}, k=1,2,\ldots, m,$ ovat kertalukua $n_k$ olevia juuria. Koska
+$$
+(z-(a+ib))(z-\bar{a+ib})=(z-a+ib)(z-a+ib)=(z-a)^2-(ib)^2=(z-a)^2+b^2,
+$$
+niin tekijähajotelmaksi saadaan
+\begin{align*}
+P(z)&=a_n(z-z_1)^{k_1}(z-z_2)^{k_2}\ldots (z-z_l)^{k_l}\\
+&\left[ (z-a_{n_1})^2 +b_{n_1}^2\right]^{n_1}\left[ (z-a_{n_2})^2 +b_{n_2}^2\right]^{n_1}\ldots \left[ (z-a_{n_m})^2 +b_{n_m}^2\right]^{n_m}.
+\end{align*}
+Usein termi
+$
+(z-a_{n_j})^2+b_{n_j}^2
+$
+kirjoitetaan muodossa
+$$
+z^2+2p_{j}x+q_j,
+$$
+ja tällä ei saa olla reaalisia nollakohtia, joten $p_j^2-q_j<0.$ Lisäksi reaalimuuttujaa merkitään $x$:llä, joten reaalikertoimisen reaalimuuttujan polynomin tekijähajotelma on
+\begin{align*}
+&P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots +a_1x+a_0\\&=a_n(x-x_1)^{k_1}(x-x_2)^{k_2}\ldots (x-x_l)^{k_l}(x^2+2p_1x+q_1)^{n_1}(x^2+2p_2x+q_2)^{n_2}\ldots (x^2+2p_mx+q_m)^{n_m},
+\end{align*}
+missä siis $a_k\in \mathbf{R},$ $a_n\neq 0$ ja $p_j^2-q_j<0,$ $j=1,2,\ldots, m.$
+\clearpage
+\section{Eksponentti- ja logaritmifunktio}
+Määritellään kompleksimuuttujan eksponenttifunktio. Koska reaaliselle eksponenttifunktiolla pätee $\exp(x_1+x_2)=\exp(x_1)\exp(x_2),\ \exp(x)=e^x,$ niin vaaditaan myös tämä ominaisuus kompleksiselta eksponenttifunktiolta.
+
+\begin{maar} Olkoon $z=x+iy$ kompleksiluku. Tällöin
+$$
+e^{z}=e^{x+iy}=e^xe^{iy}=e^x(\cos y + i\sin y).
+$$
+\end{maar}
+
+Välittömästi tästä määritelmästä saadaan, että
+$$
+\abs{z}=e^x\quad\text{ja}\quad \arg e^z=y, -\pi<y\leq \pi.
+$$
+Jaksollisuuden nojalla kaikki kompleksiluvun $e^z$ napakulmat $\theta$ toteuttavat ehdon
+$$
+\theta=\Im z+n\cdot2\pi=y+n\cdot 2\pi,\ n\in\mathbf{Z}.	
+$$
+
+Kahden kompleksiluvun $z_1$ ja $z_2$ tulo ja osamäärä on monesti helpointa laskea eksponenttimuodosta. Jos $z_1=r_1e^{i\theta_1}$ ja $z_2=r_2e^{i\theta_2},$ niin
+$$
+z_1z_2=r_1r_2e^{i(\theta_1+\theta_2)},\quad \frac{z_1}{z_2}=\frac{r_1}{r_2}e^{i(\theta_1-\theta_2)}.
+$$
+
+Kompleksinen eksponenttifunktio on -- hämmästyttävää kyllä -- jaksollinen.
+\begin{lause} Eksponenttifunktiolla on jaksona $2\pi i$, eli kaikilla $z\in\mathbf{C}$ on voimassa
+$\displaystyle e^{z+2\pi i}=e^z.$ Jos lisäksi $\alpha$ on jokin toinen jakso, niin $\alpha=n\cdot 2\pi i$ jollain kokonaisluvulla $n.$
+\end{lause}
+
+Tiedetään, että sini ja kosini saavat kaikki arvonsa jollakin perusjakson $2\pi$ pituisella reaalilukuvälillä, kuten välillä $]-\pi, \pi],$ joten sovelletaan tätä eksponenttifunktioon.
+
+\begin{lause}
+Eksponenttifunktio $e^z$ saa kaikki arvonsa jaksovyössä \newline$S=\{z\in\mathbf{C}:\ -\pi<\Im z\leq \pi\}.$ Itse asiassa tämän jaksovyön valinta on mielivaltainen; jaksovyöksi kelpaa mikä hyvänsä tyyppiä
+$S'=\{z\in\mathbf{C}:\ y_0<\Im z\leq y_0+2\pi\}$ oleva joukko.
+\end{lause}
+
+\begin{centering}
+\begin{tikzpicture}[thick,scale=0.9, every node/.style={scale=0.9}]
+    \begin{scope}[thick,font=\scriptsize][set layers]
+    \draw [->] (-4,0) -- (4,0) node [above left]  {$\Re$};
+    \node at (4,0) [below left]  {$x$};
+    \draw[dashed] (-4,-3.14)--(4,-3.14);
+    \draw[dashed] (-4,3.14)--(4,3.14);
+    \draw [->] (0,-4) -- (0,4) node [below right] {$\Im$};
+    \node at (0,4) [below left] {$y$};
+    \iffalse% Single
+    \draw (1,-3pt) -- (1,3pt)   node [above] {$1$};
+    %\draw (-1,-3pt) -- (-1,3pt) node [above] {$-1$};
+    %\draw (-3pt,1) -- (3pt,1)   node [right] {$1$};
+    %\draw (-3pt,-1) -- (3pt,-1) node [right] {$-1$};
+    
+    %\else% Multiple
+   % \foreach \n in {-3,...,-2,2,3,...,4}{%
+     %   \draw (\n,-3pt) -- (\n,3pt)   node [above] {$\n$};
+      %  \draw (-3pt,\n) -- (3pt,\n)   node [right] {$\n $};
+    }
+    \fi
+    \end{scope}
+    \draw (1,-3pt) -- (1,3pt)   node [thick,font=\scriptsize, above] {$1$};
+    \draw (-3pt,3.14) -- (3pt,3.14)   node [thick,font=\scriptsize,above right] {$\pi$};
+    \draw (-1,-3pt) -- (-1,3pt)   node [thick,font=\scriptsize, above] {$-1$};
+    \draw (-3pt,-3.141) -- (3pt,-3.14)   node [thick,font=\scriptsize,below right] {$-\pi$};
+    \draw[pattern=dots, pattern color=gray] (-3.5,-3.14) rectangle (3.5,3.14);
+    %\node at (3,2.5)   {$\bullet$};
+    %\node[above] at (3.1,2.5)   {$z=a+ib$};
+    %\draw[dashed] (3,2.5)--(3,0) node[below] {$(a,0)=a$};
+    	%\draw[dashed] (3,2.5)--(0,2.5) node[left] {$(0,b)=ib$};;
+%\node[draw,text width=4cm] at (3,3) {some text spanning three lines with automatic line breaks};
+    %\draw[solid] (0,-1) circle (1);
+    %\draw[solid] (0,-1) circle (2);
+    %\path [draw=none,fill=gray, fill opacity = 0.1] (0,-1) circle (2);
+    %\path [draw=none,fill=white, fill opacity = 0.7] (0,-1) circle (1);
+    %\node [below right,black] at (1.2,1.2) {$A=\{z\in\mathbb{C}:1\leq|z-(-i)|\leq2\}$};
+\end{tikzpicture}\end{centering}
+
+Osoittautuu, että jossakin jaksovyössä $S'$ eksponenttifunktio on bijektio eli sekä injektio ja surjektio.
+
+\begin{lause} Kuvaus $z\mapsto e^z$ on bijektio jaksovyöltä $S=\{z\in\mathbf{C}:\ -\pi<\Im z\leq \pi\}$ joukolle $\mathbf{C}\setminus{\{0\}}.$
+\end{lause}
+
+Tämän eksponenttifunktion haaran käänteisfunktiota kutsutaan logaritmin pääarvoksi. Kuten eksponenttifunktiokin, on logaritmi yleisesti  ''moniarvoinen'' funktio. Tämän tulkinnan tarkka määrittely vaatisi Riemannin pintojen teoriaa, joka sivuutetaan.
+
+\begin{maar}
+Kompleksiluvun $w\neq 0$ logaritmi on on sellainen kompleksiluku $z$, jolle $e^z=w.$
+\end{maar}
+
+\begin{maar} Jos $w=re^{i\phi}$, $r>0,\ \phi\in]-\pi, \pi],$ niin luvun $w$ logaritmin päähaara on
+$$
+\ln w=\ln r +i\phi.
+$$
+Kaikki luvun $w$ logaritmit saadaan lisäämällä pääarvoon $2\pi i$:n monikertoja
+$$
+\ln w=\ln r+i\phi+n\cdot 2\pi i,\quad n\in\mathbf{Z}.
+$$
+\end{maar}
+
+\begin{huom} Usein $\phi$:lle sallitaan arvoja vain jollakin korkeintaan $2\pi$:n pituisella avoimella välillä. Silloin edellä olevat yhtälöt määräävät yksikäsitteisen funktion. Erityisesti logaritmin päähaara
+$\ln w=\ln r+i\phi,\ \phi\in]-\pi, \pi[,$ kuvaa pitkin negatiivista reaaliakselia aukileikatun kompleksitason, siis joukon $\mathbf{C}\setminus]-\infty, 0],$ bijektiivisesti nauhalla $\{z:\ -\pi< \Im z < \pi\}.$ Muiden logaritmin haarojen, $\ln w=\ln r+i\phi +n\cdot 2\pi i,\ n\in\mathbf{Z},$ kuvat ovat jaksovyöt \newline
+$\{z:\ -\pi+n\cdot 2\pi<\Im z < \pi+n\cdot 2\pi\}.$
+\end{huom}
+\clearpage
+
+
+\clearpage
+\section*{Tehtäviä}
+\addcontentsline{toc}{section}{Tehtäviä}
+\linespread{1.667}
+%\section*{Luku \Romannum{1} }
+\begin{teht}
+Osoita, että kompleksilukujen yhteenlaskun neutraalialkio $(0, 0)$ ja luvun $z$ vasta-alkio $-z$ ovat yksikäsitteisiä.
+\end{teht}
+
+\begin{teht}
+Määrää luvun $(a, b)\in\mathbf{C}\setminus\{(0,0)\}$ käänteisalkio.
+\end{teht}
+
+\begin{teht}
+Olkoon $(a, b)\in\mathbf{C}$ sellainen kompleksiluku, jonka pituus eli etäisyys origosta on 1. Missä sijaitsee tämän luvun käänteisluku?
+\end{teht}
+
+
+\begin{teht}
+Olkoot $z=1+i$ ja $w=-1+i$. Määrää näiden lukujen
+\begin{enumerate}[leftmargin=*, label=\roman*), topsep=0pt, itemsep=12pt, parsep=0pt, font=\small\bfseries\color{blue}] 
+\item tulo
+\item tulon ja summan liittoluku
+\item osamäärä.
+\end{enumerate}
+\end{teht}
+
+\begin{teht}
+Laske $i^n$, kun $n\in\mathbf{N}.$
+\end{teht}
+
+\begin{teht}
+Määritä luvun $\dfrac{1}{2-i}+\dfrac{i}{1+i}$ reaali- ja imaginaariosa.
+\end{teht}
+
+\begin{teht}
+Millä parametrin $t\in\mathbf{R}$ arvolla pätee, että 
+$$
+\left|z+itw\right|=1,\quad\text{jossa}\quad z=\sqrt{2}-3i,\ w=-1-\frac{1}{\sqrt{2}}i\text{?}
+$$
+\end{teht}
+
+\begin{teht}
+Millä $x$:n ja $y$:n reaaliarvoilla kompleksiluku $z^2-i$, $z=x+iy$, on reaalinen? Entä puhtaasti imaginaarinen?
+\end{teht}
+
+\begin{teht}
+Ratkaise kompleksiluvut $z$ ja $w$ yhtälöstä $\displaystyle
+\begin{cases}
+2iz-3w&=1-i\\
+2w-3iw&=\dfrac{1}{\sqrt{2}i}.
+\end{cases}$
+\end{teht}
+
+\begin{teht}
+Määrää ne $z\in\mathbf{C},$ joille $\Im\left(z-\frac{1}{z}\right)=0.$
+\end{teht}
+
+\begin{teht} Todista lauseen \ref{l8} kohdat iv-vi.
+
+\end{teht}
+
+\begin{teht}
+Ratkaise yhtälö $z^2+2i-4=0.$
+\end{teht}
+
+
+
+\begin{teht} Todista, että kolmioepäyhtälön oikea puoli
+$\left\lvert z+w\right\rvert \leq \abs{z}+\abs{w}$ 
+pätee kaikilla $z,\, w\in\mathbf{C}.$
+\end{teht}
+
+\begin{teht} Kirjoita kompleksimuodossa $z$:n $\bar{z}$:n avulla paraabelin $y=x^2$ yhtälö.
+\end{teht}
+
+\begin{teht} Missä kompleksitasossa sijaitsevat pisteet, joissa $\dfrac{z^2+1}{z}$ on puhtaasti imaginaarinen?
+
+\end{teht}
+
+\begin{teht}
+Olkoot $a$ ja $b$ reaalilukukuja ja $1+2i$ on polynomin $z^2+(p+5i)z+(2-i)q$ juuri. Määrää
+vakiot $a$ ja $b$ sekä polynomin muut juuret.
+\end{teht}
+
+\begin{teht}
+Määrää yhtälön $z^3=i$ juuret.
+\end{teht}
+
+\begin{teht}
+Määrää seuraavien kompleksilukujen polaariesitys
+\begin{enumerate}[leftmargin=*, label=\roman*), topsep=0pt, itemsep=12pt, parsep=0pt, font=\small\bfseries\color{blue}] 
+\item $-3i$
+
+\item $\displaystyle \frac{1}{\sqrt{2}}\left(1+i\right)$
+
+\item $\dfrac{-3+i}{\sqrt{10}}$
+
+\item $(1+i)\left(1-\sqrt{3}-i(1+\sqrt{3})\right)$
+
+\item $\dfrac{1-i}{1+i}.$
+\end{enumerate}
+
+\end{teht}
+
+\begin{teht}
+Etsi funktion $\abs{z^2-2iz}$ suurin ja pienin arvo yksikköympyrässä $\mathbf{S}=\{z\in\mathbf{C}: \ \abs{z}=1\}.$
+\end{teht}
+
+\begin{teht}
+Määrää $w$, jotta luku $\dfrac{2i-(1-i)w}{w-i}$ olisi puhtaasti reaalinen.
+\end{teht}
+\begin{teht} Määritä imaginaariyksikön potenssit $i^n.$
+\end{teht}
+
+\begin{teht} Laske
+\begin{enumerate}[leftmargin=*, label=\roman*), topsep=0pt, itemsep=0pt, parsep=0pt, font=\small\bfseries\color{blue}]
+\item $(1+i)^6$
+
+\item $(1-i)^{-3}$
+
+\item $(-\sqrt{3}+i)^{12}.$
+\end{enumerate}
+
+\end{teht}
+\begin{teht} Olkoon $\abs{z}=2$ ja $\abs{w}=3$ sekä $\arg z=-\frac{2\pi}{3}$ ja $\arg w=\frac{\pi}{6}.$ Määritä lukujen
+\begin{listaa}
+\item $\dfrac{z}{w}$
+\item $\bar{z}^3$
+\item $\dfrac{z}{\bar{w}^2}$
+\end{listaa} itseisarvo ja vaihekulma. Piirrä luvut koordinaatistoon.
+\end{teht}
+
+\begin{teht} Todista induktiolla de Moivren kaava luonnollisille luvuille $n$ eli että
+$$
+\left(\cos \theta+i\sin\theta\right)^n=\cos n\theta + i \sin n\theta\quad\text{kaikilla } n\in\mathbf{N}.
+$$
+\end{teht}
+
+\begin{teht} Johda kolminkertaisen kulman kaavat $\sin 3x$ ja $\cos 3x.$
+\end{teht}
+
+\begin{teht} Todista identiteetit
+\begin{enumerate}[label=\alph*), topsep=0pt, itemsep=0pt, parsep=0pt, leftmargin=*]
+    \item $\cos 5\theta =16\cos^5 \theta -20\cos^3\theta +5\cos\theta,$
+    \inlineitem $\dfrac{\sin 5\theta}{\sin\theta}=16\cos^4\theta -12\cos^2\theta+1, \theta\neq n\pi.$
+\end{enumerate}
+\end{teht}
+
+\begin{teht}
+Ratkaise yhtälö $z^4=-32.$
+\end{teht}
+
+\begin{teht}
+Ratkaise yhtälö $z^3=\frac{1}{\sqrt{2}}(1-i).$
+\end{teht}
+
+\begin{teht} Olkoon $\omega$ ykkösen $n.$ juuri, joka saadaan juurikaavasta indeksillä $k=1.$
+\begin{listaa}
+\item Osoita, että kaikki ykkösen $n$:nnet juuret ovat 
+$$
+1, \omega, \omega^2,\ldots \omega^{n-1}.
+$$
+\item Laske geometrisen summakaavan avulla
+$$
+\sum_{k=0}^{n-1} \omega^k.
+$$
+Tulkitse tulos geometrisesti.
+\end{listaa}
+
+\end{teht}
+
+\begin{teht}
+Osoita, että yhtälön $z^n=w=r(\cos\theta+i\sin\theta)\neq 0$ ratkaisuille
+$$
+z_k=\sqrt[n]{r}\left(\cos \frac{\theta+2k\pi}{n}+i\sin \frac{\theta+2k\pi}{n}\right),\quad k=0,1,2,\ldots, n-1.
+$$
+pätee
+$$
+z_k=\sqrt[n]{r}\left(\cos \frac{\theta}{n}+i\sin \frac{\theta}{n}\right)\omega_k,\quad k=0,1,2,\ldots, n-1,
+$$
+jossa $\omega_k=\omega_{n, k}$ on $z^n=1$ ratkaisu.
+\end{teht}
+
+\begin{teht}
+Ratkaise Eulerin kaavan avulla yhtälö $z^6-i=0.$
+\end{teht}
+\begin{teht}
+Määritä lausekkeen $i^i$ kaikki arvot.
+\end{teht}
+\begin{teht}{*}
+Osoita, että
+$$
+\sin\frac{\pi}{n}\sin\frac{2\pi}{n}\sin\frac{3\pi}{n}\ldots \sin\frac{(n-1)\pi}{n}=\frac{n}{2^{n-1}},\quad n\geq 2, n\in\mathbf{Z}.
+$$
+\end{teht}
+
+\begin{teht} Kirjoita lausekkeet sinien ja kosinien summana
+\begin{enumerate}[label=\alph*), topsep=0pt, itemsep=0pt, parsep=0pt, leftmargin=*]
+    \item $\sin 3x \cos 5x,$
+    \inlineitem $\cos^4 x.$
+\end{enumerate}
+
+\end{teht}
+
+\begin{teht}
+Osoita, että Eulerin kaavan mukaiselle eksponenttifunktiolle pätee
+$
+e^{ix}e^{iy}=e^{i(x+y)}
+$
+kaikilla reaaliluvuilla $x,y.$
+
+\end{teht}
+
+
+\begin{teht} Määritä
+$$1 +\sin \theta +\sin 2\theta+\cdots + \sin N\theta.$$
+Vinkki: Laske 
+$\displaystyle
+1+e^{i\theta}+e^{2i\theta}+\cdots e^{iN\theta}.$
+
+\end{teht}
+
+\begin{teht}
+Todista polynomin tekijää koskeva lause \ref{lause: 14}.
+\end{teht}
+
+\begin{teht}
+Todista lause \ref{lause: konjug}.
+\end{teht}
+
+\begin{teht}
+Todista lause \ref{lause: hajotelma} tekijähajotelman (\cref{lause: tekija}) avulla.
+\end{teht}
+
+\begin{teht}
+Ratkaise yhtälö $\displaystyle \bar{e^{iz}}=e^{i\bar{z}}.$
+\end{teht}
+\begin{teht} Kirjoita kompleksiluku $e^{z^2}$ perusmuodossa. Määrää myös luvun $e^{z^2}$ kaikki vaihekulmat.
+\end{teht}
+
+\begin{teht} Määritä, miten eksponenttifunktio $\exp(z)$ kuvaa koordinaattiakselien suuntaiset suorat.
+\end{teht}
+
+\begin{teht} Ratkaise yhtälöt
+\begin{enumerate}[label=\alph*), topsep=0pt, itemsep=0pt, parsep=0pt, leftmargin=*]
+\item $e^z=-3,$
+\inlineitem $e^z=0$ ja
+\inlineitem $e^z=1-i.$
+\end{enumerate}
+\end{teht}
+
+\begin{teht} Määritä lukujen
+\begin{enumerate}[label=\alph*), topsep=0pt, itemsep=0pt, parsep=0pt, leftmargin=*]
+\item $-4$,
+\inlineitem $\displaystyle \frac{1-i}{1+i}$ ja
+\inlineitem $\displaystyle \frac{i}{4-4i}$
+\end{enumerate}
+logaritmit (kaikki arvot).
+\end{teht}
+
+\begin{teht} Missä kompleksitason osajoukossa pätee $\left|e^{-z}\right|<1$? \end{teht}
+
+
+
+\clearpage
+\section*{Vastauksia ja vinkkejä tehtäviin}
+\addcontentsline{toc}{section}{Vastauksia}
+\linespread{1.667}
+\setcounter{teht}{0}
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+\begin{teht}
+
+
+\end{teht}
+
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+\begin{teht}
+
+
+\end{teht}
+
+\begin{teht}
+
+
+\end{teht}
+
+\begin{teht}
+
+
+\end{teht}
+
+\begin{teht}
+
+
+\end{teht}
+
+\begin{teht}
+
+
+\end{teht}
+
+
+
+\begin{teht}
+
+\begin{enumerate}[leftmargin=*, label=\roman*), topsep=0pt, itemsep=0pt, parsep=0pt, font=\small\bfseries\color{blue}]
+\item $-8i$
+\item $\dfrac{1}{4}(-1+i)$
+\item $4096$
+\end{enumerate}
+
+\end{teht}
+
+
+\begin{teht}
+
+\begin{listaa}
+\item $\dfrac{2}{3},$ $-\dfrac{5\pi}{6}$
+\item $8$, $0$
+\item $\dfrac{2}{9},$ $-\dfrac{\pi}{3}$
+\end{listaa}
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+
+\begin{teht}
+
+
+\end{teht}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\cleardoublepage
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Lähteet}
+
+%\paragraph{$\Gamma$} is the decay rate, and it can be presented as elements.
+%\citep{Yampolsky,Camp}
+%\bibliographystyle{plain}
+%\bibliography{./Bibliography/bibliography_spectroscopy}
+
+\end{document}

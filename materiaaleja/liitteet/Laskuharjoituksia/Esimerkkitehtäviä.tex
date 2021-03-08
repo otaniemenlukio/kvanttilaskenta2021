@@ -1,0 +1,530 @@
+\documentclass[12pt, a4paper, t]{beamer}
+\usefonttheme[onlymath]{serif}
+\setbeamertemplate{theorems}[ams style] 
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+%\setbeamertemplate{frametitle}{\thesection.~\insertsection~\insertframetitle}
+
+%\makeatletter
+%\CheckCommand*\beamer@checkframetitle{\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+%\renewcommand*\beamer@checkframetitle{\global\let\beamer@frametitle\relax\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+%\makeatother
+
+%\usepackage{paralist}
+\usepackage[T1]{fontenc}
+%\usepackage{charter}
+\usepackage{mathdesign}
+
+\usepackage[english, finnish]{babel}
+
+%\usepackage[scaled]{helvet}
+%\renewcommand*\familydefault{\sfdefault}
+\usepackage{xcolor}
+
+
+\usepackage{amsmath}
+%\usepackage{amsfonts}    
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{xpatch}
+\makeatletter
+\xpatchcmd{\@thm}{\thm@headpunct{.}}{\thm@headpunct{}}{}{}
+\makeatother
+\theoremstyle{exercise}
+\newtheorem{teht}{Tehtävä}
+\theoremstyle{remark}
+\newtheorem*{huom}{Huomautus}
+\theoremstyle{definition}
+%\newtheorem*{theorem}{Lause}
+\newtheorem*{lause}{Lause}
+\newtheorem*{maar}{Määritelmä}
+\newtheorem{esim}{Esimerkki}
+%\usepackage{aaltothesisoma}
+%\usepackage{aaltologo}
+%\usepackage{aaltothesis}
+%\usepackage[agsm]{harvard}
+%\renewcommand{\harvardand}{\&}
+%\newcommand{\citee}[1]{(\citename*{#1} \citeyear*{#1}.)}
+%\usepackage{ulem}  
+
+\usepackage[natbib=true, bibstyle=authoryear, citestyle=authoryear]{biblatex}
+
+%
+%\addbibresource{/home/vsaariki/Latex/Bibliography/bibliography.bib}
+%\usepackage{natbib}
+%\bibliographystyle{/home/vsaariki/Latex/Bibliography/myabbrvnat}
+%\bibliographystyle{agsm}
+%\bibliographystyle{dcu}
+%\bibliographystyle{abbrvnat}
+%\bibliographystyle{plainnat}
+%\bibliographystyle{unsrtnat}
+%\renewcommand\harvardyearleft{\unskip\ }
+%\renewcommand\harvardyearright[1]{.}
+%\bibpunct{(}{)}{;}{a}{}{,~}
+
+%\usepackage{wasysym}
+%\usepackage{ccfonts,eulervm}
+%Yksiköt
+\usepackage[decimalsymbol=comma, load=prefixed]{siunitx}
+
+\usepackage{datetime}
+\renewcommand{\dateseparator}{.}
+%\date{\dmyyyydate\today}
+%\date{17.11.2014}
+
+\usepackage{booktabs} % Tarjoaa \toprule-, \midrule- ja \bottomrule-komennot taulukkoja varten
+	\renewcommand{\arraystretch}{1.3}
+
+\usepackage{wasysym}
+\usepackage{listing}
+\usepackage{bbm}
+
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{arrows}
+\usepackage{lipsum}
+\usepackage{tkz-euclide}
+\usetikzlibrary{calc}
+\usepackage[tikz]{bclogo}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{sidecap}
+\usetikzlibrary{calc,fadings,decorations.pathreplacing}
+\usepackage{xcolor}
+\usetikzlibrary{positioning}
+\usetikzlibrary{through,backgrounds}
+\usepackage{footmisc}
+
+\usepackage{pdfpages}
+\usepackage[bf,labelsep=period]{caption}
+
+
+\usepackage{bm}
+\usepackage{footmisc}
+
+%\usepackage[bf,labelsep=period]{caption}
+
+
+%\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+
+\usetikzlibrary{calc}
+\usepackage{sidecap}
+\usetikzlibrary{calc,fadings,decorations.pathreplacing}
+\usepackage{xcolor}
+\usetikzlibrary{positioning}
+\usetikzlibrary{through,backgrounds}
+\usepackage{footmisc}
+\usetikzlibrary{decorations.pathmorphing,decorations.markings}
+
+
+\usepackage{tcolorbox}% http://ctan.org/pkg/tcolorbox
+
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup} 
+% Use this if you run latex and use eps-format pictures
+%\usepackage[dvips]{graphicx}
+
+% Use this if you run pdflatex and use jpg/pdf-format pictures
+% Note that margins are not correct with pdflatex output. 
+%\usepackage[pdftex]{graphicx} 
+
+%% Use this if you want to get links and nice output with pdflatex
+%\usepackage[pdfpagemode=None,colorlinks=true,urlcolor=red, linkcolor=blue,citecolor=black,pdfstartview=FitH]{hyperref}
+
+%% Use this if you do not like hyperref package - this
+%% defines url environment and formats it correctly
+\usepackage{url}
+
+\usepackage{trace}
+ 
+
+
+
+
+\usepackage{wrapfig}
+
+
+
+
+
+
+
+
+
+
+
+
+% Mathematics
+\newcommand{\vii}{\mathop{\Big/}}
+\newcommand{\viiva}[2]{\vii\limits_{\!\!\!\!{#1}}^{\>\,{#2}}}
+\newcommand{\relR}{\mathrel{\mathsf{R}}}
+\newcommand{\cp}[1]{{#1}^\complement}
+\newcommand{\raj}[2][f]{#1\!\!\mid_{#2}}
+\renewcommand{\bar}[1]{\overline{#1}}
+\newcommand{\vek}[1]{\mbox{\boldmath$#1$}}
+\newcommand{\vekp}[1]{\hat{\vek{#1}}}
+%\renewcommand{\vec}[1]{\vek{#1}}
+%\usepackage{kpfonts}
+\newcommand*{\vv}[1]{\overrightarrow{#1}}
+\newcommand{\matr}[1]{\mathsf{#1}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\I}{\mathrm{i}}
+%\newcommand{\D}[1][x]{\,\text{d}#1}
+%\newcommand{\km}{\,\mathrm{km}}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\mean}[1]{\langle#1\rangle}
+\newcommand{\fneg}{f^{-1}}
+\newcommand{\ftil}{\tilde{f}}
+\newcommand{\ainaa}{{\alpha \in A}}
+\newcommand{\INT}[1]{\overset{\mspace{6mu}\circ}{#1}}
+\newcommand{\osit}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\diff}[2]{\frac{d #1}{d #2}}
+\renewcommand{\angle}{\sphericalangle}
+\newcommand{\epsi}{\varepsilon}
+\newcommand{\epsii}{\epsi_\text{i}}
+\newcommand{\epsie}{\epsi_\text{eff}}
+\newcommand{\epsit}{\epsi_\text{t}}
+\newcommand{\epsir}{\epsi_\text{r}}
+\newcommand{\uz}{\vek{u}_z}
+\newcommand{\roo}{\varrho}
+\newcommand{\fii}{\phi_\text{i}}
+\newcommand{\fit}{\phi_\text{t}}
+\newcommand{\Ei}{\vek{E}_\text{i}}
+\newcommand{\Et}{\vek{E}_\text{t}}
+\newcommand{\pr}{\mathfrak{p}}
+\renewcommand{\Re}[1]{\textrm{Re}\, #1}
+\renewcommand{\Im}[1]{\textrm{Im}\, #1}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Ln}{Ln}
+\newcommand{\phg}{p_\text{HG}}
+\newcommand{\kB}{k_\textrm{B}}
+
+\newcommand{\nub}{\bar{\nu}}
+
+\newcommand{\bra}[1]{\ensuremath{\left\langle#1\right|}}
+\newcommand{\ket}[1]{\ensuremath{\left|#1\right\rangle}}
+\newcommand{\bracket}[2]{\ensuremath{\left\langle#1 \vphantom{#2}\right| \left. #2 \vphantom{#1}\right\rangle}}
+\newcommand{\matrixel}[3]{\ensuremath{\left\langle #1 \vphantom{#2#3} \right| #2 \left| #3 \vphantom{#1#2} \right\rangle}}
+\newcommand{\ipr}[1]{\ensuremath{\left\langle #1\right\rangle}}
+
+\newcommand{\St}[1]{#1_\text{S}}
+\newcommand{\aSt}[1]{#1_\text{a-S}}
+\newcommand{\vib}[1]{#1_\text{vib}}
+
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Exp}{Exp}
+\DeclareMathOperator{\syt}{syt}
+\DeclareMathOperator{\pyj}{pyj}
+\DeclareMathOperator{\pym}{pym}
+
+%\usepackage{enumitem}
+%\usepackage[inline]{enumitem}
+%\newenvironment{itemize*}%
+%  {\begin{itemize}%
+ %   \setlength{\itemsep}{0pt}%
+ %   \setlength{\parskip}{0pt}}%
+%  {\end{itemize}}
+%\renewenvironment{itemize*}{\itemize}
+
+
+%\newenvironment{enumerate*}%
+ % {\begin{itemize}%
+ %   \setlength{\itemsep}{0pt}%
+ %   \setlength{\parskip}{0pt}}%
+ % {\end{itemize}}
+%\renewenvironment{enumerate*}{\enumerate}
+\usepackage{enumitem}
+
+\newenvironment{itemizea}%
+  {\begin{itemize}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parskip}{0pt}}%
+  {\end{itemize}}
+%\renewenvironment{itemize*}{\itemize}
+
+
+\newenvironment{enumeratea}%
+  {\begin{itemize}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parskip}{0pt}}%
+  {\end{itemize}}
+%\renewenvironment{enumerate*}{\enumerate}
+
+\newtheorem*{rat}{Ratkaisu}
+
+
+
+\usepackage{pdfpages}
+\addtobeamertemplate{block begin}{\vspace{-50pt}}{}
+
+\usefonttheme{structurebold}
+\usepackage{tasks}
+
+    \setbeamerfont{title,frametitle}{series=\bfseries,parent=structure}
+  \definecolor{oma}{rgb}{0.6, 0.25, 0.5}
+  
+\setbeamercolor{title}{fg=oma}
+\definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+\setbeamercolor{frametitle}{fg=brightmaroon}
+
+\global\mdfdefinestyle{exampledefault}{%
+pstrickssetting={linestyle=dashed,},linecolor=red,middlelinewidth=1.5pt}
+
+\definecolor{amaranth}{rgb}{0.9, 0.17, 0.31}
+
+\definecolor{myframecolour}{HTML}{FF0013}
+
+\addtobeamertemplate{block begin}{\vspace{-50pt}}{}
+
+\usefonttheme{structurebold}
+\usepackage{tcolorbox}% http://ctan.org/pkg/tcolorbox
+    \tcbuselibrary{skins,breakable}
+%\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1}
+\usepackage{pdfpages}
+
+    \setbeamerfont{title,frametitle}{series=\bfseries,parent=structure}
+  \definecolor{oma}{rgb}{0.6, 0.25, 0.5}
+  
+\setbeamercolor{title}{fg=oma}
+\definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+\setbeamercolor{frametitle}{fg=brightmaroon}
+
+\global\mdfdefinestyle{exampledefault}{%
+pstrickssetting={linestyle=dashed,},linecolor=red,middlelinewidth=1.5pt}
+
+\definecolor{amaranth}{rgb}{0.9, 0.17, 0.31}
+
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{colortbl}
+%\usepackage{tikz}
+\usetikzlibrary{calc}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+\setbeamertemplate{background canvas}[vertical shading]%
+  [top=gray!1,bottom=gray!10]
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{tcolorbox}% http://ctan.org/pkg/tcolorbox
+\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1}
+\definecolor{mybrown}{RGB}{128,64,0}
+\newtcolorbox{myboxa}[1]{colback=mybrown!5!white,colframe=mybrown!100!black,fonttitle=\bfseries,title=#1}
+
+\newenvironment{määr}[2]
+{\begin{tcolorbox}[adjusted title=Määritelmä #1,colframe=gray!75!black]
+%\begin{maar*}[''Jakaa täysin'']
+#2
+%\end{maar*}
+\end{tcolorbox}
+}
+
+\tcbset{mytitle/.style={title={Määritelmä~\thetcbcounter\ifstrempty{#1}{}{ #1}}}}
+\newtcolorbox[auto counter, number within=chapter, number freestyle={\noexpand\thechapter.\noexpand\arabic{\tcbcounter}}]{maari}[1][]{%
+    enhanced,
+    breakable,
+   fonttitle=\bfseries,
+    mytitle={},
+    #1
+}
+
+\usetkzobj{all}
+\date{}
+\addtobeamertemplate{frametitle}{}{\vspace{-.6em}}
+%\usepackage[inline]{enumitem}
+  %\addtobeamertemplate{frametitle}{\vspace*{-.4cm}}{\vspace*{0.2cm}}
+  \usetikzlibrary{calc,patterns,angles,quotes}
+\begin{document}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\input{vek_summa.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Tehtävä 1}
+
+\vspace{12pt}
+\begin{enumerate}[leftmargin=*, label=\alph*), topsep=0pt, itemsep=12pt, parsep=0pt, font=\bfseries\color{red}]
+\item Määritä kompleksiluku $\displaystyle z=\sqrt{2}e^{-i\pi/4}$ perusmuodossa.
+
+%\item Määrää kompleksiluvun $\displaystyle z=1-\sqrt{3}i$ eksponenttiesitys.
+\end{enumerate}
+\vspace{100pt}
+\pause
+\begin{rat}
+%\begin{enumerate}[leftmargin=*, label=\alph*), topsep=0pt, itemsep=12pt, parsep=0pt, font=\bfseries\color{red}]
+%\item 
+Eulerin kaavasta saadaan ($\sin(-x)=-\sin x,\ \cos(-x)=\cos x$)
+\begin{align*}
+z&=\sqrt{2}e^{-i\pi/4}=\sqrt{2}\left(\cos(-\pi/4)+i\sin(-\pi/4)\right)\\
+&=\sqrt{2}\left(\cos(\pi/4)-i\sin(\pi/4)\right)=\sqrt{2}\left(\frac{1}{\sqrt{2}}-i\frac{1}{\sqrt{2}}\right)\\
+&=1-i.
+\end{align*}
+%\pause
+%\item Ratkaistaan
+%\end{enumerate}
+\end{rat}
+\end{frame}
+
+
+\begin{frame}{Tehtävä 1}
+
+\vspace{12pt}
+\begin{enumerate}[leftmargin=*, label=\alph*), topsep=0pt, itemsep=12pt, parsep=0pt, font=\bfseries\color{red}]
+%\item Määritä kompleksiluku $\displaystyle z=\sqrt{2}e^{-i\pi/4}$ perusmuodossa.
+
+\item[b)] Määrää kompleksiluvun $\displaystyle z=1-\sqrt{3}i$ eksponenttiesitys.
+\end{enumerate}
+\vspace{100pt}
+\pause
+\begin{rat}
+%\begin{enumerate}[leftmargin=*, label=\alph*), topsep=0pt, itemsep=12pt, parsep=0pt, font=\bfseries\color{red}]
+%\item[b)] 
+Lasketaan kompleksiluvun pituus $\abs{z}$ ja vaihekulma $\theta.$
+\pause
+Kompleksiluvun pituus on
+$\displaystyle
+\abs{z}=\abs{1-\sqrt{3}i}=\sqrt{1^2+(-\sqrt{3})^2}=\sqrt{4}=2.
+$
+\pause
+
+Kompleksiluvun $z\neq 0$ vaihekulma $\theta$ voidaan laskea tangentin avulla
+\begin{align*}
+\tan \theta &=\frac{y}{x}\\
+\tan \theta &=-\sqrt{3}\\
+\theta &=\arctan(-\sqrt{3})=-\frac{\pi}{3}.
+\end{align*}
+\pause
+Kompleksiluvun eksponenttiesitys on
+$\displaystyle
+z=\abs{z}e^{i\theta}=2e^{-i\pi/3}.
+$
+%\end{enumerate}
+\end{rat}
+\end{frame}
+
+\begin{frame}{Tehtävä 2}
+\vspace{12pt}
+Määrää tilojen 
+$$
+\ket{\psi}=\begin{pmatrix}
+1\\
+-i
+\end{pmatrix}\quad\text{ja}\quad 
+\ket{\phi}=\begin{pmatrix}
+-i\\
+2\\
+\end{pmatrix}
+$$
+välinen sisätulo $\bracket{\psi}{\phi}.$
+\vspace{100pt}
+\pause
+\begin{rat} Sisätulo on
+\begin{align*}
+\bracket{\psi}{\phi}&=\begin{pmatrix}
+1\\
+-i
+\end{pmatrix}^{\dagger}\begin{pmatrix}
+-i\\
+2\\
+\end{pmatrix}
+=\bar{\begin{pmatrix}
+1 & -i
+\end{pmatrix}}
+\begin{pmatrix}
+-i\\
+2\\
+\end{pmatrix}
+\\
+&=\begin{pmatrix}
+1 & i
+\end{pmatrix}
+\begin{pmatrix}
+-i\\
+2\\
+\end{pmatrix}\\
+&=1\cdot(-i)+i\cdot 2=i.
+\end{align*}
+
+\end{rat}
+\end{frame}
+
+\begin{frame}{Tehtävä 3}
+\vspace{12pt}
+Määrää matriisin $\displaystyle Q=\begin{pmatrix}
+0 & -1\\
+1&0\\
+\end{pmatrix}$ ominaisarvot ja toinen ominaisvektori.
+\vspace{100pt}
+\pause
+\begin{rat}
+Ominaisarvot saadaan yhtälöstä $\det(Q-\lambda I)=0,$ jossa $I$ on yksikkömatriisi. Määritetään
+\begin{align*}
+Q-\lambda I&=\begin{pmatrix}
+0 & -1\\
+1&0\\
+\end{pmatrix}-\lambda\begin{pmatrix}
+1 & 0\\
+0&1\\
+\end{pmatrix}
+=\begin{pmatrix}
+-\lambda & -1\\
+1 & -\lambda
+\end{pmatrix}.
+\end{align*}
+
+Ratkaistaan ominaisarvot
+\begin{align*}
+\det\begin{pmatrix}
+-\lambda & -1\\
+1 & -\lambda\\
+\end{pmatrix}  &=0\\
+\lambda^2+1&=0
+\end{align*}
+\end{rat}
+
+\end{frame}
+\begin{frame}{Tehtävä 3}
+\vspace{100pt}
+\begin{rat}[jatkuu]
+Ominaisarvoiksi saadaan $\lambda^2=-1$ eli $\lambda=\pm i.$
+\pause 
+
+Määritetään ominaisarvoa $\lambda =i$ vastaava ominaisvektori $\bar{v}=\begin{pmatrix} x & y\end{pmatrix}^T$. Ratkaistaan yhtälö $Q\bar{v}=\lambda\bar{v}:$
+\begin{align*}
+\begin{pmatrix}
+0 & -1\\
+1&0\\
+\end{pmatrix}
+\begin{pmatrix}
+x\\y
+\end{pmatrix}
+&=i\begin{pmatrix}
+x\\y
+\end{pmatrix}\\
+\begin{pmatrix}
+-y\\
+x
+\end{pmatrix}
+&=\begin{pmatrix}
+ix\\iy
+\end{pmatrix}\quad \text{eli}\quad \begin{cases}
+-y=ix\\
+x=iy,
+\end{cases}
+\end{align*}
+joten $\displaystyle y=-ix.$ Ominaisvektoriksi sopii $$\bar{v}=\begin{pmatrix}
+1 \\-i\\
+\end{pmatrix}.$$
+\end{rat}
+\end{frame}
+\end{document}

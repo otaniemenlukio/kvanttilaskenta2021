@@ -1,0 +1,1982 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{chemfig}
+\makeatletter
+%\renewcommand{\@chapapp}{}% Not necessary...
+%\newenvironment{chapquote}[2][2em]
+ % {\setlength{\@tempdima}{#1}%
+ %  \def\chapquote@author{#2}%
+ %  \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+ %  \itshape}
+ % {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+%\renewcommand\thechapter{\Roman{chapter}}
+%\usepackage[paper=a4paper,textwidth=16.5cm,bottom=40mm]{geometry}
+\usepackage[left=2.5cm, top=3.0cm,right=2.5cm, bottom=2.5cm]{geometry}
+%\usepackage{avant}
+%\usepackage[scaled=.92]{helvet}
+%\renewcommand*\familydefault{\sfdefault}
+\usepackage[utf8]{inputenc}
+\usepackage{romannum}
+%\usepackage{cmbright}
+%\usepackage{ccfonts,eulervm}
+%\usepackage{eulervm}
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+\usepackage{tocloft}
+\usepackage{lipsum}
+\usepackage{titlesec}
+
+\newcommand{\secmark}{}
+\newenvironment{advanced}
+  {\renewcommand{\secmark}{*}}
+  {}
+
+\titleformat{\subsection}
+  {\large\bfseries} % Format of the title
+  {\thesection\secmark} % Label
+  {1em} % Separation between label and title body 
+        % (default = horizontal space, display = vertical space)
+  {} % Code preceding the title
+
+\usepackage[english, finnish]{babel}
+\usepackage{tabularx}
+\usepackage{ae}
+%\usepackage{cleveref}
+\usepackage[affil-it]{authblk}
+%\usepackage{CV}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+
+
+\usepackage{ulem}
+\usepackage[pdfpagemode=None,linktocpage=true, colorlinks=true,urlcolor=red, linkcolor=black,citecolor=black,pdfstartview=FitH,linktoc=all]{hyperref}
+\usepackage{cleveref}
+\makeatletter  
+\def\@endtheorem{\qed\endtrivlist\@endpefalse } % insert `\qed` macro
+\makeatother
+%\renewcommand{\qedsymbol}{}
+\usepackage{thmtools}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\declaretheoremstyle[headfont=\color{blue}\normalfont\bfseries, bodyfont=\normalfont, headpunct={.}, qed={}]{normalbody}
+\declaretheoremstyle[headfont=\color{blue}\normalfont\bfseries, bodyfont=\normalfont, headpunct={.}]{normalbody1}
+\declaretheoremstyle[headfont=\normalfont\bfseries, bodyfont=\normalfont, headpunct={.}, qed={}]{normalbody2}
+\definecolor{auburn}{rgb}{0.43, 0.21, 0.1}
+\declaretheoremstyle[headfont=\color{auburn}\normalfont\bfseries, bodyfont=\normalfont, headpunct={.}, qed={}]{normalbody3}
+%\theoremstyle{exercise}
+\declaretheorem[style=normalbody,name=Tehtävä]{teht}
+%\newtheorem{teht}{Tehtävä}
+\declaretheorem[style=normalbody,name=Esimerkki]{esim}
+\declaretheorem[style=normalbody2,name={Lause}]{lause}
+\declaretheorem[style=normalbody3,name=Määritelmä]{maar}
+
+\declaretheoremstyle[%
+  spaceabove=0pt,%
+  spacebelow=6pt,%
+  headfont=\normalfont\itshape,%
+  %postheadspace=1em,%
+  %
+  headpunct={.},
+]{mystyle} 
+\declaretheorem[style=normalbody2,name=Ratkaisu, unnumbered]{rat}
+\declaretheorem[style=mystyle,name=Todistus, unnumbered]{tod}
+%\def\eolqed{\hfill\qedsymbol}
+%\newcounter{määr}{section}
+\newenvironment{määr}[2]
+{\begin{tcolorbox}[adjusted title=Määritelmä #1,colframe=blue!75!black]
+%\begin{maar*}[''Jakaa täysin'']
+#2
+%\end{maar*}
+\end{tcolorbox}
+}
+
+\declaretheoremstyle[headfont=\normalfont\bfseries, headpunct={.}, qed={}]{normalbody5}
+\declaretheorem[style=normalbody5,name=Huomautus, unnumbered]{huom}
+\declaretheorem[style=normalbody5,name=Seuraus, unnumbered]{seur}
+
+%\renewcommand{\qedsymbol}{}
+%\declaretheorem[style=mythmstyle, name=Lause]{lause}
+\theoremstyle{remark}
+%\newtheorem*{huom}{Huomautus}
+\theoremstyle{definition}
+%\newtheorem{theorem}{Lause}[chapter]
+
+\newtheorem*{maar*}{Määritelmä}
+%\newtheorem*{seur}{Seuraus}
+%\newtheorem*{huom}{Huomautus}
+
+%\newtheorem{esim}{Esimerkki}
+%\newtheorem*{rat}{Ratkaisu}
+%\newtheorem{lause}{Lause}
+%\theoremstyle{exercise}
+%\declaretheorem[style=normalbody,name=Tehtävä]{teht}
+
+
+\usepackage{amssymb}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage{mathdesign}
+\usepackage{mathtools}
+\usepackage{graphicx}
+ %\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xr-hyper}
+%\usepackage[backend=bibtex]{biblatex}   % bibliography
+
+%\usepackage[pdfpagemode=FullScreen, colorlinks=true,urlcolor=red, linkcolor=blue,citecolor=black,pdfstartview=FitH]{hyperref}
+\usepackage{url}
+%\usepackage{cite}
+
+\usepackage{latexsym}
+
+\usepackage[decimalsymbol=comma, load=prefixed]{siunitx}
+%\usepackage{siunitx}
+%\sisetup{output-decimal-marker = {,}}
+   \sisetup{exponent-product = \cdot, output-product = \cdot}
+\sisetup{
+    group-digits=true,
+    group-separator={\,},
+%   group-four-digits=false,% default setting
+}
+\usepackage{fancyhdr}
+%\usepackage{fancyref}
+%
+% This is not working with package fancyref.
+
+\usepackage{fancyhdr} % heade
+
+% Quotes
+\usepackage{epigraph}
+
+% Headerit
+\pagestyle{fancyplain}
+\lhead[\fancyplain{}{\bfseries\thepage}]
+	{\fancyplain{}{\bfseries }}
+\chead[\fancyplain{}{\bfseries\thepage}]
+	{\fancyplain{}{\bfseries }}
+\rhead[\fancyplain{}{\bfseries\leftmark}]
+	{\fancyplain{}{\bfseries \dmyyyydate\today}}
+%\cfoot{}
+%\lfoot{}
+%\rfoot{tihayryn@lce.hut.fi}
+%
+% ei kappaleen sisennystä ja tyhjä rivi kappaleiden väliin
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.5ex}
+%\setlength{\parskip}{3mm plus0.5mm minus0.5mm}
+\usepackage{sectsty}
+%\sectionfont{\fontsize{16}{15}\selectfont}
+%\paragraphfont{\fontsize{14}{15}\selectfont}
+%\usepackage{fouriernc}
+%\usepackage{ccfonts,eulervm}
+
+%\usepackage[scaled=.92]{helvet}
+\usepackage{datetime}
+\renewcommand{\dateseparator}{.}
+\date{\dmyyyydate\today}
+
+%\setlength{\textwidth}{160mm}
+%\setlength{\oddsidemargin}{-5mm}
+%\setlength{\evensidemargin}{-5mm}
+%\setlength{\textheight}{255mm}
+%\setlength{\topmargin}{-15mm}
+
+\usepackage{natbib}
+\bibliographystyle{./Bibliography/my-dcu}
+%\bibliographystyle{agsm}
+%\bibliographystyle{dcu}
+%\bibliographystyle{abbrvnat}
+%\bibliographystyle{plainnat}
+%\bibliographystyle{unsrtnat}
+%\renewcommand\harvardyearleft{\unskip, }
+%\renewcommand\harvardyearright[1]{.}
+
+\renewcommand\harvardyearleft{\unskip\ }
+\renewcommand\harvardyearright[1]{.}
+\bibpunct{(}{)}{;}{a}{}{,~}
+\AtBeginDocument{\renewcommand{\harvardand}{ja}}
+%\renewcommand\harvardand{ja}
+\renewcommand{\arraystretch}{1.3}
+
+
+\usepackage{amssymb}
+%\usepackage{mathdesign}
+\usepackage{gauss}
+\usepackage{mathabx}
+
+\usepackage{graphicx} % Kuvien lis??????ist??????arten
+\usepackage{appendix} % Lis??????vaihtoehtoja liitteiden muotoiluun.
+
+
+\usepackage{tikz}
+\usetikzlibrary{shadings}
+\usetikzlibrary{automata, positioning}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{decorations.fractals}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{calc, intersections}	       %allows coordinate calculations.
+\usetikzlibrary{angles,patterns,calc}
+\usepackage{sidecap}
+\usetikzlibrary{calc,fadings,decorations.pathreplacing}
+\usepackage{xcolor}
+\usetikzlibrary{positioning}
+\usetikzlibrary{through,backgrounds}
+\usepackage{footmisc}
+\usepackage{sidecap}
+\usetikzlibrary{calc,fadings,decorations.pathreplacing}
+\usepackage{xcolor}
+\usetikzlibrary{positioning}
+\usetikzlibrary{through,backgrounds}
+\usepackage{footmisc}
+\usetikzlibrary{decorations.pathmorphing,decorations.markings}
+
+
+\usetikzlibrary{decorations}
+
+% Not sure this follows any proper defition of 
+% Sirpinksi triangle. It just works.
+\pgfdeclaredecoration{quasi-sirpinski}{do}{%
+    \state{do}[width=\pgfdecoratedinputsegmentlength, next state=do]{%
+        \pgfpathmoveto{\pgfpointpolar{-60}{\pgfdecoratedinputsegmentlength/2}}%
+        \pgfpathlineto{\pgfpointorigin}%
+        \pgfpathlineto{\pgfpoint{\pgfdecoratedinputsegmentlength/2}{0pt}}%
+        \pgfpathclose%
+    }
+}
+% TIKZ - for drawing Feynman diagrams
+% ... use with pdflatex
+
+
+
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{trees}
+\usetikzlibrary{matrix,arrows} 				% For commutative diagram
+			\usepackage{pgfplots}								% http://www.felixl.de/commu.pdf
+\usetikzlibrary{positioning}				% For "above of=" commands
+\usetikzlibrary{calc,through}				% For coordinates
+\usetikzlibrary{decorations.pathreplacing}  % For curly braces
+% http://www.math.ucla.edu/~getreuer/tikz.html
+\usepackage{pgffor}							% For repeating patterns
+
+\usetikzlibrary{decorations.pathmorphing}	% For Feynman Diagrams
+\usetikzlibrary{decorations.markings}
+\tikzset{
+	% >=stealth', %%  Uncomment for more conventional arrows
+    vector/.style={decorate, decoration={snake}, draw},
+	provector/.style={decorate, decoration={snake,amplitude=2.5pt}, draw},
+	antivector/.style={decorate, decoration={snake,amplitude=-2.5pt}, draw},
+    fermion/.style={draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
+    fermionbar/.style={draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{<}}}},
+    fermionnoarrow/.style={draw=black},
+    gluon/.style={decorate, draw=black,
+        decoration={coil,amplitude=4pt, segment length=5pt}},
+    scalar/.style={dashed,draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
+    scalarbar/.style={dashed,draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{<}}}},
+    scalarnoarrow/.style={dashed,draw=black},
+    electron/.style={draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
+	bigvector/.style={decorate, decoration={snake,amplitude=4pt}, draw},
+}
+
+% TIKZ - for block diagrams, 
+% from http://www.texample.net/tikz/examples/control-system-principles/
+% \usetikzlibrary{shapes,arrows}
+\tikzstyle{block} = [draw, rectangle, 
+    minimum height=3em, minimum width=6em]
+
+
+
+
+
+
+\usepackage{listing}
+\usepackage{wasysym}
+\usepackage{bbm}
+\usepackage{fancybox}
+
+\usepackage{textcomp}
+
+\usepackage[labelfont=bf,labelsep=period]{caption}
+
+%\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+
+
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+%\usepackage[nottoc]{tocbibind}
+
+\addto\captionsenglish{\renewcommand{\bibname}{References}}
+% Mathematics
+\newcommand{\vii}{\mathop{\Big/}}
+\newcommand{\viiva}[2]{\vii\limits_{\!\!\!\!{#1}}^{\>\,{#2}}}
+\newcommand{\relR}{\mathrel{\mathsf{R}}}
+\newcommand{\cp}[1]{{#1}^\complement}
+\newcommand{\raj}[2][f]{#1\!\!\mid_{#2}}
+\renewcommand{\bar}[1]{\overline{#1}}
+\newcommand{\vek}[1]{\mbox{\boldmath$#1$}}
+
+\renewcommand{\vec}[1]{\vek{#1}}
+\newcommand{\vecp}[1]{\hat{\vec{#1}}}
+\newcommand{\matr}[1]{\mathsf{#1}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\I}{\mathrm{i}}
+\newcommand{\D}[1][x]{\,\text{d}#1}
+%\newcommand{\km}{\,\mathrm{km}}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lvert\lvert#1\rvert\rvert}
+\newcommand{\mean}[1]{\langle#1\rangle}
+\newcommand{\fneg}{f^{-1}}
+\newcommand{\ftil}{\tilde{f}}
+\newcommand{\ainaa}{{\alpha \in A}}
+\newcommand{\INT}[1]{\overset{\mspace{6mu}\circ}{#1}}
+\newcommand{\osit}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\diff}[2]{\frac{d#1}{d#2}}
+\newcommand{\difft}[2]{\frac{d^2 #1}{d#2 ^2}}
+\newcommand{\ositt}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\epsi}{\varepsilon}
+\newcommand{\epsii}{\epsi_{i}}
+\newcommand{\epsie}{\epsi_{eff}}
+\newcommand{\epsit}{\epsi_{t}}
+\newcommand{\epsir}{\epsi_{r}}
+\newcommand{\uz}{\vek{u}_z}
+\newcommand{\roo}{\varrho}
+\newcommand{\fii}{\phi_{i}}
+\newcommand{\fit}{\phi_{t}}
+\newcommand{\Ei}{\vek{E}_{i}}
+\newcommand{\Et}{\vek{E}_{t}}
+\newcommand{\pr}{\mathfrak{p}}
+\renewcommand{\Re}[1]{\textrm{Re}\, #1}
+\renewcommand{\Im}[1]{\textrm{Im}\, #1}
+%\renewcommand{\Re}{{\operatorname{Re}}}           % real part
+%\renewcommand{\Im}{{\operatorname{Im}}}           % imaginary part
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Ln}{Ln}
+\DeclareMathOperator{\diag}{diag}
+
+\newcommand{\phg}{p_\text{HG}}
+\newcommand{\kB}{k_\textrm{B}}
+
+\newcommand{\nub}{\bar{\nu}}
+
+\newcommand{\bra}[1]{\ensuremath{\left\langle#1\right|}}
+\newcommand{\ket}[1]{\ensuremath{\left|#1\right\rangle}}
+\newcommand{\bracket}[2]{\ensuremath{\left\langle#1 \vphantom{#2}\right| \left. #2 \vphantom{#1}\right\rangle}}
+\newcommand{\matrixel}[3]{\ensuremath{\left\langle #1 \vphantom{#2#3} \right| #2 \left| #3 \vphantom{#1#2} \right\rangle}}
+\newcommand{\ipr}[1]{\ensuremath{\left\langle #1\right\rangle}}
+
+
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
+\newcommand{\ave}[1]{\ensuremath{\left\langle #1 \right\rangle}}
+\newcommand{\dotpr}[2]{\ensuremath{#1 \cdot #2}}
+%\newcommand{\dyad}[1]{\overleftrightarrow{#1}}
+\newcommand{\dyad}[1]{\bar{\bar #1}}
+
+\newcommand{\St}[1]{#1_{S}}
+\newcommand{\aSt}[1]{#1_{aS}}
+\newcommand{\vib}[1]{#1_{vib}}
+\newcommand{\op}[1]{\widehat{#1}}
+\newcommand{\Hami}{\mathcal{H}}
+
+\newcommand{\comm}[2]{\ensuremath{\left[ #1,\, #2 \right]}}
+\newcommand{\acomm}[2]{\ensuremath{\left\{ #1,\, #2 \right\}}}
+%\renewcommand{\v}{\mathrm{v}}
+
+ \usepackage{relsize}
+%\newcommand{\comm}[2]{%
+ % [%
+%  \begin{array}{
+ %   @{}
+  % >{\centering $\displaystyle}p{1em}<{$}
+  % @{,}
+  %  >{\centering $\displaystyle}p{1.5em}<{$}
+  % @{}
+ %}
+  % #1 & #2
+ %\end{array}%
+ %]%
+%}
+
+%\newcommand{\acomm}[2]{%
+ % \{%
+  %\begin{array}{
+   % @{}
+   %>{\centering $\displaystyle}p{1em}<{$}
+   %@{,}
+   % >{\centering $\displaystyle}p{1.5em}<{$}
+   %@{}
+ %}
+  % #1 & #2
+ %\end{array}%
+ %\}%
+%}
+
+%\newcommand{\comm}[3][1.2em]{[ \makebox[#1]{$#2$} , \makebox[#1]{$#3$} ]}
+%\newcommand{\acomm}[3][1.2em]{\left\{ \makebox[#1]{$#2$} , \makebox[#1]{$#3$} \right\} }
+ 
+
+
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Null}{null}
+
+%\usepackage[nottoc]{tocbibind}
+\usepackage{enumitem}
+\makeatletter
+% This command ignores the optional argument for itemize and enumerate lists
+\newcommand{\inlineitem}[1][]{%
+\ifnum\enit@type=\tw@
+    {\descriptionlabel{#1}}
+  \hspace{\labelsep}%
+\else
+  \ifnum\enit@type=\z@
+       \refstepcounter{\@listctr}\fi
+    \quad\@itemlabel\hspace{\labelsep}%
+\fi}
+\makeatother
+
+\newenvironment{itemize*}%
+ {\begin{itemize}%
+    \setlength{\itemsep}{0pt}%
+  \setlength{\parskip}{0pt}}%
+  {\end{itemize}}
+\renewenvironment{itemize*}{\itemize}
+
+
+\newenvironment{enumerate*}%
+  {\begin{itemize}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parskip}{0pt}}%
+  {\end{itemize}}
+\renewenvironment{enumerate*}{\enumerate}
+
+
+\usepackage{exsheets}
+
+\newenvironment{listaa} %%%% this adjusts spacing as I desire
+    {\begin{enumerate}[leftmargin=*, label=\alph*), topsep=0pt, itemsep=12pt, parsep=9pt, font=\bfseries\color{red}] \itemsep0pt \parskip0pt \parsep0pt \topsep0pt}
+    {\end{enumerate}}
+    \newenvironment{listab} %%%% this adjusts spacing as I desire
+    {\begin{enumerate}[leftmargin=*, label=\roman*), topsep=0pt, itemsep=12pt, parsep=9pt, font=\bfseries\color{blue}] \itemsep0pt \parskip0pt \parsep0pt \topsep0pt}
+    {\end{enumerate}}
+
+\usepackage{tcolorbox}% http://ctan.org/pkg/tcolorbox
+    \tcbuselibrary{skins,breakable}
+\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1}
+\newtcolorbox{myboxi}[1]{colframe=blue!75!black,fonttitle=\bfseries,title=#1}
+\newtcolorbox{myboxa}[1]{colframe=yellow!15!black,fonttitle=\bfseries,title=#1}
+
+%\usepackage{cleveref}
+
+%\usepackage{pdfpages}
+
+\title{Matriisilaskentaa}
+\author{}
+%\email{Ville.Saarikivi@aalto.fi}
+%\affil{Otaniemen lukio}
+\date{\dmyyyydate\today}
+
+%\renewcommand{\abstractname}{Foreword}
+%\setlength{\parskip}{2ex}
+%\setlength{\parindent}{0pt}
+\usepackage{tasks}
+\usepackage{exsheets}
+
+
+    
+%POISTA 2.12.
+%\usepackage[parfill]{parskip}    
+    
+
+%POISTA 2.12.
+%\usepackage[parfill]{parskip}    
+\begin{document}
+\begin{titlepage}
+
+%\thispagestyle{empty}
+
+
+\maketitle
+\thispagestyle{empty}
+\end{titlepage}
+
+
+
+%\cleardoublepage
+\clearpage
+
+\phantomsection 
+\pagenumbering{gobble}
+\pdfbookmark{Sisältö}{contents}
+%\hypertarget{MyToc}{} 
+%\addtocontents{toc}{\protect\hypertarget{toc}{}}
+%\addcontentsline{toc}{title}{Contents}
+
+%% Create it. 
+%\pagenumbering{arabic}
+%\thispagestyle{empty}
+%\pagenumbering{arabic}% Arabic page numbers (and reset to 1)
+
+%\renewcommand\contentsname{}
+\tableofcontents
+%\newpage
+
+%\cleardoublepage
+\clearpage
+\phantomsection
+\pagenumbering{arabic}% Arabic page numbers (and reset to 1)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Johdanto}
+\addcontentsline{toc}{section}{Johdanto}
+Tässä monisteessä käsitellään matriisilaskentaa. Moniste on keskeneräinen ja se päivittyy. Jos havaitset virheen, voit kirjoittaa siitä viestin kurssin Classroom-huoneeseen.
+%\cleardoublepage
+%\clearpage
+%\cleardoublepage
+\clearpage
+\phantomsection
+\section*{Merkinnät}
+\addcontentsline{toc}{section}{Merkinnät}
+\begin{tabular}{ll}
+$\mathbf{N}$ & Luonnollisten lukujen $\{0, 1, 2, \ldots\}$ joukko\\
+$\mathbf{P}$ & Alkulukujen $\{2, 3, 5, \ldots\}$ joukko\\
+$\mathbf{Q}$ & Rationaalilukujen $\{\frac{m}{n}:\, m, n\in\mathbf{Z}\, n\neq 0\}$ joukko\\
+$\mathbf{R}$ & Reaalilukujen joukko, $\mathbf{R}=]-\infty, \infty[$\\
+$\mathbf{R}_+$ & Positiivisten reaalilukujen joukko, $\mathbf{R}_+=]0, \infty[$\\
+$\mathbf{C}$ & Kompleksilukujen $\{z=x+iy:\, x, y\in\mathbf{R}\}$ joukko\\
+$\in$ & Kuuluu joukkoon, $a\in \mathbf{N}$ eli alkio $a$ kuuluu luonnollisten lukujen joukkoon\\
+$\abs{z}$ & Kompleksiluvun moduli eli itseisarvo\\
+$\arg{z}$ & Kompleksiluvun $\neq 0$ argumentti eli vaihekulma, sopimus $\arg{z}\in]-\pi, \pi]$\\
+$\vec{x}$ & Vektori, pisteen paikkavektori, sarakevektori\\
+$A=(a_{ij})$ & Matriisi, jonka alkiot ovat luvut $a_{ij}$\\
+$a$ & Skalaari eli luku\\
+$A^T$ & Matriisin transpoosi\\
+$A^{\dagger}=A^{\star}$ & Adjungoitu eli hermitoitu matriisi, $A^{\dagger}=(\bar{a_{ji}}),$  eli matriisin $A$ konjugaattitranspoosi. 
+\end{tabular}
+%\cleardoublepage
+\clearpage
+\phantomsection
+\section{Vektorilaskentaa}
+\subsection{Vektorimerkintä matriisilaskennassa}
+Vektoreille käytetään tässä monisteessa lihavoituja kirjaimia ja skalaareilla, joita ovat mm. reaali- kompleksiluvut, tavallisia kirjaimia. Toisin sanoen, $\vek{v}$ on vektori mutta $a$ on skalaari.
+
+Samastetaan $n$-ulotteisen avaruuden piste $(x_1, x_2, \ldots, x_n)$ ja sen paikkavektori $\vec{x}=x_1\vec{e}_1+x_2\vec{e}_2+\cdots +x_n\vec{e}_n,$ missä $n$-ulotteisen avaruuden kantavektorit ovat $\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n,$ missä
+$$
+\vec{e}_k=(0, 0,\ldots, \overset{k.}{1}, 0, 0, \ldots, 0).
+$$
+Kolmiulotteisen reaaliavaruuden kantavektorit $\vec{i}, \vec{j},$ ja $\vec{k}$ ovat siis pisteiden $(1,0,0), \ (0,1,0),\ (0,0,1)$ paikkavektorit eli 
+$$
+\bar{i}=(1,0,0),\quad \bar{j}=(0,1,0)\quad\text{ja}\quad \bar{k}=(0,0,1).
+$$
+Vektoreille käytetään monesti myös yläviivamerkintää $\bar{i}$, erityisesti käsin kirjoittaessa, kun sekaannuksen vaaraa kompleksikonjugaattiin ei ole.
+
+Matriisilaskentaa ajatellen vektori on mielekästä merkitä pystyvektorina
+$$
+\vec{x}=\begin{pmatrix}
+x_1\\x_2\\ \vdots\\ x_n
+\end{pmatrix}
+=(x_1, x_2, \ldots, x_n)^T,
+$$
+missä $\vec{x}^T$ tarkoittaa vektorin tranpoosia (vaakavektorin alkioita ei aina eroteta pilkuilla). Vektoreilla transponointi muuttaa vaakavektorin pystyvektoriksi ja pystyvektektorin vaakavektoriksi.
+\begin{esim} Esitä avaruuden $\mathbf{R}^3$ vektori
+$\vek{a}=\bar{i}-\pi\bar{j}+12\bar{k}$ pystyvektorina.
+\end{esim}
+\begin{rat}
+Vektorin komponenttiesityksestä saadaan suoraan
+$$
+\vec{a}=\begin{pmatrix}
+1\\
+-\pi\\
+12
+\end{pmatrix}.
+$$
+\end{rat}
+
+\subsection{Piste- eli skalaaritulo reaalisille vektoreille}
+\begin{maar}
+$\mathbf{R}^n$:n vektorien $\vec{a}=(a_1, a_2, \ldots, a_n)$ ja $\vec{b}=(b_1, b_2,\ldots, b_n)$ piste- eli skalaaritulo määritellään
+$$
+\vec{a}\cdot \vec{b}=a_1b_1+a_2b_2+\cdots a_nb_n=\sum_{k=1}^n a_k b_k.
+$$
+Skalaaritulon avulla voidaan määritellä vektorin pituus
+$$
+\abs{\vec{a}}=\sqrt{a_1^2+a_2^2+\cdots + a_n^2}=\sqrt{\vec{a}\cdot \vec{a}}$$
+ja nollasta poikkeavien vektorien välinen kulma $\alpha$
+$$
+\vec{a}\cdot \vec{b}=\abs{\vec{a}}\abs{\vec{b}}\cos \alpha.
+$$
+Pystyvektorimerkinnän avulla pistetulo on lyhyesti vain
+$$
+\vec{a}\cdot \vec{b}=\vec{a}^T\vec{b}=(a_1, a_2, \ldots, a_n)\begin{pmatrix}
+b_1\\
+b_2\\
+\vdots\\
+b_n
+\end{pmatrix}
+$$
+\end{maar}
+
+\subsection{Piste- eli sisätulo kompleksisille vektoreille*}
+%\addcontentsline{toc}{subsection}{Piste- eli sisätulo kompleksisille vektoreille}
+
+Kompleksiluvun $z=x+iy,\ x,y \in\mathbf{R},\ i^2=-1,$ itseisarvo eli pituus on sen etäisyys origosta eli $\abs{z}=\sqrt{x^2+y^2}.$ Pätee
+$$
+\abs{z}=\sqrt{\bar{z}z}, 
+$$
+missä kompleksiluvun $z$ kompleksikonjugaatti on $\bar{z}=\bar{x+iy}=x-iy=z^{\star}.$
+\begin{maar}
+Kompleksialkioisten vektorien $\vec{v}=(v_1, v_2, \ldots, v_n)^T$ ja $\vec{u}=(u_1, u_2, \ldots, u_n)^T$, missä $v_k, u_k$ ovat kompleksilukuja, välinen sisätulo on määritellään
+$$
+\vec{v}\cdot \vec{u}=\sum_{k=1}^n \bar{v_k}u_k=\vec{v}^{\dagger} \vec{u},
+$$
+missä $\vec{v}^{\dagger}=\bar{\vec{v}}^T$ on vektorin kompleksikonjugaatin transpoosi. Siis
+$$
+\vec{v}^{\dagger}=\bar{\vec{v}}^T=\bar{\begin{pmatrix}
+v_1\\
+v_2\\
+\ldots\\
+v_n
+\end{pmatrix}}^T
+=\begin{pmatrix}
+\bar{v_1}\\
+\bar{v_2}\\
+\ldots\\
+\bar{v_n}
+\end{pmatrix}^T
+=\left(\bar{v_1}, \bar{v_2}, \ldots, \bar{v_n}\right).
+$$
+Lisäksi pätee $\vec{v}^{\dagger}=\bar{\vec{v}^T}$\end{maar}
+
+\begin{esim} Laske kompleksivektorien $\vec{a}=(1-i, 3)$ ja $\vec{b}=(-1-i, 2+i)$ sisätulo.
+\end{esim}
+\begin{rat} Taas tulkitaan vektorit pystyvektoreina. Vektorien sisätulo on
+\begin{align*}
+\vec{a}\cdot \vec{b}&=\bar{\vec{a}}^T \vec{b}=\bar{(1-i, 3)}\begin{pmatrix}
+-1-i\\
+2+i
+\end{pmatrix}
+=(\bar{1-i}, \bar{3})\begin{pmatrix}
+-1-i\\
+2+i
+\end{pmatrix}
+=(1+i, 3)\begin{pmatrix}
+-1-i\\
+2+i
+\end{pmatrix}\\
+&= (1+i)(-1-i)+3(2+i)=-1-i-i-i^2+6+3i=6+i.
+\end{align*}
+\end{rat}
+
+\begin{maar}
+Vektorien $\vec{u}_i\neq \vec{0}$, $i=1,2,\ldots, n,$ sanotaan olevan ortogonaalisia, jos ne ovat kohtisuorassa toisiaan vastaan eli pistetulo häviää
+$$
+\vec{u}_i\cdot \vec{u}_j=\vec{u}_i^{\dagger}\vec{u}_j=0,\quad i\neq j.
+$$
+Jos vektorit $\vec{u}_i$ ovat ykkösen pituisia, 
+$$
+\abs{\vec{u}_i}=\sqrt{\vec{u}_i\cdot \vec{u}_i}=1,$$
+sanotaan niitä normitetuiksi. Jos vektorit $\vec{u}_i$ ovat sekä ortogonaalisia että normitettuja, niin niiden sanotaan olevan ortonormaaleja. Vektorien ortonormaalisuus voidaan ilmaista lyhyesti
+$$
+\vec{u}_i^{\dagger}\vec{u}_j=\delta_{ij}=\begin{cases}
+0,& i\neq j\\
+1, & i=j.
+\end{cases}
+$$
+\end{maar}
+
+Käytännön ongelmissa kannattaa käyttää ortonormaaleja kantavektoreja, jolloin laskut helpottuvat. Ongelmaksi muodostuu ongelman kannalta ''mielekkään'' ortonormaalin kannan löytäminen.
+
+\clearpage
+\section{Matriisilaskentaa}
+
+\subsection{Matriisin käsite ja perusmääritelmiä}
+
+$m\times n$-matriisi $A$ on lukukaavio, jossa on $m$ riviä ja $n$ saraketta eli pystyriviä. Matriisit kirjoitetaan isolla kirjaimella. Matriisin alkiot ovat useimmiten lukuja, mutta ne voivat olla myös funktioitakin, niitä merkitään pienillä kirjaimilla. Merkitään
+$$
+A=
+\begin{pmatrix} 
+   a_{11} &  a_{12}  & \ldots & a_{1n}\\
+a_{21}  &  a_{22} & \ldots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m1}  &   a_{m2}       &\ldots & a_{mn}     
+    \end{pmatrix}
+$$
+tai lyhyesti vain $A\in\mathbf{R}^{m\times n},\ A=(a_{ij}),$ jos matriisin alkiot $a_{ij}$ ovat reaalisia, ja $A\in\mathbf{C}^{m\times n},\ A=(a_{ij}),$ jos alkiot ovat kompleksisia. Koska kompleksiluvut sisältävät reaaliluvut, joten matriisien laskusäännöt ovat voimassa niin reaalisille kuin kompleksisille matriiseille. 
+
+Pystyvektori 
+$$\vec{x}=\begin{pmatrix}
+x_1\\x_2\\ \vdots\\ x_n\end{pmatrix}$$
+on myös matriisi, nimittäin $n\times 1$-matriisi, mutta usein se jätetään merkitsemättä. Matriisilaskennassa $n$-ulotteinen vektori $\vec{x}$ tarkoittaa pystyvektoria.
+
+\begin{maar}
+Jos matriisia $A=(a_{ij})$ kerrotaan luvulla $t$, niin saadaan uusi matriisi, jonka kaikki alkiot on kerrottu luvulla $t$ eli $tA=(ta_{ij}).$
+
+Kaksi matriisia $A=(a_{ij})$ ja $B=(b_{kn})$ ovat yhtä suuret, jos ne ovat samankokoiset ja niissä samat alkiot samoille paikoille. Toisin sanoen $A=B$ täsmälleen silloin, kun
+\begin{enumerate}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt]
+\item $A$ ja $B$ ovat $m\times n$-matriiseja 
+\item $a_{ij}=b_{ij}$ kaikilla $i=1,2,\ldots, m$ ja $j=1,2,\ldots, n.$
+\end{enumerate}
+
+Samankokoiset matriisit voi laskea yhteen ja vähentää toisistaan. Summamatriisi lasketaan alkioittain, toisin sanoen, jos $A=(a_{ij})$ ja $B=(b_{ij})$ ovat $m\times n$-matriiseja, niin $C=A+B,$ missä $C$:n alkio $c_{ij}=a_{ij}+b_{ij}$. Summamatriisin koko on sama kuin yhteenlaskettavien matriisien.
+\end{maar}
+
+\begin{maar}[Transpoosi]
+Jos $m\times n$-matriisin $A$ rivit ja sarakkeet vaihdetaan keskenään eli alkiot peilataan diagonaalin (päälävistäjän suhteen), saadaan matriisin transpoosi $A^T$, joka on kokoa $n\times m$
+$$
+A^T=\begin{pmatrix} 
+   a_{11} &  a_{12}  & \ldots & a_{1n}\\
+a_{21}  &  a_{22} & \ldots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m1}  &   a_{m2}       &\ldots & a_{mn}     
+    \end{pmatrix}^T=
+    \begin{pmatrix} 
+   a_{11} &  a_{21}  & \ldots & a_{m1}\\
+a_{12}  &  a_{22} & \ldots & a_{m2}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{1n}  &   a_{2n}       &\ldots & a_{mn}     
+    \end{pmatrix}.
+$$
+Jos $A=(a_{ij})$, niin $A^T=(a_{ji}).$
+\end{maar}
+
+
+
+
+
+\begin{maar}[Neliömatriisi]
+Jos matriisissa $A$ on yhtä monta riviä kuin saraketta ($m=n$), sitä kutsutaan neliömatriisiksi. Neliömatriisia, jonka päälävistaja- eli diagonaalialkiot ovat ykkösiä ja muut alkiot nollia, kutsutaan identiteettimatriisiksi tai yksikkömatriisiksi
+$$
+I=\begin{pmatrix}
+1 & 0 & \dots & 0\\
+0 & 1 & \dots & 0\\
+\vdots & \vdots & \ddots & \vdots\\
+0 & 0 & \dots & 1\\
+\end{pmatrix}.
+$$
+\end{maar}
+
+\begin{maar}[Symmetrinen ja antisymmetrinen matriisi] Matriisi $A$, joka on itsensä transpoosi, on symmetrinen. Siis $A=A^T$, joten $A$ on neliömatriisi, jonka alkiot sijaitsevat symmetrisesti päälävistäjän suhteen, eli
+$$a_{ij}=a_{ji}\quad\text{kaikilla }i \text{ ja }j.$$
+
+Matriisia $A$, jolle pätee $A^T=-A$, sanotaan antisymmetriseksi.
+\end{maar}
+
+\begin{maar} Neliömatriisi $D=(d_{ij})$ on diagonaalinen eli diagonaalimatriisi, jos $a_{ij}=0,$ kun $i\neq j.$ Usein merkitään $D=\diag(d_{11}, d_{12},\ldots, d_{nn}).$
+
+Neliömatriisi $L=(l_{ij})$ on alakolmiomatriisi, jos kaikki sen päälävistäjän yläpuoliset alkiot ovat nollia, eli
+$b_{ij}=0$, kun $i<j.$
+
+Neliömatriisi $U=(u_{ij})$ on yläkolmiomatriisi, jos kaikki sen päälävistäjän alapuoliset alkiot ovat nollia, eli
+$c_{ij}=0$, kun $i>j.$
+\end{maar}
+\subsection{Perusmääritelmiä kompleksisille matriiseille*}
+Adjungointi vastaa reaalisen matriisin transponointia.
+\begin{maar}[Adjungaatti]
+Jos $m\times n$-matriisin $A$ alkiot konjugoidaan ja rivit ja sarakkeet vaihdetaan keskenään eli alkiot peilataan päädiagonaalin eli päälävistäjän, jonka alkiot ovat $a_{ii},$ suhteen, saadaan matriisin hermitoitu matriisi eli adjungaatti eli hermiittiskonjugaatti $A^{\dagger}=A^{\star}$, joka on kokoa $n\times m$
+$$
+A^{\dagger}=\bar{\begin{pmatrix} 
+   a_{11} &  a_{12}  & \ldots & a_{1n}\\
+a_{21}  &  a_{22} & \ldots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m1}  &   a_{m2}       &\ldots & a_{mn}     
+    \end{pmatrix}}^T=
+    \begin{pmatrix} 
+   \bar{a_{11}} &  \bar{a_{21}}  & \ldots & \bar{a_{m1}}\\
+\bar{a_{12}}  &  \bar{a_{22}} & \ldots & \bar{a_{m2}}\\
+\vdots & \vdots & \ddots & \vdots\\
+\bar{a_{1n} } &   \bar{a_{2n}}       &\ldots & \bar{a_{mn}}   
+    \end{pmatrix}.
+$$
+Jos $A=(a_{ij})$, niin $A^{\dagger}=(\bar{a_{ji}}).$
+\end{maar}
+
+Symmetristä matriisia vastaa kompleksinen hermiittinen matriisi.
+\begin{maar}[Hermiittinen matriisi]
+Jos matriisille $A$ pätee $A^{\dagger}=A$, niin matriiisin sanotaan olevan hermiittinen eli itseadjungoitu. Tällöin $A$ on neliömatriisi, jonka alkioille pätee
+$$a_{ij}=\bar{a_{ji}}\quad\text{kaikilla }i \text{ ja }j.$$
+Huomaa, että symmetrinen reaalinen matriisi on hermiittinen, joten reaalisten matriisien tapauksessa ei puhutu hermiittisyydestä.
+
+Monissä kvanttimekaniikan ongelmissa esiintyy hermiittisiä operaattoreita, joita kuvataan hermiittisillä matriiseilla.
+\end{maar}
+
+
+\clearpage
+\subsection{Matriisin ja vektorin tulo, lineaarinen yhtälöryhmä}
+Tarkastellaan $m$:n yhtälön ja $n$:n tuntemattoman lineaarista yhtälöryhmää
+$$
+\begin{cases}
+ \begin{array}{@{}*{7}{c@{}}}
+    a_{11} x_1 & {}+{} & a_{12} x_2 & {}+ \cdots +{} & a_{1n} x_n & {}={} & b_1\\
+    a_{21} x_1 & {}+{} & a_{22} x_2 & {}+ \cdots +{} & a_{2n} x_n & {}={} & b_2\\[-2pt]
+    \vdots     &       & \vdots     &                & \vdots     &       & \vdots\\
+    a_{m1} x_1 & {}+{} & a_{m2} x_2 & {}+ \cdots +{} & a_{mn} x_n & {}={} & b_m.
+  \end{array}
+  \end{cases}$$
+Yhtälö kirjoitetaan lyhyesti vain
+$$
+A\vec{x}=\vec{b},
+$$
+missä
+$$
+A=
+\begin{pmatrix} 
+   a_{11} &  a_{12}  & \ldots & a_{1n}\\
+a_{21}  &  a_{22} & \ldots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m1}  &   a_{m2}       &\ldots & a_{mn}     
+    \end{pmatrix},\quad
+    \vec{x}=\begin{pmatrix}
+    x_1\\
+    x_2\\
+    \vdots\\
+    x_n
+    \end{pmatrix},\quad
+    \vec{b}=\begin{pmatrix}
+    b_1\\
+    b_2\\
+    \vdots\\
+    b_m
+    \end{pmatrix}.
+$$
+Yhtälön ratkaisujen lukumäärä eli erilaisten vektorien $\vec{x}$ määrä voi olla joko $1$, ei yhtään tai äärettömän monta. Jatkossa tutkitaan tapausta, jossa yhtälöitä on yhtä monta kuin tuntemattomia ($m=n$).
+
+Matriisin ja vektorin tulo $A\vec{x}$ on määritelty vain, jos matriisissa $A$ on yhtä monta saraketta kuin vektorissa $\vec{x}$ on rivejä. Kun $A$ on $m\times n$-matriisi ja $\vec{x}$ on $n$-vektori, on niiden tulo $A\vec{x}=\vec{b}$ $m$-vektori, jonka $i$:s alkio $b_i$ saadaan laskemalla matriisin $A$ $i$:nnen rivivektorin ja $\vec{x}$:n reaalinen pistetulo
+$$
+a_{i1}x_1+a_{i2}x_2+\cdots +a_{in}x_n=\begin{pmatrix}
+a_{i1}, & a_{i2}, & \cdots, & a_{in}
+\end{pmatrix}
+\begin{pmatrix}
+x_1\\
+x_2\\
+\vdots\\
+x_n
+\end{pmatrix}
+=b_i.
+$$
+
+Jos matriisi annetaan sarakevektorien avulla
+$$
+A=(\vec{a}_1, \vec{a}_2, \ldots, \vec{a}_n),\quad \vec{a}_k=\begin{pmatrix}
+a_{1k}\\
+a_{2k}\\
+\vdots\\
+a_{mk}
+\end{pmatrix},\quad k=1,2, \ldots, n,
+$$
+niin tulo $A\vec{x}$ on sarakevektorien lineaarikombinaatio
+$$
+A\vec{x}=x_1\vec{a}_1+x_2\vec{a}_2+\cdots + x_n\vec{a}_n.
+$$
+\begin{maar}[Lineaarikuvaus matriisin avulla]
+Kuvaus $A:\mathbf{R}^n\to\mathbf{R}^m$ on lineaarinen eli se on lineaarikuvaus, jos
+$$
+A(\alpha \vec{x}+\beta \vec{y})=A(\alpha\vec{x})+A(\beta\vec{y})=\alpha A(\vec{x})+\beta A(\vec{y})
+$$
+kaikilla vektoreilla $\vec{x}, \vec{y}\in\mathbf{R}^n$ ja kaikilla luvuilla eli skalaareilla $\alpha, \beta\in\mathbf{R}.$ Lisäksi matriisilaskennassa $A(\vec{x})=A\vec{x},$ koska lineaarikuvaus $A:\mathbf{R}^n\to\mathbf{R}^m$ ja sitä vastaava $m\times n$-matriisi $A$ samastetaan. Lineaarikuvauksilla voidaan esittää mm. kiertoja ja peilauksia eri avaruuksien välillä. 
+\end{maar}
+
+Mikä sitten määrää lineaarikuvauksen matriisin? Matriisiesitys riippuu siitä, mitä lähtövektoriavaruuden $\mathbf{R}^n$ kantavektoreita käytetään. Matriisiesitystä varten riittää tietää, mitä lineaarikuvaus ''tekee'' kantavektoreilla. Esimerkiksi, jos $\vec{e}_i, i=1, 2, \ldots, n$ ovat kantavektorit, niin riittää laskea
+$$
+A\vec{e}_i
+$$
+kaikilla $i=1,2,\ldots, n.$ Tällöin $A$:n matriisiesitykseen kootaan sarakevektoreiksi vektorit $A\vec{e}_i.$
+
+
+\begin{esim} Lineaarikuvauksesta $A$ tiedetään, että
+$$
+A(1,2,2)=(2,-4,1),\ A(-1,0,4)=(0, -2, 3)\ \text{ja }  A(-1,-2,-6)=(0, 1, 2).
+$$
+Määritä $A$:n matriisiesitys.
+\end{esim}
+\begin{rat}
+Pitää siis ratkaista $A\vec{i},\ A\vec{j}$ ja $A\vec{k},$ missä $\vec{i}=\vec{e_1}=(1, 0, 0)^T$ jne. Nyt pystyvektorimerkinnöin saadaan lineaarisuuden perusteella
+\begin{align*}
+&A\begin{pmatrix}
+1\\
+2\\
+2
+\end{pmatrix}=
+A\begin{pmatrix}
+1\\
+0\\
+0
+\end{pmatrix}
++A\begin{pmatrix}
+0\\
+2\\
+0
+\end{pmatrix}+A\begin{pmatrix}
+0\\
+0\\
+2
+\end{pmatrix}
+=A\vec{i}+2A\vec{j}+2A\vec{k}=\begin{pmatrix*}[r]
+2\\
+-4\\
+1
+\end{pmatrix*},\\
+&A\begin{pmatrix*}[r]
+-1\\
+0\\
+4
+\end{pmatrix*}=
+-A\vec{i}+4A\vec{k}=\begin{pmatrix*}[r]
+0\\
+-2\\
+3
+\end{pmatrix*},\\
+&A\begin{pmatrix*}[r]
+-1\\
+-2\\
+-6
+\end{pmatrix*}=
+-A\vec{i}-2A\vec{j}-6A\vec{k}=\begin{pmatrix*}[r]
+0\\
+1\\
+2
+\end{pmatrix*}.
+\end{align*}
+Kun nämä kolme yhtälöä lasketaan puolittain yhteen, saadaan
+\begin{align*}-A\vec{i}=\begin{pmatrix*}[r]
+2\\
+-4\\
+1
+\end{pmatrix*}+\begin{pmatrix*}[r]
+0\\
+-2\\
+3
+\end{pmatrix*}+\begin{pmatrix*}[r]
+0\\
+1\\
+2
+\end{pmatrix*}=\begin{pmatrix*}[r]
+2\\
+-5\\
+6
+\end{pmatrix*}\iff A\vec{i}=\begin{pmatrix*}[r]
+-2\\
+5\\
+-6
+\end{pmatrix*}
+\end{align*}
+
+
+
+Toisesta yhtälöstä saadaan
+\begin{align*}
+A\vec{k}=\frac{1}{4}\left( \begin{pmatrix*}[r]
+0\\
+-2\\
+3
+\end{pmatrix*}+A\vec{i}\right)
+=\frac{1}{4}\left( \begin{pmatrix*}[r]
+0\\
+-2\\
+3
+\end{pmatrix*}+\begin{pmatrix*}[r]
+-2\\
+5\\
+-6
+\end{pmatrix*}\right)=\begin{pmatrix*}[r]
+-\frac{1}{2}\\
+\frac{3}{4}\\
+-\frac{3}{4}
+\end{pmatrix*},
+\end{align*}
+ja edelleen ensimmäisestä yhtälöstä saadaan
+\begin{align*}
+A\vec{j}
+=\frac{1}{2}\left(\begin{pmatrix*}[r]
+2\\
+-4\\
+1
+\end{pmatrix*}
+-A \vec{i}-2A\vec{k}
+\right)
+=\frac{1}{2}\left(\begin{pmatrix*}[r]
+2\\
+-4\\
+1
+\end{pmatrix*}-\begin{pmatrix*}[r]
+-2\\
+5\\
+-6
+\end{pmatrix*}-2\begin{pmatrix*}[r]
+-\frac{1}{2}\\
+\frac{3}{4}\\
+-\frac{3}{4}
+\end{pmatrix*} \right)=\begin{pmatrix*}[r]
+\frac{5}{2} \\
+-\frac{21}{4}\\
+\frac{17}{4}
+\end{pmatrix*}.
+\end{align*}
+Lineaarikuvauksen matriisiesitys on
+\begin{align*}
+A=\left(A\vec{i},\ A\vec{j},\ A\vec{k}\right)=\begin{pmatrix*}[r]
+-2 & \frac{5}{2} & -\frac{1}{2} \\
+5 & -\frac{21}{4} &\frac{3}{4}\\
+-6 & \frac{17}{4} & -\frac{3}{4}	 	
+\end{pmatrix*}.
+\end{align*}
+\end{rat}
+\clearpage
+\subsection{Matriisien tulo}
+
+Yleistetään matriisin ja vektorin tulo kahden matriisin tuloksi. 
+
+\begin{maar} Olkoot $A$ $m\times n$-matriisi ja $B$ $k\times l$ matriisi. Tulo $AB$ on määritelty, jos ja vain jos $k=n$, toisin sanoen $A$:n sarakkeiden lukumäärä on sama kuin $B$:n rivien. Tällöin tulomatriisi $C=AB$ on $m\times l$-matriisi, jonka alkio $c_{ij}$ saadaan laskettua $A$:n 
+$i$:nnen rivivektorin ja $B$ $j$:nnen sarakevektorin (reaalisesta) pistetulosta. Siis
+\begin{align*}
+AB&=\begin{pmatrix} 
+   a_{11} &  a_{12}  & \ldots & a_{1n}\\
+a_{21}  &  a_{22} & \ldots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{i1} & a_{i2} & \ldots & a_{in}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m1}  &   a_{m2}       &\ldots & a_{mn}     
+    \end{pmatrix}
+    \begin{pmatrix} 
+   b_{11} &  b_{12}  & \ldots & b_{1j}& \ldots & b_{1l}\\
+b_{21}  &  b_{22} & \ldots & b_{2j} & \ldots & b_{2l}\\
+\vdots & \vdots & \ddots & \vdots&\cdots&\vdots\\
+a_{n1}  &   a_{n2}       &\ldots& b_{nj}& \ldots& a_{nl}     
+    \end{pmatrix}
+    \\
+    &=
+    \begin{pmatrix} 
+   c_{11} &  c_{12}  & \ldots & c_{1j}&\ldots & c_{1l}\\
+c_{21}  &  c_{22} & \ldots & c_{2j}&\ldots &c_{2l}\\
+\vdots & \vdots & \ddots & \vdots&\ldots&\vdots\\
+c_{i1} & c_{i2} & \ldots & c_{ij}&\ldots & c_{il}\\
+\vdots & \vdots & \ddots &\vdots &\ldots& \vdots\\
+c_{m1}  &   c_{m2}       &\ldots &c_{mj}&\ldots& c_{ml}     
+    \end{pmatrix}=C,
+\end{align*}
+missä
+\begin{align*}
+c_{ij}&=\begin{pmatrix}
+a_{i1}, & a_{i2}, & \ldots,& a_{in}
+\end{pmatrix}
+\begin{pmatrix}
+b_{1j}\\
+b_{2j}\\
+\vdots\\
+b_{nj}
+\end{pmatrix}\\
+&=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}=\sum_{k=1}^n a_{ik}b_{kj}.
+\end{align*}
+
+\begin{huom} Matriisien tulo $AB$ ei ole vaihdannainen, eli ei päde, että $AB=BA,$ vaikka matriisit $A$ ja $B$ olisivat samankokoisia neliömatriiseja.
+
+Myöskään tulon nollasääntö ei päde matriiseille. Ehdosta $AB=0,$ jossa $0$ on nollamatriisi, \uuline{ei} seuraa, että $A$ tai $B$ olisi nollamatriisi.
+\end{huom}
+\end{maar}
+
+\clearpage
+\subsection{Matriisin determinantti}
+Ainoastaan neliömatriisille $A$ voidaan laskea determinantti, $\det A$, joka on luku. Jos $A$ on $2\times 2$-matriisi
+$$
+A=\begin{pmatrix}
+a_{11} & a_{12}\\
+a_{21}& a_{22}
+\end{pmatrix},
+$$
+niin sen determinantti on
+$$
+\det A=\begin{vmatrix}
+a_{11} & a_{12}\\
+a_{21}& a_{22}
+\end{vmatrix}=a_{11}a_{22}-a_{12}a_{21}.
+$$
+
+Neliömatriisien laskenta palautuu $2\times 2$-matriisin determinanttien laskentaan purkusäännöllä. 
+
+\begin{maar}[Determinantin kehityskaava] Neliömatriisin $A=a_{ij}, \ i, j=1, 2, \ldots, n,$ alkiota $a_{ij}$ vastaava alimatriisi	$A_{ij}$ on $(n-1)\times(n-1)$-matriisi, joka on saatu matriisista $A$ poistamalla siitä $i$:s rivi ja $j$:s sarake. Matriisin determinantti voidaan laskea joko kehittämällä se sarakkeen suhteen tai rivin suhteen
+$$
+\det A=\sum_{i=1}^n (-1)^{i+j} a_{ij}\det A_{ij}=\sum_{j=1}^n (-1)^{i+j} a_{ij}\det A_{ij}.
+$$
+Kehittämistä jatketaan siihen saakka, kunnes alimatriisit ovat $2\times 2$-matriiseja.
+\end{maar}
+
+\begin{lause}
+Olkoot $A$ ja $B$ $n\times n$-matriiseja ja $\alpha$ luku. Tällöin pätee
+$$
+\det(AB)=\det A\det B\quad\text{ja}\quad \det (\alpha A)=\alpha^n\det A.
+$$
+Lisäksi purkusäännöistä seuraa suoraan, että
+$$
+\det A^T=\det A.
+$$
+
+Jos matriisi $A$ diagonaalinen, yläkolmio- tai alakolmiomatriisi, niin sen determinantti on diagonaalialkioiden tulo
+$$
+\det A=a_{11}a_{22}\ldots a_{nn}.
+$$
+
+\end{lause}
+
+\begin{esim}
+Millä parametrin $t$ arvolla $\det A=0,$ kun
+$$
+A=\begin{pmatrix}
+t-1&-1+i\\
+-1-i&t+1
+\end{pmatrix}.
+$$
+\end{esim}
+\begin{rat}
+Lasketaan determinantti
+$$
+\det A= \begin{vmatrix}
+t-1&-1+i\\
+-1-i&t+1
+\end{vmatrix}=
+(t-1)(t+1)-(-1+i)(-1-i)=t^2-1-\abs{-1+i}^2=t^2-1-(1^2+1^2)=t^2-3.
+$$
+Siis $\det A=0$ täsmälleen silloin, kun $t^2=3$ eli $t=\pm\sqrt{3}.$
+\end{rat}
+
+Determinantin purkusäännöistä voidaan johtaa säännöt, joiden avulla determinanttien laskeminen helpottuu.
+\begin{lause}[Determinantin ominaisuuksia]
+\begin{enumerate}[leftmargin=*, label=\alph*), topsep=3pt, itemsep=9pt, parsep=0pt, font=\bfseries\color{red}]
+\item Jos $B$ on saatu matriisista $A$ vaihtamalla sen kaksi riviä keskenään, niin $\det B=-\det A.$
+\item Jos $B$ on saatu matriisista $A$ siten, että johonkin $A$:n riviin on lisätty toinen rivi vakiolla kerrottuna, niin $\det B=\det A.$
+\item Jos matriisissä $B$ on kaksi samaa riviä, niin $\det B=0.$
+\end{enumerate}
+\end{lause}
+
+\clearpage
+\subsection{Vektorien ristitulo}
+Kahden vektorin välinen ristitulo on vektori, joka on kohtisuorassa molempia vektoreita vastaan. Näin ollen sitä ei voida määritellä tason vektoreille, ellei tason $\mathbf{R}^2$ vektoreita ajatella osana avaruuden $\mathbf{R}^3$ vektoreita. Lisäksi ristitulovektorin suunta saadaan oikean käden säännöllä.
+
+\begin{tikzpicture}[thick,scale=2, every node/.style={scale=2}]
+\draw[-,fill=white!95!red](0,0)--(3,0)--(4,1)--(1,1)--cycle;
+\node at (2,0.5) {$|\textcolor{blue}{\vec{a}}\times \textcolor{red}{\vec{b}}|$};
+\draw[ultra thick,-latex,blue](0,0)--(3,0)node[midway,below]{$\vec{a}$};
+\draw[ultra thick,-latex,red](0,0)--(1,1)node[midway,above]{$\vec{b}$};
+\draw[ultra thick,-latex,blue!50!red](0,0)--(0,3)node[pos=0.7,right]{$\vec{a}\times \vec{b}$};
+\draw (0.6,0) arc [start angle=0,end angle=45,radius=0.6]
+node[pos=0.7,right]{$\alpha$};
+\end{tikzpicture}
+
+\begin{maar}[Ristitulon geometrinen tulkinta] Olkoot $\vec{a}$ ja $\vec{b}$ kolmiulotteisen avaruuden $\mathbf{R}^3$ vektoreita. Tällöin vektorien ristitulo on
+$$
+\vec{a}\times \vec{b}=\abs{\vec{a}}\abs{\vec{b}}\sin \alpha \vec{e},
+$$
+missä $\alpha=\angle(\vec{a}, \vec{b})$ on vektorien välinen kulma ja $\vec{e}$ on yksikkövektori, $\abs{\vec{e}}=1$, jonka suunta on sellainen, että vektorit $\vec{a}, \vec{b}, \vec{e}$ muodostavat oikeakätisen kolmikon (peukalo, etusormi, keskisormi).
+
+\end{maar}
+\begin{seur}
+Olkoot $\vec{a}, \vec{b}\neq \vec{0}$ avaruuden vektoreita.
+\begin{listab} \item Tällöin $\vec{a}\times \vec{b}=\vec{0}$ jos ja vain jos $\vec{a}\parallel \vec{b}$ eli $\vec{a}=t\vec{b}$ jollakin $t\neq 0.$
+\item Lisäksi ristitulovektori $\vec{a}\times\vec{b}$ on kohtisuorassa molempia vektoreita $\vec{a}$ ja $\vec{b}$ vastaan eli
+$$
+(\vec{a}\times\vec{b})\bullet \vec{a}=0\quad\text{ja}\quad (\vec{a}\times\vec{b})\bullet \vec{b}=0,
+$$ 
+tässä $\vec{v}\bullet\vec{u}$ tarkoittaa vektorien välistä pistetuloa.
+\item $\abs{\vec{a}\times\vec{b}}$ on vektorien $\vec{a}$ ja $\vec{b}$ virittämän suunnikkaan pinta-ala. Erityisesti, jos kolmion kaksi sivuvektoria ovat $\vec{a}$ ja $\vec{b},$ niin kolmion pinta-ala on $\dfrac{1}{2}\abs{\vec{a}\times\vec{b}}.$
+\end{listab}
+\end{seur}
+\begin{lause}[Ristitulon komponenttiesitys] Olkoot 
+$$
+\vec{a}=a_1\vec{i}+a_2\vec{j}+a_3\vec{k}\quad\text{ja}\quad \vec{b}=b_1\vec{i}+b_2\vec{j}+b_3\vec{k}.
+$$
+Tällöin
+$$
+\vec{a}\times\vec{b}=(a_2b_3-a_3b_2)\vec{i}+(a_3b_1-a_1b_3)\vec{j}+(a_1b_2-a_2b_1)\vec{k}.
+$$
+Laskinohjelmistoissa ristitulon voi myös kätevästi laskea suoraan.
+\end{lause}
+\begin{tod} Harjoitustehtävänä.
+\end{tod}
+\begin{maar}[Laskukaava $2\times 2$-determinantille]
+$2\times 2$-matriisi $A$ on lukukaavio, jossa on 2 riviä ja 2 saraketta,
+$$
+A=\begin{pmatrix}
+a & b\\
+c & d
+\end{pmatrix}.
+$$
+$A$:n  determinantti on luku
+$$
+\det{A}=\begin{vmatrix}
+a & b\\
+c & d
+\end{vmatrix}=ad-bc.
+$$
+\end{maar}
+
+\begin{lause}[Ristitulo determinanttina] Vektorien $$
+\vec{a}=a_1\vec{i}+a_2\vec{j}+a_3\vec{k}\quad\text{ja}\quad \vec{b}=b_1\vec{i}+b_2\vec{j}+b_3\vec{k}.
+$$ ristitulo voidaan laskea $3\times3$-determinanttina seuraavan purkusäännön avulla
+$$
+\vec{a}\times\vec{b}=\begin{vmatrix}
+\vec{i}& \vec{j}&\vec{k}\\
+a_1 & a_2 & a_3\\
+b_1 & b_2 & b_3
+\end{vmatrix}
+=\begin{vmatrix}
+a_2 & a_3\\
+b_2 & b_3
+\end{vmatrix}\vec{i}-
+\begin{vmatrix}
+a_1& a_3\\
+b_1 & b_3
+\end{vmatrix}\vec{j}+
+\begin{vmatrix}
+a_1 & a_2\\
+b_1 & b_2
+\end{vmatrix}\vec{k}.
+$$
+Huomaa, että vektoria $\bar{i}, \bar{j}$ tai $\bar{k}$ vastaava $2\times2$-determinantti saadaan näkyviin poistamalla se rivi ja sarake, jossa vektori on. Huomaa myös kiertovaihtelu $+, -, +$
+\end{lause}
+\begin{lause}[Ristitulon ominaisuuksia]
+Olkoot $\vec{a}, \vec{b}$ ja $\vec{c}$ mielivaltaisia avaruuden vektoreita ja $t$ on reaaliluku. Tällöin on voimassa
+\begin{listaa}
+\item $\vec{a}\times\vec{a}=\vec{0}$
+
+\item $\vec{a}\times\vec{b}=-\vec{b}\times \vec{a}$ (ristitulo on antikommutatiivinen)
+
+\item $(\vec{a}+\vec{b})\times\vec{c}=\vec{a}\times \vec{c}+\vec{b}\times\vec{c}$ (osittelulaki)
+
+
+
+\item $\vec{a}\times (\vec{b}+\vec{c})=\vec{a}\times\vec{b}+\vec{a}\times \vec{c}$ (osittelulaki)
+
+\item $(t\vec{a})\times\vec{b}=\vec{a}\times(t\vec{b})=t(\vec{a}\times \vec{b})$
+\item $\vec{a}\bullet(\vec{a}\times\vec{b})=0=\vec{b}\bullet(\vec{a}\times\vec{b})$
+\item $\vec{i}\times\vec{i}=\vec{j}\times\vec{j}=\vec{k}\times\vec{k}=\vec{0}$
+\item $\vec{i}\times \vec{j}=\vec{k},\ \vec{j}\times \vec{k}=\vec{i}$ ja $\vec{k}\times\vec{i}=\vec{j}.$
+\end{listaa}
+\end{lause}
+\begin{tod} Suoraviivainen lasku.
+\end{tod}
+
+\begin{tikzpicture}[rotate around y=-15, rotate around z=7]
+          % Nota: els punts tenen coordenades (x,z,y)
+          \coordinate (O) at (0,0,0);
+          \coordinate (P0) at (3,2,2);
+          \coordinate (P) at (5.5,2,4);
+
+          % Punts M i N
+          \coordinate (M) at (5.5,2,2);
+          \coordinate (N) at (3,2,4);
+
+          % Punts dels vectors directors
+
+          \coordinate (V1) at (4.5,2,2);
+          \coordinate (V2) at (3,2,3.5);
+
+          % Punts del pla (a partir de A, P, M i N
+          \coordinate (PLA0) at (1,2,0.2);
+          \coordinate (PLA1) at (7,2,0.2);
+          \coordinate (PLA2) at (1,2,4.5);
+          \coordinate (PLA3) at (7,2,4.5);          
+
+          % eixos de coordenades
+          \draw[->] (0,0,0) -- (4,0,0);
+          \draw[->] (0,0,0) -- (0,3,0);
+          \draw[->] (0,0,0) -- (0,0,3);
+          \draw (4,0,0) node[anchor=west] {$y$};
+          \draw (0,3,0) node[anchor=south] {$z$};
+          \draw (0,0,3) node[anchor=north east] {$x$};
+
+          % Pla
+          \fill[color=green!10,thick,draw=black] (PLA0) -- (PLA1) -- (PLA3) -- (PLA2) -- cycle;
+          \draw (PLA1) node[anchor=west] {$T$};
+
+          % Punts: A, P i vectors de posició i AP
+          \draw[color=orange,very thick,->,dashed] (O) -- (P0);
+          \draw[color=green,very thick,->,dashed] (O) -- (P);
+          \draw[color=red,ultra thick,->] (P0) -- (P);
+          \draw (P0) node[anchor=south east] {$A$};
+          \draw (P) node[anchor=south] {$P$};
+
+          % Llei del paral·lelogram
+          \draw[thick, dotted,->] (P0) -- (M);
+          \draw[thick, dotted,->] (P0) -- (N);
+          \draw[thick, dotted,->] (M) -- (P);
+          \draw[thick, dotted,->] (N) -- (P);         
+
+
+          % Punts M i N i els respectius vectors
+
+          \draw[ultra thick,color=black,->] (P0) -- (V1) node[midway, above] {$\bar{u}$};
+          \draw[ultra thick,color=black,->] (P0) -- (V2) node[midway, left=9pt] {$\bar{v}$};
+          \draw (M) node[anchor=west] {$M$};
+          \draw (N) node[anchor=east] {$N$};
+
+		\draw[ultra thick,color=black,->] (P0) -- (3,4,2) node[midway, right] {$\bar{n}$};
+
+    \end{tikzpicture}
+    
+Taso $T$ kulkee pisteen $A$ kautta ja tason suuntavektorit ovat $\vec{u}$ ja $\vec{v}$, joille $\vec{u}\nparallel \vec{v}.$ Taso muodostuu pisteistä $P$, joille
+$$\bar{OP}=\bar{OA}+s\vec{u}+t\vec{v},\quad s, t\in \mathbf{R}.$$
+Tätä esitystä kutsutaan tason vektoriesitykseksi. Vektorit $\vec{u}$ ja $\vec{v}$ virittävät tason. Miten tästä esityksestä päästään tason yhtälöön eli tason normaalimuotoon $ax+by+cz+d=0$?
+Ristitulo antaa tähän suoran vastauksen.
+\begin{lause} Jos taso kulkee pisteen $A=(x_0, y_0, z_0)$ kautta ja sen virittävät vektorit $\bar{u}$ ja $\bar{v},$ niin tason normaaliksi sopii vektori
+$$\vec{n}=\vec{u}\times \vec{v}$$
+tai mikä hyvänsä tämän kanssa yhdensuuntainen vektori. Tason yhtälö on tällöin
+$$
+\vec{n}\bullet (\vec{r}-\vec{r}_0)=0,
+$$
+missä 
+$$\vec{r}=\vec{OP}=x\vec{i}+y\vec{j}+z\vec{k}\quad\text{ja}\quad \vec{r}_0=\bar{OA}=x_0\vec{i}+y_0\vec{j}+z_0\vec{k}.
+$$
+\end{lause}
+
+\clearpage
+\subsection{Käänteismatriisi}
+\begin{maar}
+Neliömatriisilla $A$ on käänteismatriisi $B$, jos
+$$
+AB=BA=I,
+$$
+jolloin merkitään $B=A^{-1}.$ 
+\end{maar}
+
+Itse asiassa ehdosta $AB=I$, seuraa, että $B=A^{-1}$, vaikkei matriisien tulo olekaan vaihdannainen, toisin sanoen  $AB\neq BA.$ Koska tulon determinantti on determinanttien tulo, niin
+$$
+\det A\det (A^{-1})=\det(AA^{-1})=\det I=1.
+$$
+Siispä $\det (A^{-1})=\dfrac{1}{\det A}.$ Pätee: Matriisilla $A$ on käänteismatriisi täsmälleen silloin, kun $\det A\neq 0.$
+
+\begin{lause}
+Erikoisesti, jos
+$$
+A=\begin{pmatrix}
+a_{11}& a_{12}\\
+a_{21} & a_{22}
+\end{pmatrix}
+$$
+on säännöllinen, niin
+$$
+A^{-1}=\frac{1}{\det A}\begin{pmatrix}
+a_{22}& -a_{12}\\
+-a_{21} & a_{11}
+\end{pmatrix}.
+$$
+\end{lause}
+
+
+Tarkastellaan nyt yhtälöryhmää, jossa on yhtä monta tuntematonta kuin yhtälöäkin
+$$
+\begin{cases}
+ \begin{array}{@{}*{7}{c@{}}}
+    a_{11} x_1 & {}+{} & a_{12} x_2 & {}+ \cdots +{} & a_{1n} x_n & {}={} & b_1\\
+    a_{21} x_1 & {}+{} & a_{22} x_2 & {}+ \cdots +{} & a_{2n} x_n & {}={} & b_2\\[-2pt]
+    \vdots     &       & \vdots     &                & \vdots     &       & \vdots\\
+    a_{n1} x_1 & {}+{} & a_{n2} x_2 & {}+ \cdots +{} & a_{nn} x_n & {}={} & b_n.
+  \end{array}
+  \end{cases}$$
+eli lyhyesti vain $A\vec{x}=\vec{b}.$  
+
+Yhtälöllä on  $A\vec{x}=\vec{b}$ on yksikäsitteinen ratkaisu täsmälleen silloin, kun $A^{-1}$ on olemassa eli $\det A\neq 0.$ Tällöin ratkaisu on 
+$$
+\vec{x}=A^{-1}\vec{b}.
+$$
+
+Käytännössä -- ilman tietokonetta -- käänteismatriisia ei lasketa, vaan yhtälö $A\vec{x}=\vec{b}$ ratkaistaan Gaussin eliminointimenetelmällä myös niissä tapauksissa, joissa $A$ ei ole neliömatriisi. Gaussin eliminointimenetelmä on algoritmi, joka paljastaa samalla ratkaisujen lukumäärän.
+
+\begin{lause} Olkoot $A$ ja $B$ säännöllisiä samankokoisia neliömatriiseja. Tällöin pätee
+$$
+\left(AB\right)^{-1}=B^{-1}A^{-1}.
+$$
+\end{lause}
+
+
+\subsection{Lineaarinen yhtälöryhmä}
+Lineaarinen yhtälöryhmä on muotoa
+$$
+\begin{cases}
+ \begin{array}{@{}*{7}{c@{}}}
+    a_{11} x_1 & {}+{} & a_{12} x_2 & {}+ \cdots +{} & a_{1n} x_n & {}={} & b_1\\
+    a_{21} x_1 & {}+{} & a_{22} x_2 & {}+ \cdots +{} & a_{2n} x_n & {}={} & b_2\\[-2pt]
+    \vdots     &       & \vdots     &                & \vdots     &       & \vdots\\
+    a_{m1} x_1 & {}+{} & a_{m2} x_2 & {}+ \cdots +{} & a_{mn} x_n & {}={} & b_m.
+  \end{array}
+  \end{cases}$$
+Matriisilaskennassa lineaarinen yhtälöryhmä kirjoitetaan muodossa $A\vec{x}=\vec{b}.$ Lineaarisella yhtälöryhmällä ratkaisujen lukumäärä, eli erilaisten vektorien $\vec{x}$ määrä, ei voi olla mitä vain.
+
+\begin{lause} Lineaarisella yhtälöryhmällä $A\vec{x}=\vec{b}$ on joko
+\begin{listab}
+\item täsmälleen yksi ratkaisu $\vec{x}$
+\item ei yhtään ratkaisua
+\item äärettömän monta ratkaisua.
+\end{listab}
+
+\end{lause}
+
+Jos $A$ on neliömatriisi, niin yhtälöllä $A\vec{x}=\vec{b}$ on yksikäsitteinen ratkaisu täsmälleen silloin, kun $A$ on säännöllinen eli matriisilla $A$ on käänteismatriisi. Tällöin ratkaisu on
+$$
+\vec{x}=A^{-1}\vec{b}.
+$$
+Käytännössä käänteismatriisi ei kuitenkaan määritetä, vaan käytetään Gaussin algoritmia. Algoritmi nimittäin paljastaa, onko yhtälöllä yksikäsitteistä ratkaisua.
+
+\clearpage
+
+\subsection{Permutaatiomatriisi}
+Tarkastellaan tässä neliömatriisia $A.$ Eräs rivioperaatio on rivien vaihtaminen keskenään. Miten tämä saadaan aikaiseksi matriisikertolaskulla?
+
+\begin{maar} Matriiisi $P$ on permutaatiomatriisi, jos se on saatu identiteettimatriisista $I$ vaihtamalla siinä rivien paikkoja.
+\end{maar}
+
+\begin{esim} Tarkastellaan matriisin rivien vaihtoa
+$$
+A=\begin{gmatrix}[p]
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9 
+\rowops
+\swap{1}{2}
+\end{gmatrix}\sim
+\begin{pmatrix}
+1 & 2 & 3 \\
+7 & 8 & 9\\
+4 & 5 & 6 
+\end{pmatrix}=\tilde{A}.
+$$
+Pitäisi siis löytää rivienvaihtomatriisi $P$ niin, että $PA=\tilde{A}.$
+
+Vaihdetaan identiteettimatriisista $I$ toisen ja kolmannen rivin paikkoja keskenään, jolloin saadaan matriisi
+$$
+P=\begin{pmatrix}
+1 & 0 &0\\
+0 & 0 & 1\\
+0 & 1 & 0
+\end{pmatrix}.
+$$
+Kun matriisilla $P$ kerrotaan vasemmalta matriisia $A,$ saadaan matriisi, jonka ylin rivi on sama kuin matriisissa $A,$ mutta kaksi muuta riviä vaihtaa paikkaansa
+$$
+PA=\begin{pmatrix}
+1 & 0 &0\\
+0 & 0 & 1\\
+0 & 1 & 0
+\end{pmatrix}\begin{pmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9 
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 & 2 & 3\\
+7 & 8 &9\\
+4 & 5 & 6
+\end{pmatrix}=\tilde{A}.
+$$
+\end{esim}
+\clearpage
+\subsection{Ominaisarvo ja ominaisvektori}
+
+$n$-ulotteista vektoria $\vec{v}\neq 0$ sanotaan lineaarikuvauksen $A:\mathbf{C}^n\to\mathbf{C}^n$ (eli $n\times n$-matriisin) \emph{ominaisvektoriksi}, jos 
+$$
+A\vec{v}=\lambda\vec{v}
+$$
+jollakin luvulla $\lambda.$ Lukua $\lambda$ sanotaan matriisin ominaisarvoksi, ja se voi reaalisenkin matriisin tapauksessa olla kompleksiluku. Ominaisarvo voi myös olla $0,$ jolloin matriisi on epäsäännöllinen.
+
+\begin{tikzpicture}
+\draw [-latex, red, thick] (0,0) -- (2,2);
+\node[left] at (1.3,1.2) {$\vec{v}$};
+\draw [-latex, red, thick] (5,2) -- (2,-1);
+\node[right] at (3.5,.5) {$A\vec{v}$};
+\draw[->] (1.1,1) to [bend left=45] (2.7,0);
+\end{tikzpicture}
+
+
+Ominaisvektori $\vec{v}$ ei ole yksikäsitteinen, ainoastaan sen suunta on, sillä $A(t\vec{v})=tA\vec{v}=t\lambda \vec{v}=\lambda t\vec{v}.$
+
+Miten määrätään neliömatriisin ominaisarvot ja vektorit? Edeltä muistetaan, että matriisi on säännöllinen -- eli sillä on käänteismatriisi -- täsmälleen silloin, kun $\det A\neq 0.$
+
+Palataan ominaisvektoriyhtälöön $A\vec{v}=\lambda\vec{v}.$ Tästä saadaan yhtäpitävästi
+\begin{align*}
+A\vec{x}-\lambda\vec{v}&=0\\
+\left(A-\lambda I\right)\vec{v}&=0.
+\end{align*}
+Ominaisvektori ei voi olla nollavektori, joten neliömatriisin $A$ ominaisarvot saadaan yhtälöstä
+$$\det\left(A-\lambda I\right)=0,$$
+sillä yhtälön $\left(A-\lambda I\right)\vec{v}=0$ kerroinmatriisin pitää olla epäsäännöllinen.
+
+Lauseke $\det\left(A-\lambda I\right)$ on $\lambda$:n suhteen polynomi astetta $n$, jonka juuret ovat ominaisarvot. Lauseketta
+$$
+p_A(\lambda)=\det\left(A-\lambda I\right)$$
+kutsutaankin matriisin $A$ karakteristiseksi polynomiksi. Huomaa, että reaalisen matriisin ominaisarvot voivat olla kompleksilukuja.
+
+
+
+
+Ominaisarvoa ja sitä vastaavaa ominaisvektoria kutsutaan ominaispariksi. Ominaisarvot ja -vektorit lasketaan seuraavasti.
+\begin{enumerate}[leftmargin=*]
+\item Ominaisarvot saadaan yhtälöstä $p_A(\lambda)=\det\left(A-\lambda I\right)=0.$
+\item Ominaisarvoa $\lambda_i$ vastaava ominaisvektori $\vec{v}_i$ ratkaistaan yhtälöstä 
+$$
+\left(A-\lambda_i I\right)\vec{v}_i=0
+$$
+esimerkiksi ratkaisemalla yhtälöryhmä komponenttiesityksestä tai Gaussin eliminointimenetelmällä.
+\end{enumerate}
+Käytännössä ominaisarvot ja -vektorit ratkaistaan hienostuneilla algoritmeilla tietokoneella.
+
+Ominaisarvojen joukkoa kutsutaan $A$:n spektriksi ja vastaavia ominaisvektoreita usein $A$:n ominaistiloiksi.
+
+\begin{maar}[Ominaisarvon algebrallinen kertaluku] Jos matriisin $A$ karakteristisen polynomin $p_A$ juuren $\lambda_i$ asteluku on $n$, eli karakteristisen polynomi on muotoa
+$$
+p_A(\lambda)=(\lambda-\lambda_i)^n \tilde{p}(\lambda),
+$$
+niin sanotaan, että ominaisarvon $\lambda_i$ algebrallinen kertaluku on $n$. Tätä merkitään
+$$
+m_a(\lambda_i)=n.
+$$
+\end{maar}
+
+Eri ominaisarvoihin liittyvät ominaisvektorit ovat lineaarisesti riippumattomia. Symmetriset matriisit ovat monessa yhteydessä tärkeitä.
+
+\begin{lause} Symmetrisen matriisin $A=A^T$ ominaisarvot ovat reaalisia ja ominaisvektorit ovat ortogonaalisia. Ominaisvektorit $\vec{u}_i$ ovat näin ollen toisiaan vastaan kohtisuorassa
+$$
+\vec{u}_i\cdot \vec{u}_j=\vec{u}_i^T\vec{u}_j=0,\quad\text{kun}\quad i\neq j.
+$$
+\end{lause}
+
+\subsection{Neliömuoto}
+Olkoon $A$ $n\times n$-matriisi. Tällöin sitä vastaava neliömuoto on
+$$
+q(\vec{x})=\vec{x}^T A\vec{x}=\sum_{i=1}^n\sum_{j=1}^n a_ij x_ix_j.
+$$
+Koska $x_ix_j=x_jx_i,$ niin neliömuotoa vastaavaksi matriisiksi valitaan symmetrinen matriisi.
+
+Symmetrinen matriisi $A$ on ortogonaalisesti diagonalisoituva, niin muuttujan vaihdolla neliömuoto voidaan esittää ilman ristitermejä $x_ix_j,\ i\neq j.$
+
+
+\subsection{Toisen asteen käyrät}
+Toisen asteen käyrä on muotoa
+$$
+f(\vec{x})=a_{11}x^2+a_{22}y^2+2a_{12}xy+b_1x+b_2y+c=0,
+$$
+lyhyesti vain
+$$
+f(\vec{x})=\vec{x}^TA\vec{x}+B\vec{x}+c=0,
+$$
+missä
+$$
+A=\begin{pmatrix}
+a_{11} & a_{12}\\
+a_{21} & a_{22}
+\end{pmatrix},
+a_{21}=a_{12},\quad B=[b_1, b_2],\quad c\in\mathbf{R}.
+$$
+\clearpage
+\subsection{Bra-ket-merkintätapa*}
+Bra-ket-merkintätapa eli Diracin merkintätapa on yleisessä käytössä kvanttimekaniikassa. Englanniksi merkintätavan nimi on \emph{bracket} (sulku). Bra-vektoria merkitään symbolilla
+$\bra{\psi}$, kun taas ket-vektoria merkitään $\ket{\psi}.$ Ket-vektorilla tarkoitetaan kvanttimekaanista tilaa. Bra-ket-merkintä
+$$
+\bracket{\psi}{\phi}
+$$
+tarkoittaa tilojen $\ket{\psi}$ ja $\ket{\phi}$ välistä sisätuloa.
+
+Mikäli tila-avaruus $n$-ulotteinen kompleksiavaruus, niin ket-vektorit $\ket{\vec{a}}$ ja $\ket{\vec{b}}$ esittävät pisteiden paikkavektoreita $n$-ulotteisessa kompleksiavaruudessa
+$$
+\ket{\vec{a}}=\begin{pmatrix}
+a_1\\
+a_2\\
+\vdots\\
+a_n
+\end{pmatrix},\quad \ket{\vec{b}}=\begin{pmatrix}
+b_1\\
+b_2\\
+\vdots\\
+b_n
+\end{pmatrix}.
+$$
+Ket-vektoria $\ket{\vec{a}}$ vastaava bra-vektori on ket-vektorin adjungaatti eli
+$$
+\bra{\vec{a}} =\begin{pmatrix}
+a_1\\
+a_2\\
+\vdots\\
+a_n
+\end{pmatrix}^{\dagger}
+=\begin{pmatrix}
+\bar{a_1}, \bar{a_2}, \ldots, \bar{a_n}
+\end{pmatrix}
+$$
+Täten vektorien eli tilojen $\ket{\vec{a}}$ ja $\ket{\vec{b}}$ välinen sisätulo 
+$$
+\bracket{a}{b}=\begin{pmatrix}
+\bar{a_1}, \bar{a_2}, \ldots, \bar{a_n}
+\end{pmatrix}\begin{pmatrix}
+b_1\\
+b_2\\
+\vdots\\
+b_n
+\end{pmatrix}=\sum_{j=1}^n\bar{a_j}b_j.
+$$
+
+Tilaa $\ket{\psi}$ sanotaan normitetuksi, jos
+$$
+\norm{\psi}=\sqrt{\bracket{\psi}{\psi}}=1.
+$$
+
+Huomaa, että bra-ket-merkintätapa on lineaarinen ket-vektorin suhteen ja konjugaattilineaarinen bra-vektorin suhteen. Olkoon $\alpha, \beta\in \mathbf{C},$ ja olkoon $\bra{\vec{f}}, \bra{\vec{g}}, \bra{\vec{h}}$ vektoreita, tällöin
+\begin{enumerate}[leftmargin=*, label=\alph*), topsep=0pt, itemsep=9pt, parsep=0pt, font=\small\bfseries\color{blue}]
+\item $\bracket{\vec{f}}{\alpha\vec{g}+\beta \vec{h}}=\bracket{\vec{f}}{\alpha\vec{g}}+\bracket{\vec{f}}{\beta \vec{h}}=\alpha\bracket{\vec{f}}{\vec{g}}+\beta\bracket{\vec{f}}{\vec{h}}$
+\item $\bracket{\alpha\vec{f}+\beta \vec{g}}{\vec{h}}=\bracket{\alpha\vec{f}}{\vec{h}}+\bracket{\beta\vec{g}}{ \vec{h}}=\bar{\alpha}\bracket{\vec{f}}{\vec{h}}+\bar{\beta}\bracket{\vec{g}}{\vec{h}}$.
+\end{enumerate}
+
+Kun operaattori $A$ (eli matriisi) operoi ket-vektoriin $\ket{\phi}$, saadaan ket-vektori
+$$
+A\ket{\phi}=\ket{A\phi}.
+$$
+Vastaavalla tavalla saadaan bra-vektori, kun operaattori $A$ operoi bra-vektoriin $\bra{\psi}$ oikealta
+$$
+\bra{\psi}A=\bra{\psi A}.
+$$
+
+Hermiittisen operaattorin $A$ odotusarvo normitetussa tilassa $\psi$, $\norm{\psi}=1$, voidaan laskea lausekkeesta
+$$
+\ipr{A}=\matrixel{\psi}{A}{\psi}.
+$$
+
+Kvanttimekaniikassa mitattavia fysikaalisia suureita vastaavat hermiittiset operaattorit, joita kuvataan matriiseilla. Systeemin ollessa normitetussa tilassa $\bra{\psi}$,  on mitatun suureen keskiarvo sama kuin suuretta vastaavan operaattorin $A$ odotusarvo. 
+
+\begin{esim} Laske Paulin spinmatriisin
+$$
+\sigma_y=\begin{pmatrix}
+0 & -i\\
+i & 0
+\end{pmatrix}
+$$
+odotusarvo tilassa $\displaystyle \ket{\psi}=\frac{1}{\sqrt{2}}\begin{pmatrix}
+1\\
+-1
+\end{pmatrix}.$
+\end{esim}
+\begin{rat} Tila on normitettu, sillä
+$$
+\norm{\psi}^2=\bracket{\psi}{\psi}=\frac{1}{\sqrt{2}}\begin{pmatrix}
+1 & -1
+\end{pmatrix}\frac{1}{\sqrt{2}}\begin{pmatrix}
+1\\
+-1
+\end{pmatrix}=\frac{1}{2}\left(1^2+(-1)^2\right)=1.
+$$
+Näin ollen Paulin spinmatriisin odotusarvo on
+\begin{align*}
+\ave{\sigma_y}&=\matrixel{\psi}{\sigma_y}{\psi}=\bracket{\psi}{\sigma_y\psi}=\frac{1}{\sqrt{2}}\begin{pmatrix}
+1&
+-1
+\end{pmatrix}
+\begin{pmatrix}
+0 & -i\\
+i & 0
+\end{pmatrix}\frac{1}{\sqrt{2}}\begin{pmatrix}
+1\\
+-1
+\end{pmatrix}\\
+&=
+\frac{1}{2}\begin{pmatrix}
+1&
+-1
+\end{pmatrix}
+\begin{pmatrix}
+0 & -i\\
+i & 0
+\end{pmatrix}\begin{pmatrix}
+1\\
+-1
+\end{pmatrix}
+=
+\frac{1}{2}\begin{pmatrix}
+1&
+-1
+\end{pmatrix}
+\begin{pmatrix}
+0\cdot1-i\cdot(-1) \\
+i\cdot 1+0\cdot (-1)
+\end{pmatrix}\\
+&=
+\frac{1}{2}\begin{pmatrix}
+1&
+-1
+\end{pmatrix}
+\begin{pmatrix}
+i \\
+i
+\end{pmatrix}
+=\frac{1}{2}\left(i-i\right)=0.
+\end{align*}
+
+\end{rat}
+\clearpage
+\subsection{Unitaarinen matriisi*}
+\begin{maar} Neliömatriisi $U$ on unitaarinen, jos
+$$
+U^{\dagger}U=UU^{\dagger}=I.
+$$
+Toisin sanoen matriisin $U$ käänteismatriisi on sen adjungaatti, $U^{-1}=U^{\dagger}.$
+\end{maar}
+
+Suora seuraus unitaarisuuden määritelmästä on, että matriisin $U$ sarakevektorit ovat ortonormaaleja.
+
+\begin{lause} Olkoon $U$ unitaarinen $n\times n$-matriisi ja vektorit $\vec{u_i}, \ i=1,2,\ldots, n,$ sen sarakkeet, eli
+$$
+U=\begin{pmatrix}
+\vec{u_1},& \vec{u_2},&\ldots , & \vec{u_n}
+\end{pmatrix}.$$
+Tällöin vektorit $\vec{u_i}$ ortonormaalit
+$$
+\bracket{\vec{u_i}}{\vec{u_j}}=\vec{u_i}^{\dagger}\vec{u_j}=\delta_{ij}=\begin{cases}
+1,&\text{kun } i=j\\
+0,&\text{muuten}.\end{cases}
+$$
+Vektorien $\vec{u_i},\ i=1,2,\ldots,n,$ ortonormaalisuus tarkoittaa, että vektorit ovat pareittain kohtisuorassa (ortogonaalisia) ja ykkösen pituiset.
+\end{lause}
+
+Vektorin kuvaaminen unitaarisella matriisilla säilyttää sisätulon eli vektorien väliset kulmat säilyvät unitaarisissa kuvauksissa.
+
+\begin{lause} Olkoot $U$ unitaarinen $n\times n$-matriisi ja $\vec{x}, \vec{y}\in\mathbf{C}^n.$ Tällöin
+$$
+\bracket{U\vec{x}}{U\vec{y}}=\bracket{\vec{x}}{\vec{y}}.
+$$
+\end{lause}
+\begin{tod} Suoralla laskulla saadaan
+\begin{align*}
+\bracket{U\vec{x}}{U\vec{y}}&=\left(U\vec{x}\right)^{\dagger} U\vec{y}=\vec{x}^{\dagger}U^{\dagger}U \vec{y}\\
+&=\vec{x}^{\dagger} I \vec{y}=\vec{x}^{\dagger}\vec{y}=\bracket{\vec{x}}{\vec{y}}.
+\end{align*}
+\end{tod}
+
+
+Kvanttimekaniikassa operaattoria vastaa hermiittinen matriisi. Hermiittiselle matriisille $A=A^{\dagger}$ pätee:
+\begin{enumerate}[leftmargin=*, label=--, topsep=0pt, itemsep=9pt, parsep=0pt, font=\small\bfseries\color{blue}]
+\item kaikki ominaisarvot $\lambda_i$ ovat reaalisia
+\item eri ominaisarvoja vastaavat ominaisvektorit $\vec{v_i}$ ovat ortogonaaliset eli $\vec{v_i}\cdot \vec{v_j}=0, i\neq j.$
+\end{enumerate}
+\clearpage
+ \section*{Tehtäviä}
+\addcontentsline{toc}{section}{Tehtäviä}
+\linespread{1.667}
+\begin{teht} Olkoon $\bar{u}=(7, 2, 5)^T,\ \vec{v}=(3, 1, 3)^T$ ja $\bar{w}=(6, 1, 0)^T.$ Näytä, että
+$3\bar{u}-5\bar{v}=\bar{w}.$ Määritä yhtälön
+$$
+\begin{pmatrix}
+7 & 3\\
+2 & 1\\
+5 & 3
+\end{pmatrix} \vec{x}=\begin{pmatrix}
+6\\1\\0
+\end{pmatrix}
+$$
+ratkaisu.
+\end{teht}
+
+\begin{teht} Määritä tason lineaarikuvaus eli matriisi, joka peilaa pisteen $\vec{x}\in\mathbf{R}^2$
+\begin{listaa}
+\item $x_1$-akselin suhteen
+\item $x_2$-akselin suhteen
+\item suoran $x_1+x_2=0$ suhteen
+\item origon suhteen?
+\end{listaa}
+\end{teht}
+\begin{teht}
+Määritä edellisen tehtävän perusteella matriisi, joka ensin peilaa pisteen $\vec{x}\in\mathbf{R}^2$ suoran $x_1+x_2=0$ suhteen ja sitten peilaa pisteen origon suhteen? Onko matriisi sama, jos peilausjärjestystä vaihdetaan?
+\end{teht}
+
+
+\begin{teht} Olkoon $A=\begin{pmatrix}
+1 & 2\\
+1 & 3\\
+1 & 5\\
+\end{pmatrix}.$ Määrää $2\times 3$-matriisi $B,$ jonka alkioina ovat 1, -1 ja 0, niin, että $AB=I_2.$ Onko mahdollista, että $CA=I_4$ jollakin $4\times 2$-matriisilla $C$? Tässä $I_n$ on $n\times n$-yksikkömatriisi.
+\end{teht}
+
+\begin{teht}
+Neliömatriisi $N$ on nilpotentti, jos
+$
+N^k=\overbrace{N\cdot N \cdots N}^{k\text{ kpl}}=0.
+$
+Anna esimerkki sellaisesta matriisista $N$, jonka kaikki alkiot poikkeavat nollasta, mutta jolle pätee $N^2=0.$
+\end{teht}
+
+\begin{teht} Olkoon $A$ $m\times n$-matriisi ja $B$ $n\times k$-matriisi. Osoita, että $(AB)^T=B^TA^T.$
+\end{teht}
+
+\begin{teht} Taso kulkee pisteiden $A=(1,2,1),\ B=(-1, 0,2)$ ja $C=(-3,1,3)$ kautta. Määrää tason normaalimuotoinen yhtälö käyttäen ristituloa.
+\end{teht}
+\begin{teht} Määrää ristitulon avulla yksikkövektori, joka on kohtisuorassa vektoreita $\bar{i}+\bar{j}$ ja $\bar{j}+3\bar{k}$ vastaan.
+\end{teht}
+\begin{teht} Määrää kolmion $ABC$ pinta-ala ristituloa käyttäen, kun $A=(1,2,0)$, $B=(1,0,2)$ ja $C=(0, 3, 1).$
+\end{teht}
+\begin{teht} Jos avaruuden kolme vektoria $\vec{u}, \vec{v}$ ja $\vec{w}$ on annettu. Millä ehdolla vektorit ovat samassa tasossa?
+\end{teht}
+
+
+\begin{teht} Avaruuden $\mathbf{R}^3$ vektorien $\vec{a},\ \vec{b}$ ja $\vec{c}$ skalaarikolmitulo on 
+$$\vec{a}\bullet \vec{b}\times\vec{c}=\vec{a}\bullet (\vec{b}\times\vec{c}).$$
+Osoita, että
+$$
+\vec{a}\bullet \vec{b}\times\vec{c}=\det \left(
+\vec{a}, \vec{b}, \vec{c}
+\right)
+$$
+\end{teht}
+
+\begin{teht}
+Osoita, että lineaarisella yhtälöryhmällä $A\vec{x}=\vec{b}$ ei voi olla täsmälleen kahta ratkaisua.
+Vinkki: Tarkastele eri ratkaisujen välisen suoran pisteitä.
+\end{teht}
+
+
+\begin{teht} Fotosynteesissä kasvi muodostaa auringonvalosta saamallaan energialla hiilidioksista ja vedestä happea ja glukoosia. Etsi reaktion 
+$$
+x_1\chemfig{CO_2}+x_2\chemfig{H_2 O}\rightarrow x_3\chemfig{O_2}+x_4\chemfig{C_6 H_12 O_6}
+$$
+kertoimet $x_i,\ i=1, 2, 3, 4.$
+\end{teht}
+
+\begin{teht} Määrää homogeenisen yhtälöryhmän
+$$\begin{cases}
+-x+y-z-3w&=0\\
+3x+y-z-w&=0\\
+2x-y-2z-w&=0
+\end{cases}
+$$
+ratkaisut.
+\end{teht}
+
+\begin{teht} Olkoon $L:\mathbf{R}^3\to \mathbf{R}^3$ lineaarikuvaus $L(\vec{x})=\vec{x}\times \vec{a},$ jossa $\vec{a}=(1, 2, -4).$ Määritä lineaarikuvauksen matriisi.
+
+\end{teht}
+
+\begin{teht} $m\times n$-matriisin $A$ nolla-avaruus eli ydin on
+$$
+\Null{A}=\{\vec{x}\in\mathbf{R}^n:\, A\vec{x}=0\}.
+$$
+Määritä matriisin
+$$
+A=\begin{pmatrix}
+1 & 0 &0\\
+0 & 1 & 0
+\end{pmatrix}
+$$
+nolla-avaruus. Mikä on sen dimensio?
+\end{teht}
+
+\begin{teht} Olkoon
+$$
+A=\begin{pmatrix}
+1 & 1 & 0 & 0 \\
+0 & 1 & 1 &0\\
+0 & 0 & 1 & 1\\
+0 & 0 & 0 & 1
+\end{pmatrix}.
+$$
+Laske $A^k$, kun $k=1, 2, 3, \ldots, 1992.$
+\end{teht}
+
+\begin{teht} Jos $A$ on neliömatriisi, niin yhtälöryhmä $A\vec{x}=\vec{b}$ on yksinkertaista ratkaista, jos
+$A=LU$, missä $L$ on alakolmio- ja $U$ yläkolmiomatriisi. Ratkaise yhtälö
+$$
+A\vec{x}=\vec{b},
+$$
+jossa
+$$
+A=\begin{pmatrix}
+3 & -7 & -2\\
+-3 & 5 & 1\\
+6 & -4 & 0
+\end{pmatrix}
+$$
+ja $\vec{b}=(-7, 5, 2)^T$, käyttäen LU-hajotelmaa.
+\end{teht}
+
+\begin{teht}
+Muodosta permutaatiomatriisi, joka siirtää $n\times n$-matriisissa kaikkia rivejä yhden ylöspäin, paitsi ylin rivi siirtyy alimmaiseksi. Tarkista saamasi matriisi tapauksessa, jossa 
+$$
+A=\begin{pmatrix}
+2 & -1 & 0 & 12\\
+1 & -1 & 0 & 1\\
+0 & -11 & 1 & -2\\
+0 & 1 & 1 & 1
+\end{pmatrix}.
+$$
+\end{teht}
+
+\begin{teht} Tarkestellaan tasossa $\mathbf{R}^2$ peilausta origon suhteen. Muodosta peilausmatriisi $Q$ ja laske sen ominaisarvot ja -vektorit.
+\end{teht}
+
+\begin{teht} Etsi matriisin
+$$
+A=\begin{pmatrix*}[r]
+-3 & -2 & 4\\
+-2 & 0 & 2\\
+4 & 2 & -3
+\end{pmatrix*}
+$$
+ortogonaalinen diagonalisointi.
+\end{teht}
+
+\begin{teht} Olkoon $A$ symmetrinen. Etsi muunnos, jonka avulla meliömuoto
+$
+q(\vec{x})=\vec{x}^TAx
+$
+saadaan pääakseliesitysmuotoon
+$$
+q(\vec{x})=\sum_{i=1}^n \lambda_i y_i^2.
+$$
+\end{teht}
+
+\begin{teht} Määrää neliömuodon $q(\vec{x})=-3x_1^2-3x_3^2-4x_1x_2+8x_1x_3+4x_2x_3$ pääakseliesitys.
+\end{teht}
+
+\begin{teht} Luokittele toisen asteen käyrä $$
+5x^2+5y^2-8xy-18x+18y+8=0
+$$
+ja etsi sen pääakseliesitys.
+
+\end{teht}
+
+\begin{teht} Määritä sen paraabelin yhtälö, joka parhaiten sopii (pienimmän neliösumman mielessä) pisteisiin $(-1, 1/2),\ (1, -1),\ (2, -1/2)$ ja $(3, 2).$
+\end{teht}
+\begin{teht} Määritä säämallin siirtymäkaavion siirtymämatriisi.
+
+\begin{tikzpicture}[font=\sffamily]
+
+    % Add the states
+    \node[state,
+          text=yellow,
+          draw=none,
+          fill=gray!50!black] (s) {Aurinkoista};
+    \node[state,
+          right=2cm of s,
+          text=blue!30!white, 
+          draw=none, 
+          fill=gray!50!black] (r) {Sateista};
+
+    % Connect the states with arrows
+    \draw[every loop,
+          auto=right,
+          line width=1mm,
+          >=latex,
+          draw=orange,
+          fill=orange]
+        (s) edge[bend right, auto=left]  node {0{,}6} (r)
+        (r) edge[bend right, auto=right] node {0{,}7} (s)
+        (s) edge[loop above]             node {0{,}4} (s)
+        (r) edge[loop above]             node {0{,}3} (r);
+   \end{tikzpicture}
+
+Määritä siirtymämatriisin tasapainojakauma.
+\end{teht}
+\end{document}

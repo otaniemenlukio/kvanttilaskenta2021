@@ -1,0 +1,515 @@
+\documentclass[a4paper, 12pt]{article}
+
+
+\makeatletter
+%\renewcommand{\@chapapp}{}% Not necessary...
+%\newenvironment{chapquote}[2][2em]
+ % {\setlength{\@tempdima}{#1}%
+ %  \def\chapquote@author{#2}%
+ %  \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+ %  \itshape}
+ % {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+%\renewcommand\thechapter{\Roman{chapter}}
+%\usepackage[paper=a4paper,textwidth=16.5cm,bottom=40mm]{geometry}
+\usepackage[left=2.5cm, top=3.0cm,right=2.5cm, bottom=2.5cm]{geometry}
+%\usepackage{avant}
+%\usepackage[scaled=.92]{helvet}
+%\renewcommand*\familydefault{\sfdefault}
+\usepackage[utf8]{inputenc}
+\usepackage{romannum}
+%\usepackage{cmbright}
+%\usepackage{ccfonts,eulervm}
+%\usepackage{eulervm}
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+
+\usepackage[english, finnish]{babel}
+\usepackage{tabularx}
+\usepackage{ae}
+%\usepackage{cleveref}
+\usepackage[affil-it]{authblk}
+%\usepackage{CV}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+
+
+
+\usepackage[pdfpagemode=None,linktocpage=true, colorlinks=true,urlcolor=red, linkcolor=black,citecolor=black,pdfstartview=FitH,linktoc=all]{hyperref}
+\usepackage{cleveref}
+\makeatletter  
+\def\@endtheorem{\qed\endtrivlist\@endpefalse } % insert `\qed` macro
+\makeatother
+%\renewcommand{\qedsymbol}{}
+\usepackage{thmtools}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\declaretheoremstyle[headfont=\color{blue}\normalfont\bfseries, bodyfont=\normalfont, headpunct={.}, qed={}]{normalbody}
+\declaretheoremstyle[headfont=\color{blue}\normalfont\bfseries, bodyfont=\normalfont, headpunct={.}]{normalbody1}
+\declaretheoremstyle[headfont=\normalfont\bfseries, bodyfont=\normalfont, headpunct={.}, qed={}]{normalbody2}
+\definecolor{auburn}{rgb}{0.43, 0.21, 0.1}
+\declaretheoremstyle[headfont=\color{auburn}\normalfont\bfseries, bodyfont=\normalfont, headpunct={.}, qed={}]{normalbody3}
+%\theoremstyle{exercise}
+\declaretheorem[style=normalbody,name=Tehtävä]{teht}
+%\newtheorem{teht}{Tehtävä}
+\declaretheorem[style=normalbody,name=Esimerkki]{esim}
+\declaretheorem[style=normalbody2,name={Lause}]{lause}
+\declaretheorem[style=normalbody3,name=Määritelmä]{maar}
+
+\declaretheoremstyle[%
+  spaceabove=0pt,%
+  spacebelow=6pt,%
+  headfont=\normalfont\itshape,%
+  %postheadspace=1em,%
+  %
+  headpunct={.},
+]{mystyle} 
+\declaretheorem[style=normalbody2,name=Ratkaisu, unnumbered]{rat}
+\declaretheorem[style=mystyle,name=Todistus, unnumbered]{tod}
+%\def\eolqed{\hfill\qedsymbol}
+%\newcounter{määr}{section}
+\newenvironment{määr}[2]
+{\begin{tcolorbox}[adjusted title=Määritelmä #1,colframe=blue!75!black]
+%\begin{maar*}[''Jakaa täysin'']
+#2
+%\end{maar*}
+\end{tcolorbox}
+}
+
+\declaretheoremstyle[headfont=\normalfont\bfseries, headpunct={.}, qed={}]{normalbody5}
+\declaretheorem[style=normalbody5,name=Huomautus, unnumbered]{huom}
+\declaretheorem[style=normalbody5,name=Seuraus, unnumbered]{seur}
+
+%\renewcommand{\qedsymbol}{}
+%\declaretheorem[style=mythmstyle, name=Lause]{lause}
+\theoremstyle{remark}
+%\newtheorem*{huom}{Huomautus}
+\theoremstyle{definition}
+%\newtheorem{theorem}{Lause}[chapter]
+
+\newtheorem*{maar*}{Määritelmä}
+%\newtheorem*{seur}{Seuraus}
+%\newtheorem*{huom}{Huomautus}
+
+%\newtheorem{esim}{Esimerkki}
+%\newtheorem*{rat}{Ratkaisu}
+%\newtheorem{lause}{Lause}
+%\theoremstyle{exercise}
+%\declaretheorem[style=normalbody,name=Tehtävä]{teht}
+
+
+\usepackage{amssymb}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage{mathdesign}
+\usepackage{mathtools}
+\usepackage{graphicx}
+ %\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xr-hyper}
+%\usepackage[backend=bibtex]{biblatex}   % bibliography
+
+%\usepackage[pdfpagemode=FullScreen, colorlinks=true,urlcolor=red, linkcolor=blue,citecolor=black,pdfstartview=FitH]{hyperref}
+\usepackage{url}
+%\usepackage{cite}
+
+\usepackage{latexsym}
+
+\usepackage[decimalsymbol=comma, load=prefixed]{siunitx}
+%\usepackage{siunitx}
+%\sisetup{output-decimal-marker = {,}}
+   \sisetup{exponent-product = \cdot, output-product = \cdot}
+\sisetup{
+    group-digits=true,
+    group-separator={\,},
+%   group-four-digits=false,% default setting
+}
+\usepackage{fancyhdr}
+%\usepackage{fancyref}
+%
+% This is not working with package fancyref.
+
+\usepackage{fancyhdr} % heade
+
+% Quotes
+\usepackage{epigraph}
+
+% Headerit
+\pagestyle{fancyplain}
+\lhead[\fancyplain{}{\bfseries\thepage}]
+	{\fancyplain{}{\bfseries }}
+\chead[\fancyplain{}{\bfseries\thepage}]
+	{\fancyplain{}{\bfseries }}
+\rhead[\fancyplain{}{\bfseries\leftmark}]
+	{\fancyplain{}{\bfseries \dmyyyydate\today}}
+%\cfoot{}
+%\lfoot{}
+%\rfoot{tihayryn@lce.hut.fi}
+%
+% ei kappaleen sisennystä ja tyhjä rivi kappaleiden väliin
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.5ex}
+%\setlength{\parskip}{3mm plus0.5mm minus0.5mm}
+\usepackage{sectsty}
+%\sectionfont{\fontsize{16}{15}\selectfont}
+%\paragraphfont{\fontsize{14}{15}\selectfont}
+%\usepackage{fouriernc}
+%\usepackage{ccfonts,eulervm}
+
+%\usepackage[scaled=.92]{helvet}
+\usepackage{datetime}
+\renewcommand{\dateseparator}{.}
+\date{\dmyyyydate\today}
+
+%\setlength{\textwidth}{160mm}
+%\setlength{\oddsidemargin}{-5mm}
+%\setlength{\evensidemargin}{-5mm}
+%\setlength{\textheight}{255mm}
+%\setlength{\topmargin}{-15mm}
+
+\usepackage{natbib}
+\bibliographystyle{./Bibliography/my-dcu}
+%\bibliographystyle{agsm}
+%\bibliographystyle{dcu}
+%\bibliographystyle{abbrvnat}
+%\bibliographystyle{plainnat}
+%\bibliographystyle{unsrtnat}
+%\renewcommand\harvardyearleft{\unskip, }
+%\renewcommand\harvardyearright[1]{.}
+
+\renewcommand\harvardyearleft{\unskip\ }
+\renewcommand\harvardyearright[1]{.}
+\bibpunct{(}{)}{;}{a}{}{,~}
+\AtBeginDocument{\renewcommand{\harvardand}{ja}}
+%\renewcommand\harvardand{ja}
+\renewcommand{\arraystretch}{1.3}
+
+
+\usepackage{amssymb}
+%\usepackage{mathdesign}
+\usepackage{gauss}
+\usepackage{mathabx}
+
+\usepackage{graphicx} % Kuvien lis??????ist??????arten
+\usepackage{appendix} % Lis??????vaihtoehtoja liitteiden muotoiluun.
+
+
+\usepackage{tikz}
+\usetikzlibrary{shadings}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{decorations.fractals}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{calc, intersections}	       %allows coordinate calculations.
+\usetikzlibrary{angles,patterns,calc}
+\usepackage{sidecap}
+\usetikzlibrary{calc,fadings,decorations.pathreplacing}
+\usepackage{xcolor}
+\usetikzlibrary{positioning}
+\usetikzlibrary{through,backgrounds}
+\usepackage{footmisc}
+\usepackage{sidecap}
+\usetikzlibrary{calc,fadings,decorations.pathreplacing}
+\usepackage{xcolor}
+\usetikzlibrary{positioning}
+\usetikzlibrary{through,backgrounds}
+\usepackage{footmisc}
+\usetikzlibrary{decorations.pathmorphing,decorations.markings}
+
+
+\usetikzlibrary{decorations}
+
+% Not sure this follows any proper defition of 
+% Sirpinksi triangle. It just works.
+\pgfdeclaredecoration{quasi-sirpinski}{do}{%
+    \state{do}[width=\pgfdecoratedinputsegmentlength, next state=do]{%
+        \pgfpathmoveto{\pgfpointpolar{-60}{\pgfdecoratedinputsegmentlength/2}}%
+        \pgfpathlineto{\pgfpointorigin}%
+        \pgfpathlineto{\pgfpoint{\pgfdecoratedinputsegmentlength/2}{0pt}}%
+        \pgfpathclose%
+    }
+}
+% TIKZ - for drawing Feynman diagrams
+% ... use with pdflatex
+
+
+
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{trees}
+\usetikzlibrary{matrix,arrows} 				% For commutative diagram
+			\usepackage{pgfplots}								% http://www.felixl.de/commu.pdf
+\usetikzlibrary{positioning}				% For "above of=" commands
+\usetikzlibrary{calc,through}				% For coordinates
+\usetikzlibrary{decorations.pathreplacing}  % For curly braces
+% http://www.math.ucla.edu/~getreuer/tikz.html
+\usepackage{pgffor}							% For repeating patterns
+
+\usetikzlibrary{decorations.pathmorphing}	% For Feynman Diagrams
+\usetikzlibrary{decorations.markings}
+\tikzset{
+	% >=stealth', %%  Uncomment for more conventional arrows
+    vector/.style={decorate, decoration={snake}, draw},
+	provector/.style={decorate, decoration={snake,amplitude=2.5pt}, draw},
+	antivector/.style={decorate, decoration={snake,amplitude=-2.5pt}, draw},
+    fermion/.style={draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
+    fermionbar/.style={draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{<}}}},
+    fermionnoarrow/.style={draw=black},
+    gluon/.style={decorate, draw=black,
+        decoration={coil,amplitude=4pt, segment length=5pt}},
+    scalar/.style={dashed,draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
+    scalarbar/.style={dashed,draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{<}}}},
+    scalarnoarrow/.style={dashed,draw=black},
+    electron/.style={draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
+	bigvector/.style={decorate, decoration={snake,amplitude=4pt}, draw},
+}
+
+% TIKZ - for block diagrams, 
+% from http://www.texample.net/tikz/examples/control-system-principles/
+% \usetikzlibrary{shapes,arrows}
+\tikzstyle{block} = [draw, rectangle, 
+    minimum height=3em, minimum width=6em]
+
+
+
+
+
+
+\usepackage{listing}
+\usepackage{wasysym}
+\usepackage{bbm}
+\usepackage{fancybox}
+
+\usepackage{textcomp}
+
+\usepackage[labelfont=bf,labelsep=period]{caption}
+
+%\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+
+
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+%\usepackage[nottoc]{tocbibind}
+
+\addto\captionsenglish{\renewcommand{\bibname}{References}}
+% Mathematics
+\newcommand{\vii}{\mathop{\Big/}}
+\newcommand{\viiva}[2]{\vii\limits_{\!\!\!\!{#1}}^{\>\,{#2}}}
+\newcommand{\relR}{\mathrel{\mathsf{R}}}
+\newcommand{\cp}[1]{{#1}^\complement}
+\newcommand{\raj}[2][f]{#1\!\!\mid_{#2}}
+\renewcommand{\bar}[1]{\overline{#1}}
+\newcommand{\vek}[1]{\mbox{\boldmath$#1$}}
+
+\renewcommand{\vec}[1]{\vek{#1}}
+\newcommand{\vecp}[1]{\hat{\vec{#1}}}
+\newcommand{\matr}[1]{\mathsf{#1}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\I}{\mathrm{i}}
+\newcommand{\D}[1][x]{\,\text{d}#1}
+%\newcommand{\km}{\,\mathrm{km}}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\mean}[1]{\langle#1\rangle}
+\newcommand{\fneg}{f^{-1}}
+\newcommand{\ftil}{\tilde{f}}
+\newcommand{\ainaa}{{\alpha \in A}}
+\newcommand{\INT}[1]{\overset{\mspace{6mu}\circ}{#1}}
+\newcommand{\osit}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\diff}[2]{\frac{d#1}{d#2}}
+\newcommand{\difft}[2]{\frac{d^2 #1}{d#2 ^2}}
+\newcommand{\ositt}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\epsi}{\varepsilon}
+\newcommand{\epsii}{\epsi_{i}}
+\newcommand{\epsie}{\epsi_{eff}}
+\newcommand{\epsit}{\epsi_{t}}
+\newcommand{\epsir}{\epsi_{r}}
+\newcommand{\uz}{\vek{u}_z}
+\newcommand{\roo}{\varrho}
+\newcommand{\fii}{\phi_{i}}
+\newcommand{\fit}{\phi_{t}}
+\newcommand{\Ei}{\vek{E}_{i}}
+\newcommand{\Et}{\vek{E}_{t}}
+\newcommand{\pr}{\mathfrak{p}}
+\renewcommand{\Re}[1]{\textrm{Re}\, #1}
+\renewcommand{\Im}[1]{\textrm{Im}\, #1}
+%\renewcommand{\Re}{{\operatorname{Re}}}           % real part
+%\renewcommand{\Im}{{\operatorname{Im}}}           % imaginary part
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Ln}{Ln}
+\newcommand{\phg}{p_\text{HG}}
+\newcommand{\kB}{k_\textrm{B}}
+
+\newcommand{\nub}{\bar{\nu}}
+
+\newcommand{\bra}[1]{\ensuremath{\left\langle#1\right|}}
+\newcommand{\ket}[1]{\ensuremath{\left|#1\right\rangle}}
+\newcommand{\bracket}[2]{\ensuremath{\left\langle#1 \vphantom{#2}\right| \left. #2 \vphantom{#1}\right\rangle}}
+\newcommand{\matrixel}[3]{\ensuremath{\left\langle #1 \vphantom{#2#3} \right| #2 \left| #3 \vphantom{#1#2} \right\rangle}}
+\newcommand{\ipr}[1]{\ensuremath{\left\langle #1\right\rangle}}
+
+
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
+\newcommand{\ave}[1]{\ensuremath{\left\langle #1 \right\rangle}}
+\newcommand{\dotpr}[2]{\ensuremath{#1 \cdot #2}}
+%\newcommand{\dyad}[1]{\overleftrightarrow{#1}}
+\newcommand{\dyad}[1]{\bar{\bar #1}}
+
+\newcommand{\St}[1]{#1_{S}}
+\newcommand{\aSt}[1]{#1_{aS}}
+\newcommand{\vib}[1]{#1_{vib}}
+\newcommand{\op}[1]{\widehat{#1}}
+\newcommand{\Hami}{\mathcal{H}}
+
+\newcommand{\comm}[2]{\ensuremath{\left[ #1,\, #2 \right]}}
+\newcommand{\acomm}[2]{\ensuremath{\left\{ #1,\, #2 \right\}}}
+%\renewcommand{\v}{\mathrm{v}}
+
+ \usepackage{relsize}
+%\newcommand{\comm}[2]{%
+ % [%
+%  \begin{array}{
+ %   @{}
+  % >{\centering $\displaystyle}p{1em}<{$}
+  % @{,}
+  %  >{\centering $\displaystyle}p{1.5em}<{$}
+  % @{}
+ %}
+  % #1 & #2
+ %\end{array}%
+ %]%
+%}
+
+%\newcommand{\acomm}[2]{%
+ % \{%
+  %\begin{array}{
+   % @{}
+   %>{\centering $\displaystyle}p{1em}<{$}
+   %@{,}
+   % >{\centering $\displaystyle}p{1.5em}<{$}
+   %@{}
+ %}
+  % #1 & #2
+ %\end{array}%
+ %\}%
+%}
+
+%\newcommand{\comm}[3][1.2em]{[ \makebox[#1]{$#2$} , \makebox[#1]{$#3$} ]}
+%\newcommand{\acomm}[3][1.2em]{\left\{ \makebox[#1]{$#2$} , \makebox[#1]{$#3$} \right\} }
+ 
+
+
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\tr}{tr}
+
+%\usepackage[nottoc]{tocbibind}
+\usepackage{enumitem}
+\makeatletter
+% This command ignores the optional argument for itemize and enumerate lists
+\newcommand{\inlineitem}[1][]{%
+\ifnum\enit@type=\tw@
+    {\descriptionlabel{#1}}
+  \hspace{\labelsep}%
+\else
+  \ifnum\enit@type=\z@
+       \refstepcounter{\@listctr}\fi
+    \quad\@itemlabel\hspace{\labelsep}%
+\fi}
+\makeatother
+
+\newenvironment{itemize*}%
+ {\begin{itemize}%
+    \setlength{\itemsep}{0pt}%
+  \setlength{\parskip}{0pt}}%
+  {\end{itemize}}
+\renewenvironment{itemize*}{\itemize}
+
+
+\newenvironment{enumerate*}%
+  {\begin{itemize}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parskip}{0pt}}%
+  {\end{itemize}}
+\renewenvironment{enumerate*}{\enumerate}
+
+
+\usepackage{tcolorbox}% http://ctan.org/pkg/tcolorbox
+    \tcbuselibrary{skins,breakable}
+\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1}
+\newtcolorbox{myboxi}[1]{colframe=blue!75!black,fonttitle=\bfseries,title=#1}
+\newtcolorbox{myboxa}[1]{colframe=yellow!15!black,fonttitle=\bfseries,title=#1}
+
+\usepackage{tasks}
+\usepackage{exsheets}
+
+\newenvironment{listaa} %%%% this adjusts spacing as I desire
+    {\begin{enumerate}[leftmargin=*, label=\alph*), topsep=0pt, itemsep=0pt, parsep=0pt, font=\small\bfseries\color{blue}] \itemsep0pt \parskip0pt \parsep0pt \topsep0pt}
+    {\end{enumerate}}
+    \newenvironment{listab} %%%% this adjusts spacing as I desire
+    {\begin{enumerate}[leftmargin=*, label=\roman*), topsep=0pt, itemsep=0pt, parsep=0pt, font=\small\bfseries\color{blue}] \itemsep0pt \parskip0pt \parsep0pt \topsep0pt}
+    {\end{enumerate}}
+    
+\begin{document}
+\pagestyle{plain}
+\pagenumbering{arabic}
+\section*{Harjoitus 2}
+
+
+\begin{enumerate}[itemsep=12pt,label=\textbf{\color{red}{\arabic*.}}, leftmargin=*]
+
+
+\item Jos $\lambda$ on matriisin $A$ ominaisarvo ja $\vec{v}$ on vastaava ominaisvektori, niin on voimassa ominaisarvoyhtälö
+$$
+    A\vec{v}=\lambda \vec{v}
+$$
+Ratkaise matriisin ominaisarvot ja ominaisarvoja vastaavat ominaisvektorit, kun 
+\begin{equation*}
+   A = \left(
+    \begin{array}{cc}
+    4 & 2  \\ 	
+    3 & 3 
+\end{array} 
+\right).
+\end{equation*}
+
+\item Etsi seuraavien kompleksilukujen eksponenttimuoto.
+\begin{listaa}
+\item $-1$
+\item $i$ 
+\item $-\dfrac{1}{\sqrt{3}}+i$
+\end{listaa}
+
+
+
+\item Laske Paulin spinmatriisien
+$$ \sigma_{x}=\begin{pmatrix}0&1\\1&0\end{pmatrix},\quad \sigma_{y}=\begin{pmatrix}0& -i\\i&0\end{pmatrix},\quad \sigma_z=\begin{pmatrix}1& 0\\0&-1\end{pmatrix}
+$$
+väliset kommutaattorit $\comm{\sigma_x}{\sigma_y}, \comm{\sigma_y}{\sigma_z}$ ja $\comm{\sigma_{z}}{\sigma_x}.$ Operaattorien $A$ ja $B$ välinen kommutaattori on $\comm{A}{B}=AB-BA.$
+
+
+\item Laske sekatilan $\ket{\vec{a}}=\frac{1}{\sqrt{2}}\left( \ket{\vec{0}}-\ket{\vec{1}}\right),$ missä 
+$$
+\ket{\vec{0}}=\begin{pmatrix}
+1\\
+0
+\end{pmatrix},\quad \ket{\vec{1}}=\begin{pmatrix}
+0\\
+1
+\end{pmatrix},
+$$
+odotusarvo $\matrixel{\vec{a}}{\sigma_z}{\vec{a}}=\bra{\vec{a}}^{\dagger} \sigma_z \ket{\vec{a}}.$
+\end{enumerate}
+
+\end{document}
